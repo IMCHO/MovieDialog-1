@@ -10,6 +10,7 @@ import Foundation
 
 class Dialog: Codable {
     var title:String
+    var image:String
     var date:String
     var star:Int
     var simpleReview:[String]
@@ -19,6 +20,6 @@ class Dialog: Codable {
 
 extension Dialog: CustomStringConvertible {
     var description: String {
-        return "Dialog<\(title), \(date), \(star), \(simpleReview), \(review), \(createdDate)>"
+        return "\(title), \(image), \(date), \(star), \(simpleReview), \(review), \(createdDate)"
     }
 }
