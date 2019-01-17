@@ -12,6 +12,13 @@
 		3F9022DA21EC5DC0002AF52F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F9022D821EC5DC0002AF52F /* Main.storyboard */; };
 		3F9022DC21EC5DC1002AF52F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F9022DB21EC5DC1002AF52F /* Assets.xcassets */; };
 		3F9022DF21EC5DC1002AF52F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F9022DD21EC5DC1002AF52F /* LaunchScreen.storyboard */; };
+		DADEE77521EF80950007F93A /* user.plist in Resources */ = {isa = PBXBuildFile; fileRef = DADEE77421EF80950007F93A /* user.plist */; };
+		DADEE77721EF80BB0007F93A /* dialog.plist in Resources */ = {isa = PBXBuildFile; fileRef = DADEE77621EF80BB0007F93A /* dialog.plist */; };
+		DADEE77921EF81050007F93A /* challenge.plist in Resources */ = {isa = PBXBuildFile; fileRef = DADEE77821EF81050007F93A /* challenge.plist */; };
+		DADEE77B21EF879B0007F93A /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADEE77A21EF879B0007F93A /* InfoTableViewController.swift */; };
+		DADEE77D21EF880C0007F93A /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADEE77C21EF880C0007F93A /* user.swift */; };
+		DADEE77F21EF88290007F93A /* dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADEE77E21EF88290007F93A /* dialog.swift */; };
+		DADEE78121EF88340007F93A /* challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADEE78021EF88340007F93A /* challenge.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +29,13 @@
 		3F9022DB21EC5DC1002AF52F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F9022DE21EC5DC1002AF52F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F9022E021EC5DC1002AF52F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DADEE77421EF80950007F93A /* user.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = user.plist; sourceTree = "<group>"; };
+		DADEE77621EF80BB0007F93A /* dialog.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = dialog.plist; sourceTree = "<group>"; };
+		DADEE77821EF81050007F93A /* challenge.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = challenge.plist; sourceTree = "<group>"; };
+		DADEE77A21EF879B0007F93A /* InfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewController.swift; sourceTree = "<group>"; };
+		DADEE77C21EF880C0007F93A /* user.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
+		DADEE77E21EF88290007F93A /* dialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dialog.swift; sourceTree = "<group>"; };
+		DADEE78021EF88340007F93A /* challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = challenge.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +74,13 @@
 				3F9022DB21EC5DC1002AF52F /* Assets.xcassets */,
 				3F9022DD21EC5DC1002AF52F /* LaunchScreen.storyboard */,
 				3F9022E021EC5DC1002AF52F /* Info.plist */,
+				DADEE77421EF80950007F93A /* user.plist */,
+				DADEE77621EF80BB0007F93A /* dialog.plist */,
+				DADEE77821EF81050007F93A /* challenge.plist */,
+				DADEE77A21EF879B0007F93A /* InfoTableViewController.swift */,
+				DADEE77C21EF880C0007F93A /* user.swift */,
+				DADEE77E21EF88290007F93A /* dialog.swift */,
+				DADEE78021EF88340007F93A /* challenge.swift */,
 			);
 			path = MovieDialog;
 			sourceTree = "<group>";
@@ -124,7 +145,10 @@
 			files = (
 				3F9022DF21EC5DC1002AF52F /* LaunchScreen.storyboard in Resources */,
 				3F9022DC21EC5DC1002AF52F /* Assets.xcassets in Resources */,
+				DADEE77721EF80BB0007F93A /* dialog.plist in Resources */,
 				3F9022DA21EC5DC0002AF52F /* Main.storyboard in Resources */,
+				DADEE77921EF81050007F93A /* challenge.plist in Resources */,
+				DADEE77521EF80950007F93A /* user.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +159,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DADEE77D21EF880C0007F93A /* user.swift in Sources */,
+				DADEE78121EF88340007F93A /* challenge.swift in Sources */,
+				DADEE77B21EF879B0007F93A /* InfoTableViewController.swift in Sources */,
+				DADEE77F21EF88290007F93A /* dialog.swift in Sources */,
 				3F9022D721EC5DC0002AF52F /* ViewController.swift in Sources */,
 				3F9022D521EC5DC0002AF52F /* AppDelegate.swift in Sources */,
 			);
