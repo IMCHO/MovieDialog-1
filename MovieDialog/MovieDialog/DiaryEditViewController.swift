@@ -9,6 +9,7 @@
 import UIKit
 
 class DiaryEditViewController: UIViewController, SendDataDelegate {
+    let picker = UIImagePickerController() //갤러리 및 카메라에서 사진을 불러올 때 사용
     
     @IBAction func cancelNavButton(_ sender: Any) { //Cancel button
         let alert = UIAlertController(title: "저장하지 않은 데이터는 사라집니다", message: "창을 닫으시겠습니까?", preferredStyle: UIAlertController.Style.alert)
@@ -31,8 +32,13 @@ class DiaryEditViewController: UIViewController, SendDataDelegate {
                 self.performSegue(withIdentifier: "toSearchSegue", sender: nil)
             }
         }))
-        actionSheet.addAction(UIAlertAction(title:"내 파일에서 불러오기", style:.default, handler:{result in
-            //do something22
+        actionSheet.addAction(UIAlertAction(title:"갤러리에서 불러오기", style:.default, handler:{result in
+            //갤러리에서 이미지 불러오기
+            self.openLibrary()
+        }))
+        actionSheet.addAction(UIAlertAction(title:"사진 찍기", style:.default, handler:{result in
+            //카메라로 사진 찍기
+            self.openCamera()
         }))
         actionSheet.addAction(UIAlertAction(title:"취소", style:.cancel, handler:nil))
         self.present(actionSheet, animated:true, completion:nil)
@@ -40,14 +46,14 @@ class DiaryEditViewController: UIViewController, SendDataDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        picker.delegate = self as UIImagePickerControllerDelegate & UINavigationControllerDelegate
     }
     
+    //-----웹에서 검색한 데이터(제목, 사진)을 불러오는 함수
     func sendData(title:String, img:UIImage){
         movieTitle.text = title
         movieImage.image = img
     }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toSearchSegue"{
             let nav:UINavigationController = segue.destination as! UINavigationController
@@ -55,5 +61,32 @@ class DiaryEditViewController: UIViewController, SendDataDelegate {
             viewController.delegate = self
         }
     }
+    
+    
+    
+    func openLibrary(){
+        picker.sourceType = .photoLibrary
+        present(picker, animated:false, completion:nil)
+    }
+    
+    func openCamera(){
+        if(UIImagePickerController.isSourceTypeAvailable(.camera)){
+            picker.sourceType = .camera
+            present(picker, animated:false, completion:nil)
+        } else{
+            print("Camera not available")
+        }
+        
+    }
 
+}
+
+extension DiaryEditViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+            movieImage.image = image
+            print(info)
+        }
+        dismiss(animated:true, completion:nil)
+    }
 }
