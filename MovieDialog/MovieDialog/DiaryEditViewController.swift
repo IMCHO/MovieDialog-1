@@ -9,8 +9,19 @@
 import UIKit
 
 class DiaryEditViewController: UIViewController, SendDataDelegate {
-    @IBOutlet weak var movieImage: UIImageView!
-    @IBOutlet weak var movieTitle: UILabel!
+    
+    @IBAction func cancelNavButton(_ sender: Any) { //Cancel button
+        let alert = UIAlertController(title: "저장하지 않은 데이터는 사라집니다", message: "창을 닫으시겠습니까?", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title:"확인", style:UIAlertAction.Style.default) { UIAlertAction in
+            self.dismiss(animated:true, completion:nil)
+        })
+        alert.addAction(UIAlertAction(title:"취소", style:UIAlertAction.Style.cancel){ UIAlertAction in })
+        present(alert, animated:true, completion:nil)
+    }
+    
+    @IBOutlet weak var movieImage: UIImageView! //영화 포스터
+    @IBOutlet weak var movieTitle: UILabel! //영화 제목
+    
     @IBAction func selectPicButton(_ sender: UIButton) { //Alert Controller
         let actionSheet = UIAlertController(title:"포스터 입력 방식을 선택해 주세요", message:nil, preferredStyle:.actionSheet)
         actionSheet.addAction(UIAlertAction(title:"웹에서 검색하기", style:.default, handler:{result in

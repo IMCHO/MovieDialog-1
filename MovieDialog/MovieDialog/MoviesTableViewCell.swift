@@ -15,6 +15,7 @@ class MoviesTableViewCell: UITableViewCell {
     @IBOutlet weak var directorLabel: UILabel!
     @IBOutlet weak var actorsLabel: UILabel!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

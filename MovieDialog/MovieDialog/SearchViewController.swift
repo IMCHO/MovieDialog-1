@@ -11,6 +11,12 @@ import UIKit
 class SearchViewController: UIViewController {
     var delegate:SendDataDelegate?
     
+    
+    @IBAction func cancelNavButton(_ sender: Any) {
+        self.dismiss(animated:true, completion:nil)
+    }
+    
+    
     @IBOutlet weak var searchTextField: UITextField!
     
     @IBAction func searchButtonPressed(_ sender: Any) {
@@ -30,15 +36,6 @@ class SearchViewController: UIViewController {
         //Dispose of any resources that can be recreated.
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     //MoviesTableViewController의 queryText 필드에 텍스트 필드의 내용을 저장해줌으로써 다음 뷰로 검색어를 넘김
     override func prepare(for segue:UIStoryboardSegue, sender:Any?){

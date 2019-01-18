@@ -222,14 +222,6 @@ class MoviesTableViewController: UITableViewController, XMLParserDelegate {
             delegate?.sendData(title:titleString, img:movieImage)
             dismiss(animated:true, completion:nil)
             
-            /*
-            if let resultController = storyboard!.instantiateViewController(withIdentifier: "DEStoryBoardID") as? DiaryEditViewController{
-                present(resultController, animated:true, completion:nil)
-                
-                resultController.setInfo(titleString, movieImage)
-            }
-            */
-            
         }
     }
     
