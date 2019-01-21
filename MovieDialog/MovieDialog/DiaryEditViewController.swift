@@ -44,6 +44,56 @@ class DiaryEditViewController: UIViewController, SendDataDelegate {
         self.present(actionSheet, animated:true, completion:nil)
     }
     
+    @IBOutlet weak var star1: UIButton!
+    @IBOutlet weak var star2: UIButton!
+    @IBOutlet weak var star3: UIButton!
+    @IBOutlet weak var star4: UIButton!
+    @IBOutlet weak var star5: UIButton!
+    
+    @IBAction func handleStar1(_ sender: Any) {
+        star1.isSelected = true
+        star2.isSelected = false
+        star3.isSelected = false
+        star4.isSelected = false
+        star5.isSelected = false
+    }
+    
+    @IBAction func handleStar2(_ sender: Any) {
+        star1.isSelected = true
+        star2.isSelected = true
+        star3.isSelected = false
+        star4.isSelected = false
+        star5.isSelected = false
+    }
+    @IBAction func handleStar3(_ sender: Any) {
+        star1.isSelected = true
+        star2.isSelected = true
+        star3.isSelected = true
+        star4.isSelected = false
+        star5.isSelected = false
+        
+    }
+    
+    @IBAction func handleStar4(_ sender: Any) {
+        star1.isSelected = true
+        star2.isSelected = true
+        star3.isSelected = true
+        star4.isSelected = true
+        star5.isSelected = false
+        
+    }
+    
+    @IBAction func handleStar5(_ sender: Any) {
+        star1.isSelected = true
+        star2.isSelected = true
+        star3.isSelected = true
+        star4.isSelected = true
+        star5.isSelected = true
+        
+    }
+     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         picker.delegate = self as UIImagePickerControllerDelegate & UINavigationControllerDelegate

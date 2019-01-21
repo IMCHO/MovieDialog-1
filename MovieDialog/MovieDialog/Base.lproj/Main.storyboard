@@ -119,6 +119,55 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2em-Kg-6hQ">
+                                <rect key="frame" x="198" y="145" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="empty_star"/>
+                                <state key="selected" image="full_star"/>
+                                <connections>
+                                    <action selector="handleStar1:" destination="Upv-NW-1Iu" eventType="touchUpInside" id="rMY-0l-RYX"/>
+                                    <action selector="handleStar2:" destination="Upv-NW-1Iu" eventType="touchUpInside" id="QHe-Qb-lST"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJe-E9-EUb">
+                                <rect key="frame" x="236" y="145" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="empty_star"/>
+                                <state key="selected" image="full_star"/>
+                                <connections>
+                                    <action selector="handleStar1:" destination="Upv-NW-1Iu" eventType="touchUpInside" id="h65-hb-lxG"/>
+                                    <action selector="handleStar3:" destination="Upv-NW-1Iu" eventType="touchUpInside" id="bo1-ro-btq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DuA-Hw-0Bs">
+                                <rect key="frame" x="274" y="145" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="empty_star"/>
+                                <state key="selected" image="full_star"/>
+                                <connections>
+                                    <action selector="handleStar1:" destination="Upv-NW-1Iu" eventType="touchUpInside" id="PB9-5l-Fu6"/>
+                                    <action selector="handleStar4:" destination="Upv-NW-1Iu" eventType="touchUpInside" id="fig-7J-bSK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aBr-5B-v9T">
+                                <rect key="frame" x="312" y="145" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="empty_star"/>
+                                <state key="selected" image="full_star"/>
+                                <connections>
+                                    <action selector="handleStar1:" destination="Upv-NW-1Iu" eventType="touchUpInside" id="3S9-Ur-nmD"/>
+                                    <action selector="handleStar5:" destination="Upv-NW-1Iu" eventType="touchUpInside" id="uH9-FU-dXG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nwO-qn-bP7">
+                                <rect key="frame" x="160" y="145" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="empty_star"/>
+                                <state key="selected" image="full_star"/>
+                                <connections>
+                                    <action selector="handleStar1:" destination="Upv-NW-1Iu" eventType="touchUpInside" id="BSb-Ml-VBX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="w8Y-D3-X9I"/>
@@ -127,6 +176,11 @@
                     <connections>
                         <outlet property="movieImage" destination="3Wo-P1-XDh" id="LQ6-Hj-JGG"/>
                         <outlet property="movieTitle" destination="nZJ-8d-zgu" id="CQ8-Mq-5nH"/>
+                        <outlet property="star1" destination="nwO-qn-bP7" id="30I-9S-7v0"/>
+                        <outlet property="star2" destination="2em-Kg-6hQ" id="Oc6-Fo-g2T"/>
+                        <outlet property="star3" destination="BJe-E9-EUb" id="Etk-HE-1pI"/>
+                        <outlet property="star4" destination="DuA-Hw-0Bs" id="thv-v2-xfP"/>
+                        <outlet property="star5" destination="aBr-5B-v9T" id="LXr-Q2-ZZ4"/>
                         <segue destination="UG0-4a-ntY" kind="presentation" identifier="toSearchSegue" id="q2w-E5-pTA"/>
                     </connections>
                 </viewController>
@@ -436,5 +490,7 @@
     </scenes>
     <resources>
         <image name="default-image" width="275" height="275"/>
+        <image name="empty_star" width="180" height="180"/>
+        <image name="full_star" width="180" height="180"/>
     </resources>
 </document>
