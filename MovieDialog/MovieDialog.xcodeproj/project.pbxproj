@@ -19,6 +19,9 @@
 		3FEFF04D21F18E0700C04F19 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEFF04C21F18E0700C04F19 /* Model.swift */; };
 		3FEFF04F21F18F4F00C04F19 /* MoviesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEFF04E21F18F4F00C04F19 /* MoviesTableViewCell.swift */; };
 		DA148D5421F59A5F00E66E82 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA148D5321F59A5F00E66E82 /* InfoViewController.swift */; };
+		DAD4F2AC21F5A6C000465DFD /* infoStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAD4F2AB21F5A6C000465DFD /* infoStoryboard.storyboard */; };
+		DAD4F2AE21F5A82300465DFD /* challengeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAD4F2AD21F5A82300465DFD /* challengeStoryboard.storyboard */; };
+		DAD4F2B021F5A88C00465DFD /* dialogStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAD4F2AF21F5A88C00465DFD /* dialogStoryboard.storyboard */; };
 		DADEE77521EF80950007F93A /* user.plist in Resources */ = {isa = PBXBuildFile; fileRef = DADEE77421EF80950007F93A /* user.plist */; };
 		DADEE77721EF80BB0007F93A /* dialog.plist in Resources */ = {isa = PBXBuildFile; fileRef = DADEE77621EF80BB0007F93A /* dialog.plist */; };
 		DADEE77921EF81050007F93A /* challenge.plist in Resources */ = {isa = PBXBuildFile; fileRef = DADEE77821EF81050007F93A /* challenge.plist */; };
@@ -42,6 +45,9 @@
 		3FEFF04C21F18E0700C04F19 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		3FEFF04E21F18F4F00C04F19 /* MoviesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesTableViewCell.swift; sourceTree = "<group>"; };
 		DA148D5321F59A5F00E66E82 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		DAD4F2AB21F5A6C000465DFD /* infoStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = infoStoryboard.storyboard; sourceTree = "<group>"; };
+		DAD4F2AD21F5A82300465DFD /* challengeStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = challengeStoryboard.storyboard; sourceTree = "<group>"; };
+		DAD4F2AF21F5A88C00465DFD /* dialogStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = dialogStoryboard.storyboard; sourceTree = "<group>"; };
 		DADEE77421EF80950007F93A /* user.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = user.plist; sourceTree = "<group>"; };
 		DADEE77621EF80BB0007F93A /* dialog.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = dialog.plist; sourceTree = "<group>"; };
 		DADEE77821EF81050007F93A /* challenge.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = challenge.plist; sourceTree = "<group>"; };
@@ -99,6 +105,9 @@
 				3FEFF04E21F18F4F00C04F19 /* MoviesTableViewCell.swift */,
 				3FEFF04C21F18E0700C04F19 /* Model.swift */,
 				DA148D5321F59A5F00E66E82 /* InfoViewController.swift */,
+				DAD4F2AB21F5A6C000465DFD /* infoStoryboard.storyboard */,
+				DAD4F2AD21F5A82300465DFD /* challengeStoryboard.storyboard */,
+				DAD4F2AF21F5A88C00465DFD /* dialogStoryboard.storyboard */,
 			);
 			path = MovieDialog;
 			sourceTree = "<group>";
@@ -162,10 +171,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F9022DF21EC5DC1002AF52F /* LaunchScreen.storyboard in Resources */,
+				DAD4F2AE21F5A82300465DFD /* challengeStoryboard.storyboard in Resources */,
+				DAD4F2AC21F5A6C000465DFD /* infoStoryboard.storyboard in Resources */,
 				3F9022DC21EC5DC1002AF52F /* Assets.xcassets in Resources */,
 				DADEE77721EF80BB0007F93A /* dialog.plist in Resources */,
 				3F9022DA21EC5DC0002AF52F /* Main.storyboard in Resources */,
 				DADEE77921EF81050007F93A /* challenge.plist in Resources */,
+				DAD4F2B021F5A88C00465DFD /* dialogStoryboard.storyboard in Resources */,
 				DADEE77521EF80950007F93A /* user.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
