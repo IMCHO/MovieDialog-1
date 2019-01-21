@@ -12,7 +12,7 @@
         <!--내목표-->
         <scene sceneID="niA-gr-ebw">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZR3-Wp-0dq" sceneMemberID="viewController">
+                <navigationController title="내목표" automaticallyAdjustsScrollViewInsets="NO" id="ZR3-Wp-0dq" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="내목표" id="KQC-5M-oxu"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WEj-Z8-SVo">
@@ -70,7 +70,6 @@
         <!--내정보-->
         <scene sceneID="eSz-me-cWa">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jAY-FF-1Ef" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HYd-a8-j42" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="내정보" id="jam-sS-bkC"/>
                     <toolbarItems/>
@@ -83,6 +82,7 @@
                         <segue destination="Xpv-B7-gjw" kind="relationship" relationship="rootViewController" id="h2Q-bM-sQO"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jAY-FF-1Ef" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3634" y="-1985"/>
         </scene>
