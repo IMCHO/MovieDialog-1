@@ -24,10 +24,24 @@ class DiaryEditViewController: UIViewController, SendDataDelegate {
     @IBOutlet weak var textTitle: UITextField!//영화 제목
     @IBOutlet weak var date: UILabel! //관람일
     
+    var dialogs:[Dialog]=[]
+    let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+    let encoder = PropertyListEncoder()
+    let decoder = PropertyListDecoder()
     
     @IBAction func saveNavButton(_ sender: Any) { //save button
-        let newDiary = Dialog(title: textTitle.text!, image: "", date: date.text!, star: countStar, simpleReview: [""], review: "", createdDate: "")
+        let newDiary = Dialog(title: textTitle.text!, image: "", date: date.text!, star: countStar, simpleReview: [], review: "", createdDate: "")
     
+        dialogs.append(newDiary)
+        print(dialogs)
+        encoder.outputFormat = .xml
+
+        if let path = Bundle.main.path(forResource: "dialog", ofType: "plist") {
+            if let data = try? encoder.encode(dialogs){
+//                try? data.write(to: URL(fileURLWithPath: path))
+                try? data.write(to: URL(fileURLWithPath: documentsPath + "/dialog.plist"))
+            }
+        }
     }
     
     
@@ -152,6 +166,18 @@ class DiaryEditViewController: UIViewController, SendDataDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         picker.delegate = self as UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        
+        if let path = Bundle.main.path(forResource: "dialog", ofType: "plist") {
+            if let data = try? Data(contentsOf: URL(fileURLWithPath: path)) {
+                if let decodedDialogs = try? decoder.decode([Dialog].self, from: data) {
+                    dialogs = decodedDialogs
+                }
+            }
+            encoder.outputFormat = .xml
+            if let data = try? encoder.encode(dialogs) {
+                try? data.write(to: URL(fileURLWithPath: documentsPath + "/dialog.plist"))
+            }
+        }
     }
     
     //-----웹에서 검색한 데이터(제목, 사진)을 불러오는 함수
