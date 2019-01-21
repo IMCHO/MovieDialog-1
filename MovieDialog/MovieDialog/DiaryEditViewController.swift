@@ -21,8 +21,16 @@ class DiaryEditViewController: UIViewController, SendDataDelegate {
     }
     
     @IBOutlet weak var movieImage: UIImageView! //영화 포스터
-    @IBOutlet weak var movieTitle: UILabel! //영화 제목
+    @IBOutlet weak var textTitle: UITextField!//영화 제목
     @IBOutlet weak var date: UILabel! //관람일
+    
+    
+    @IBAction func saveNavButton(_ sender: Any) { //save button
+        let newDiary = Dialog(title: textTitle.text!, image: "", date: date.text!, star: countStar, simpleReview: [""], review: "", createdDate: "")
+    
+    }
+    
+    
     
     @IBAction func selectPicButton(_ sender: UIButton) { //포스터 선택
         let actionSheet = UIAlertController(title:"포스터 입력 방식을 선택해 주세요", message:nil, preferredStyle:.actionSheet)
@@ -50,6 +58,7 @@ class DiaryEditViewController: UIViewController, SendDataDelegate {
     @IBOutlet weak var star3: UIButton!
     @IBOutlet weak var star4: UIButton!
     @IBOutlet weak var star5: UIButton!
+    var countStar:Int = 0
     
     @IBAction func handleStar1(_ sender: Any) {
         star1.isSelected = true
@@ -57,6 +66,7 @@ class DiaryEditViewController: UIViewController, SendDataDelegate {
         star3.isSelected = false
         star4.isSelected = false
         star5.isSelected = false
+        countStar = 1
     }
     
     @IBAction func handleStar2(_ sender: Any) {
@@ -65,6 +75,7 @@ class DiaryEditViewController: UIViewController, SendDataDelegate {
         star3.isSelected = false
         star4.isSelected = false
         star5.isSelected = false
+        countStar = 2
     }
     @IBAction func handleStar3(_ sender: Any) {
         star1.isSelected = true
@@ -72,7 +83,7 @@ class DiaryEditViewController: UIViewController, SendDataDelegate {
         star3.isSelected = true
         star4.isSelected = false
         star5.isSelected = false
-        
+        countStar = 3
     }
     
     @IBAction func handleStar4(_ sender: Any) {
@@ -81,7 +92,7 @@ class DiaryEditViewController: UIViewController, SendDataDelegate {
         star3.isSelected = true
         star4.isSelected = true
         star5.isSelected = false
-        
+        countStar = 4
     }
     
     @IBAction func handleStar5(_ sender: Any) {
@@ -90,7 +101,7 @@ class DiaryEditViewController: UIViewController, SendDataDelegate {
         star3.isSelected = true
         star4.isSelected = true
         star5.isSelected = true
-        
+        countStar = 5
     }
     
    
@@ -106,6 +117,7 @@ class DiaryEditViewController: UIViewController, SendDataDelegate {
             dateFormatter.dateFormat = "MMM. dd (yyyy년)"
             let dateString = dateFormatter.string(from:datePicker.date)
             self.date.font = UIFont(name:self.date.font.fontName, size:17)
+            self.date.frame.origin = CGPoint(x:207, y:150)
             self.date.text = dateString
             
         }))
@@ -114,6 +126,28 @@ class DiaryEditViewController: UIViewController, SendDataDelegate {
         
     }
     
+    @IBOutlet weak var simpleView:UIView!
+    @IBOutlet weak var normalView:UIView!
+    @IBAction func segControl(_ sender:UISegmentedControl){
+        if sender.selectedSegmentIndex == 0{
+            simpleView.isHidden = false
+            normalView.isHidden = true
+        } else {
+            simpleView.isHidden = true
+            normalView.isHidden = false
+        }
+    }
+    
+    
+    
+    
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        simpleView.isHidden = false
+        normalView.isHidden = true
+        self.textTitle.placeholder = "영화 제목을 입력해 주세요"
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -122,7 +156,7 @@ class DiaryEditViewController: UIViewController, SendDataDelegate {
     
     //-----웹에서 검색한 데이터(제목, 사진)을 불러오는 함수
     func sendData(title:String, img:UIImage){
-        movieTitle.text = title
+        textTitle.text = title
         movieImage.image = img
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

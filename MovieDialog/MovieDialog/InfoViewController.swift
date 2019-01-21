@@ -29,6 +29,7 @@ class InfoViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
+        
         if let path = Bundle.main.path(forResource: "dialog", ofType: "plist") {
             if let data = try? Data(contentsOf: URL(fileURLWithPath: path)) {
                 if let decodedDialogs = try? decoder.decode([Dialog].self, from: data) {
