@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--내목표-->
+        <!--Title-->
         <scene sceneID="SNZ-5X-Iae">
             <objects>
-                <viewController storyboardIdentifier="ChallengeScene" id="XJO-Gx-jLb" customClass="MyGoalViewController" customModule="MovieDialog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XJO-Gx-jLb" customClass="MyGoalViewController" customModule="MovieDialog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VG3-QS-rma">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -75,7 +75,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="pCj-Jz-b3y"/>
                     </view>
-                    <navigationItem key="navigationItem" title="내목표" id="4vY-jG-1TB"/>
+                    <navigationItem key="navigationItem" title="Title" id="354-x0-nc0"/>
                     <connections>
                         <outlet property="goalList" destination="gOz-73-jkn" id="OVS-Yg-a8d"/>
                         <outlet property="starImage" destination="aPR-0k-2xh" id="dUm-X2-vFl"/>
@@ -85,6 +85,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pPc-IW-745" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2170.4000000000001" y="-3581.5592203898054"/>
+        </scene>
+        <!--내목표-->
+        <scene sceneID="q6O-b1-cY3">
+            <objects>
+                <navigationController storyboardIdentifier="ChallengeScene" title="내목표" automaticallyAdjustsScrollViewInsets="NO" id="BuL-AB-xAD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="내목표" id="t4N-qq-K1P"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eTT-ht-Xdf">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XJO-Gx-jLb" kind="relationship" relationship="rootViewController" id="IZu-zT-OEW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PXv-R4-1fX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2946" y="-3582"/>
         </scene>
     </scenes>
 </document>
