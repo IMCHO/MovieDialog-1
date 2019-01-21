@@ -13,6 +13,13 @@ class Challenge: Codable {
     var time:String
     var goal:Int
     var now:Int
+    
+    init(title:String,time:String,goal:Int,now:Int) {
+        self.title=title
+        self.time=time
+        self.goal=goal
+        self.now=now
+    }
 }
 
 extension Challenge: CustomStringConvertible {
