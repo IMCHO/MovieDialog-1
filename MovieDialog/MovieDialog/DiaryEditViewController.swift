@@ -22,6 +22,7 @@ class DiaryEditViewController: UIViewController, SendDataDelegate {
     
     @IBOutlet weak var movieImage: UIImageView! //영화 포스터
     @IBOutlet weak var movieTitle: UILabel! //영화 제목
+    @IBOutlet weak var date: UILabel! //관람일
     
     @IBAction func selectPicButton(_ sender: UIButton) { //포스터 선택
         let actionSheet = UIAlertController(title:"포스터 입력 방식을 선택해 주세요", message:nil, preferredStyle:.actionSheet)
@@ -94,7 +95,22 @@ class DiaryEditViewController: UIViewController, SendDataDelegate {
     
    
     @IBAction func selectDate(_ sender: Any) {
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .date
         
+        let alert = UIAlertController(title: "\n\n\n\n\n\n\n\n\n\n\n", message: nil, preferredStyle: .actionSheet)
+        alert.view.addSubview(datePicker)
+        
+        alert.addAction(UIAlertAction(title:"완료", style:.default, handler:{result in
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMM. dd (yyyy년)"
+            let dateString = dateFormatter.string(from:datePicker.date)
+            self.date.font = UIFont(name:self.date.font.fontName, size:17)
+            self.date.text = dateString
+            
+        }))
+        alert.addAction(UIAlertAction(title:"취소", style:.cancel, handler:nil))
+        self.present(alert, animated:true, completion:nil)
         
     }
     

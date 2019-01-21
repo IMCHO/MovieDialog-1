@@ -213,6 +213,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="jsi-fC-Kxh"/>
                     <connections>
+                        <outlet property="date" destination="83y-Ne-cz3" id="LcB-nd-ecX"/>
                         <outlet property="movieImage" destination="3Wo-P1-XDh" id="LQ6-Hj-JGG"/>
                         <outlet property="movieTitle" destination="nZJ-8d-zgu" id="CQ8-Mq-5nH"/>
                         <outlet property="star1" destination="nwO-qn-bP7" id="30I-9S-7v0"/>
