@@ -23,7 +23,7 @@ class DiaryEditViewController: UIViewController, SendDataDelegate {
     @IBOutlet weak var movieImage: UIImageView! //영화 포스터
     @IBOutlet weak var movieTitle: UILabel! //영화 제목
     
-    @IBAction func selectPicButton(_ sender: UIButton) { //Alert Controller
+    @IBAction func selectPicButton(_ sender: UIButton) { //포스터 선택
         let actionSheet = UIAlertController(title:"포스터 입력 방식을 선택해 주세요", message:nil, preferredStyle:.actionSheet)
         actionSheet.addAction(UIAlertAction(title:"웹에서 검색하기", style:.default, handler:{result in
             //검색창 띄우기
@@ -91,7 +91,12 @@ class DiaryEditViewController: UIViewController, SendDataDelegate {
         star5.isSelected = true
         
     }
-     
+    
+   
+    @IBAction func selectDate(_ sender: Any) {
+        
+        
+    }
     
     
     override func viewDidLoad() {
