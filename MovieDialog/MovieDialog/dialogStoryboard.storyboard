@@ -79,17 +79,14 @@
                                                 <action selector="cancelNavButton:" destination="gNg-zY-EpS" id="5tb-MQ-QQy"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="XER-Ds-Qvc"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="XER-Ds-Qvc">
+                                            <connections>
+                                                <action selector="saveNavButton:" destination="gNg-zY-EpS" id="ioE-Zo-Djz"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="영화 제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VZ6-kd-GwR">
-                                <rect key="frame" x="160" y="108" width="199" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u6e-YK-SMx">
                                 <rect key="frame" x="198" y="183" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -146,10 +143,21 @@
                                     <segment title="간편 리뷰"/>
                                     <segment title="리뷰"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segControl:" destination="gNg-zY-EpS" eventType="valueChanged" id="dcs-Ft-lOy"/>
+                                </connections>
                             </segmentedControl>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8cs-Au-MmJ">
                                 <rect key="frame" x="16" y="301" width="343" height="349"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZe-Hj-a3h">
+                                        <rect key="frame" x="20" y="20" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="unchecked"/>
+                                        <state key="selected" image="checked"/>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="관람일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOh-LC-y0m">
@@ -178,6 +186,27 @@
                                     <action selector="selectDate:" destination="gNg-zY-EpS" eventType="touchUpInside" id="n49-Qu-Srz"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VwN-PM-hS0">
+                                <rect key="frame" x="274" y="301" width="343" height="349"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YYf-aW-SLg">
+                                        <rect key="frame" x="25" y="68" width="97" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jdE-ma-Mu6">
+                                <rect key="frame" x="155" y="102" width="204" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="sho-Ke-Blw"/>
@@ -186,12 +215,14 @@
                     <connections>
                         <outlet property="date" destination="8Up-Va-IsZ" id="BtH-aC-TaH"/>
                         <outlet property="movieImage" destination="0Fq-fX-RAB" id="cLX-7s-dg1"/>
-                        <outlet property="movieTitle" destination="VZ6-kd-GwR" id="ZN7-qm-Fvw"/>
+                        <outlet property="normalView" destination="VwN-PM-hS0" id="YLY-xh-6la"/>
+                        <outlet property="simpleView" destination="8cs-Au-MmJ" id="USI-50-7t0"/>
                         <outlet property="star1" destination="7Wt-Vp-sWj" id="XbD-sh-5Ev"/>
                         <outlet property="star2" destination="u6e-YK-SMx" id="Clm-Yc-oLC"/>
                         <outlet property="star3" destination="b10-Ba-j26" id="Hv6-qU-G84"/>
                         <outlet property="star4" destination="70K-EZ-C0C" id="lsV-QT-XOg"/>
                         <outlet property="star5" destination="eQe-cK-sgM" id="sbp-Kd-0Qy"/>
+                        <outlet property="textTitle" destination="jdE-ma-Mu6" id="eWT-Bk-GLG"/>
                         <segue destination="BxE-ft-OIh" kind="presentation" identifier="toSearchSegue" id="Dei-Vx-PVJ"/>
                     </connections>
                 </viewController>
@@ -357,8 +388,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="checked" width="180" height="180"/>
         <image name="default-image" width="275" height="275"/>
         <image name="empty_star" width="180" height="180"/>
         <image name="full_star" width="180" height="180"/>
+        <image name="unchecked" width="180" height="180"/>
     </resources>
 </document>

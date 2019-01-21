@@ -16,6 +16,16 @@ class Dialog: Codable {
     var simpleReview:[String]
     var review:String
     var createdDate:String
+    
+    init(title:String,image:String,date:String,star:Int,simpleReview:[String],review:String,createdDate:String){
+        self.title=title
+        self.image=image
+        self.date=date
+        self.star=star
+        self.simpleReview=simpleReview
+        self.review=review
+        self.createdDate=createdDate
+    }
 }
 
 extension Dialog: CustomStringConvertible {
