@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 
 class DiaryEditViewController: UIViewController, SendDataDelegate {
     let picker = UIImagePickerController() //갤러리 및 카메라에서 사진을 불러올 때 사용
@@ -30,7 +31,14 @@ class DiaryEditViewController: UIViewController, SendDataDelegate {
     let decoder = PropertyListDecoder()
     
     @IBAction func saveNavButton(_ sender: Any) { //save button
-        let newDiary = Dialog(title: textTitle.text!, image: "", date: date.text!, star: countStar, simpleReview: [], review: "", createdDate: "")
+        if let saveImage = movieImage.image{
+            CustomPhotoAlbum.sharedInstance.saveImage(image: saveImage) //사진 저장
+        }
+        let today = NSDate() //현재 날짜
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let todayString = dateFormatter.string(from: today as Date)
+        let newDiary = Dialog(title: textTitle.text!, image: "", date: date.text!, star: countStar, simpleReview: [], review: "", createdDate: todayString)
     
         dialogs.append(newDiary)
         print(dialogs)
@@ -42,6 +50,8 @@ class DiaryEditViewController: UIViewController, SendDataDelegate {
                 try? data.write(to: URL(fileURLWithPath: documentsPath + "/dialog.plist"))
             }
         }
+        
+        self.dismiss(animated:true, completion:nil)
     }
     
     
