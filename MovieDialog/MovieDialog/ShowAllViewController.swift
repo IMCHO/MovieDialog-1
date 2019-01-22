@@ -8,28 +8,94 @@
 
 import UIKit
 
-class ShowAllViewController: UIViewController {
+class ShowAllViewController: UIViewController{
 
     @IBOutlet weak var sort: UISegmentedControl!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     @IBAction func indexChange(_ sender: UISegmentedControl) {
-        
+        if sender.selectedSegmentIndex == 0{
+            print("1")
+        }else if sender.selectedSegmentIndex == 1{
+            print("2")
+        }else if sender.selectedSegmentIndex == 2{
+            print("3")
+        }else if sender.selectedSegmentIndex == 3{
+            print("4")
+        }
     }
+    
+    func getImage(imageName: String) -> String{
+        let fileManager = FileManager.default
+        let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
+        
+        if fileManager.fileExists(atPath: imagePath){
+            return imagePath
+        }else{
+            return ""
+        }
+    }
+    
+    var dialogs:[Dialog]=[]
+    let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+    let encoder = PropertyListEncoder()
+    let decoder = PropertyListDecoder()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        collectionView.delegate = self
+        collectionView.dataSource=self
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
-        if sort.selectedSegmentIndex == 0{
-            print("ok")
+        super.viewWillAppear(animated)
+        
+        indexChange(sort)
+        
+        if let data=try? Data(contentsOf: URL(fileURLWithPath:documentsPath+"/dialog.plist")){
+            if let decodedDialogs=try? decoder.decode([Dialog].self, from: data){
+                dialogs=decodedDialogs
+            }else{
+                print("디코딩 실패")
+            }
+        }else{
+            print("기존 데이터 없음")
         }
+        
+        collectionView.reloadData()
     }
-
-    
     
 
+}
 
+extension ShowAllViewController:UICollectionViewDataSource{
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell=collectionView.dequeueReusableCell(withReuseIdentifier: "defaultCollection", for: indexPath) as! DialogCollectionViewCell
+        
+        if dialogs.count>0{
+            let name=dialogs[4].image
+//            print(name)
+            if getImage(imageName: name) != ""{
+//                print(getImage(imageName: name))
+                cell.movieImage.image=UIImage(contentsOfFile: getImage(imageName: name))
+            }
+        }
+        
+        return cell
+    }
+}
+
+extension ShowAllViewController:UICollectionViewDelegate{
+    
 }

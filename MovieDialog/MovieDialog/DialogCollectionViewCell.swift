@@ -11,4 +11,6 @@ import UIKit
 class DialogCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var movieImage: UIImageView!
+    
+    
 }
