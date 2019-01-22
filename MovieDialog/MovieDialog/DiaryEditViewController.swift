@@ -39,18 +39,23 @@ class DiaryEditViewController: UIViewController, SendDataDelegate {
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let todayString = dateFormatter.string(from: today as Date)
         let newDiary = Dialog(title: textTitle.text!, image: "", date: date.text!, star: countStar, simpleReview: [], review: "", createdDate: todayString)
-    
+
+        if let data=try? Data(contentsOf: URL(fileURLWithPath:documentsPath+"/dialog.plist")){
+            if let decodedDialogs=try? decoder.decode([Dialog].self, from: data){
+                dialogs=decodedDialogs
+            }
+        }else{
+            print("기존 데이터 없음")
+        }
+        
         dialogs.append(newDiary)
         print(dialogs)
         encoder.outputFormat = .xml
-
-        if let path = Bundle.main.path(forResource: "dialog", ofType: "plist") {
-            if let data = try? encoder.encode(dialogs){
-//                try? data.write(to: URL(fileURLWithPath: path))
-                try? data.write(to: URL(fileURLWithPath: documentsPath + "/dialog.plist"))
-            }
-        }
         
+        if let data = try? encoder.encode(dialogs){
+            try? data.write(to: URL(fileURLWithPath: documentsPath + "/dialog.plist"))
+        }
+
         self.dismiss(animated:true, completion:nil)
     }
     
@@ -176,18 +181,6 @@ class DiaryEditViewController: UIViewController, SendDataDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         picker.delegate = self as UIImagePickerControllerDelegate & UINavigationControllerDelegate
-        
-        if let path = Bundle.main.path(forResource: "dialog", ofType: "plist") {
-            if let data = try? Data(contentsOf: URL(fileURLWithPath: path)) {
-                if let decodedDialogs = try? decoder.decode([Dialog].self, from: data) {
-                    dialogs = decodedDialogs
-                }
-            }
-            encoder.outputFormat = .xml
-            if let data = try? encoder.encode(dialogs) {
-                try? data.write(to: URL(fileURLWithPath: documentsPath + "/dialog.plist"))
-            }
-        }
     }
     
     //-----웹에서 검색한 데이터(제목, 사진)을 불러오는 함수

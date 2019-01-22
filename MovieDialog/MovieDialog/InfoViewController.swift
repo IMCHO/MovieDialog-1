@@ -28,33 +28,23 @@ class InfoViewController: UIViewController {
         // Do any additional setup after loading the view.
         tableView.dataSource = self
         tableView.delegate = self
-        
-        
-        if let path = Bundle.main.path(forResource: "dialog", ofType: "plist") {
-            if let data = try? Data(contentsOf: URL(fileURLWithPath: path)) {
-                if let decodedDialogs = try? decoder.decode([Dialog].self, from: data) {
-                    dialogs = decodedDialogs
-                }
-            }
-            encoder.outputFormat = .xml
-            if let data = try? encoder.encode(dialogs) {
-                try? data.write(to: URL(fileURLWithPath: documentsPath + "/dialog.plist"))
-            }
-        }
+//
+//
+//        if let path = Bundle.main.path(forResource: "dialog", ofType: "plist") {
+//            if let data = try? Data(contentsOf: URL(fileURLWithPath: path)) {
+//                if let decodedDialogs = try? decoder.decode([Dialog].self, from: data) {
+//                    dialogs = decodedDialogs
+//                }
+//            }
+//            encoder.outputFormat = .xml
+//            if let data = try? encoder.encode(dialogs) {
+//                try? data.write(to: URL(fileURLWithPath: documentsPath + "/dialog.plist"))
+//            }
+//        }
     }
     
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         if let data=try? Data(contentsOf: URL(fileURLWithPath:documentsPath+"/dialog.plist")){
             if let decodedDialogs=try? decoder.decode([Dialog].self, from: data){
@@ -75,14 +65,27 @@ class InfoViewController: UIViewController {
                 }
                 //                print(timesOfMovie.sorted{$0.1>$1.1})
             }
+        }else{
+            print("저장된 데이터 없음")
         }
         
+        tableView.reloadData()
     }
+    
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
     
 }
 
 extension InfoViewController:UITableViewDataSource{
-    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -96,6 +99,8 @@ extension InfoViewController:UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+
+
         let cell=tableView.dequeueReusableCell(withIdentifier: "defaultCell", for: indexPath)
         cell.detailTextLabel?.textColor = .blue
         
