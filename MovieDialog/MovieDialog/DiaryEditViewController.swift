@@ -31,13 +31,19 @@ class DiaryEditViewController: UIViewController, SendDataDelegate {
     let decoder = PropertyListDecoder()
     
     @IBAction func saveNavButton(_ sender: Any) { //save button
-        if let saveImage = movieImage.image{
-            CustomPhotoAlbum.sharedInstance.saveImage(image: saveImage) //사진 저장
-        }
         let today = NSDate() //현재 날짜
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let todayString = dateFormatter.string(from: today as Date)
+        
+        let dateFormatterForFileName = DateFormatter()
+        dateFormatterForFileName.dateFormat = "yyyy_MM_dd_HH_mm"
+        let imageName = dateFormatterForFileName.string(from: today as Date)+".png"
+        
+        if let saveImg = movieImage.image{
+            saveImage(incomeImage: saveImg, imageName: imageName) //사진 저장
+        }
+        
         let newDiary = Dialog(title: textTitle.text!, image: "", date: date.text!, star: countStar, simpleReview: [], review: "", createdDate: todayString)
 
         if let data=try? Data(contentsOf: URL(fileURLWithPath:documentsPath+"/dialog.plist")){
@@ -57,6 +63,27 @@ class DiaryEditViewController: UIViewController, SendDataDelegate {
         }
 
         self.dismiss(animated:true, completion:nil)
+    }
+    
+    
+    
+    func saveImage(incomeImage:UIImage, imageName:String){
+        //create an instance of the FileManager
+        let fileManager = FileManager.default
+        
+        //get the image path
+        let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
+        
+        print(imagePath)
+        
+        //get the image
+        let image = incomeImage
+        
+        //get the PNG data for this image
+        let data = image.pngData()
+        
+        //store it in the document directory
+        fileManager.createFile(atPath: imagePath as String, contents: data, attributes: nil)
     }
     
     
