@@ -13,6 +13,7 @@ var goalNum: UITextField!
 class AddGoalView: UIViewController {
 
     @IBOutlet weak var inputTitle: UITextField!
+    @IBOutlet weak var titleButton: UIButton!
     @IBAction func insertTitle(_ sender: Any) {
         print(inputTitle)
         goalTitle = inputTitle
@@ -30,6 +31,9 @@ class AddGoalView: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        titleButton.layer.borderColor = UIColor.lightGray.cgColor
+        titleButton.layer.borderWidth = 1
+        titleButton.layer.cornerRadius = 10
         
     }
 
