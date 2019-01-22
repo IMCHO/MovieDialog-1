@@ -33,6 +33,7 @@
 		DADEE77D21EF880C0007F93A /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADEE77C21EF880C0007F93A /* user.swift */; };
 		DADEE77F21EF88290007F93A /* dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADEE77E21EF88290007F93A /* dialog.swift */; };
 		DADEE78121EF88340007F93A /* challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADEE78021EF88340007F93A /* challenge.swift */; };
+		DAFA11FC21F7098F0071C33A /* DialogCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFA11FB21F7098F0071C33A /* DialogCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		DADEE77C21EF880C0007F93A /* user.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
 		DADEE77E21EF88290007F93A /* dialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dialog.swift; sourceTree = "<group>"; };
 		DADEE78021EF88340007F93A /* challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = challenge.swift; sourceTree = "<group>"; };
+		DAFA11FB21F7098F0071C33A /* DialogCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				3F85D6FC21F5BEF70012FADD /* MyGoalListView.swift */,
 				3F85D6FE21F5BF4B0012FADD /* MyGoalListCell.swift */,
 				7F41CC4A21F5F46400556DC2 /* AddGoalView.swift */,
+				DAFA11FB21F7098F0071C33A /* DialogCollectionViewCell.swift */,
 			);
 			path = MovieDialog;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				3FEFF04F21F18F4F00C04F19 /* MoviesTableViewCell.swift in Sources */,
 				3F9022D721EC5DC0002AF52F /* ViewController.swift in Sources */,
 				3F76C8F121F07CF000BC98D8 /* DiaryEditViewController.swift in Sources */,
+				DAFA11FC21F7098F0071C33A /* DialogCollectionViewCell.swift in Sources */,
 				3F85D6FD21F5BEF70012FADD /* MyGoalListView.swift in Sources */,
 				DA148D5421F59A5F00E66E82 /* InfoViewController.swift in Sources */,
 				3FEFF04D21F18E0700C04F19 /* Model.swift in Sources */,

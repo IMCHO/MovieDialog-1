@@ -10,6 +10,9 @@ import UIKit
 
 class ShowAllViewController: UIViewController {
 
+    @IBOutlet weak var sort: UISegmentedControl!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
