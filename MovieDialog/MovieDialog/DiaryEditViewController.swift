@@ -43,8 +43,11 @@ class DiaryEditViewController: UIViewController, SendDataDelegate {
         if let saveImg = movieImage.image{
             saveImage(incomeImage: saveImg, imageName: imageName) //사진 저장
         }
-        
-        let newDiary = Dialog(title: textTitle.text!, image: imageName, date: date.text!, star: countStar, simpleReview: [], review: "", createdDate: todayString)
+        var optionalFreeReviewText = ""
+        if let tempReviewText = reviewInputText.text{
+            optionalFreeReviewText = tempReviewText
+        }
+        let newDiary = Dialog(title: textTitle.text!, image: imageName, date: date.text!, star: countStar, simpleReview: checkBoxChecked(), review: optionalFreeReviewText, createdDate: todayString)
 
         if let data=try? Data(contentsOf: URL(fileURLWithPath:documentsPath+"/dialog.plist")){
             if let decodedDialogs=try? decoder.decode([Dialog].self, from: data){
@@ -224,38 +227,154 @@ class DiaryEditViewController: UIViewController, SendDataDelegate {
     @IBOutlet weak var label13: UILabel!
     @IBOutlet weak var label14: UILabel!
     
+    
     @IBAction func checkAction1(_ sender: Any) {
+        if check1.isSelected == true{
+            check1.isSelected = false
+        } else {
+            check1.isSelected = true
+        }
     }
     @IBAction func checkAction2(_ sender: Any) {
+        if check2.isSelected == true{
+            check2.isSelected = false
+        } else {
+            check2.isSelected = true
+        }
     }
     @IBAction func checkAction3(_ sender: Any) {
+        if check3.isSelected == true{
+            check3.isSelected = false
+        } else {
+            check3.isSelected = true
+        }
     }
     @IBAction func checkAction4(_ sender: Any) {
+        if check4.isSelected == true{
+            check4.isSelected = false
+        } else {
+            check4.isSelected = true
+        }
     }
     @IBAction func checkAction5(_ sender: Any) {
+        if check5.isSelected == true{
+            check5.isSelected = false
+        } else {
+            check5.isSelected = true
+        }
     }
     @IBAction func checkAction6(_ sender: Any) {
+        if check6.isSelected == true{
+            check6.isSelected = false
+        } else {
+            check6.isSelected = true
+        }
     }
-    
     @IBAction func checkAction7(_ sender: Any) {
+        if check7.isSelected == true{
+            check7.isSelected = false
+        } else {
+            check7.isSelected = true
+        }
     }
-    
     @IBAction func checkAction8(_ sender: Any) {
+        if check8.isSelected == true{
+            check8.isSelected = false
+        } else {
+            check8.isSelected = true
+        }
     }
     @IBAction func checkAction9(_ sender: Any) {
+        if check9.isSelected == true{
+            check9.isSelected = false
+        } else {
+            check9.isSelected = true
+        }
     }
     @IBAction func checkAction10(_ sender: Any) {
+        if check10.isSelected == true{
+            check10.isSelected = false
+        } else {
+            check10.isSelected = true
+        }
     }
     @IBAction func checkAction11(_ sender: Any) {
+        if check11.isSelected == true{
+            check11.isSelected = false
+        } else {
+            check11.isSelected = true
+        }
     }
     @IBAction func checkAction12(_ sender: Any) {
+        if check12.isSelected == true{
+            check12.isSelected = false
+        } else {
+            check12.isSelected = true
+        }
     }
-    
     @IBAction func checkAction13(_ sender: Any) {
+        if check13.isSelected == true{
+            check13.isSelected = false
+        } else {
+            check13.isSelected = true
+        }
+    }
+    @IBAction func checkAction14(_ sender: Any) {
+        if check14.isSelected == true{
+            check14.isSelected = false
+        } else {
+            check14.isSelected = true
+        }
     }
     
-    @IBAction func checkAction14(_ sender: Any) {
+    func checkBoxChecked() -> [String] {
+        var simpleReviewResult:[String] = []
+        if check1.isSelected == true{
+            simpleReviewResult += [label1.text!]
+        }
+        if check2.isSelected == true{
+            simpleReviewResult += [label2.text!]
+        }
+        if check3.isSelected == true{
+            simpleReviewResult += [label3.text!]
+        }
+        if check4.isSelected == true{
+            simpleReviewResult += [label4.text!]
+        }
+        if check5.isSelected == true{
+            simpleReviewResult += [label5.text!]
+        }
+        if check6.isSelected == true{
+            simpleReviewResult += [label6.text!]
+        }
+        if check7.isSelected == true{
+            simpleReviewResult += [label7.text!]
+        }
+        if check8.isSelected == true{
+            simpleReviewResult += [label8.text!]
+        }
+        if check9.isSelected == true{
+            simpleReviewResult += [label9.text!]
+        }
+        if check10.isSelected == true{
+            simpleReviewResult += [label10.text!]
+        }
+        if check11.isSelected == true{
+            simpleReviewResult += [label11.text!]
+        }
+        if check12.isSelected == true{
+            simpleReviewResult += [label12.text!]
+        }
+        if check13.isSelected == true{
+            simpleReviewResult += [label13.text!]
+        }
+        if check14.isSelected == true{
+            simpleReviewResult += [label14.text!]
+        }
+        
+        return simpleReviewResult
     }
+    
     
     @IBOutlet weak var reviewInputText: UITextField!
     
