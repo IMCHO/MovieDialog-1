@@ -70,7 +70,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="movieImage" destination="WZg-xI-2Le" id="zDY-Al-cIV"/>
                         <outlet property="sort" destination="fAy-Rx-Ir9" id="cLX-rQ-OuA"/>
                     </connections>
                 </viewController>
