@@ -12,12 +12,23 @@ class ShowAllViewController: UIViewController {
 
     @IBOutlet weak var sort: UISegmentedControl!
     
+    @IBAction func indexChange(_ sender: UISegmentedControl) {
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if sort.selectedSegmentIndex == 0{
+            print("ok")
+        }
+    }
+
+    
     
 
 

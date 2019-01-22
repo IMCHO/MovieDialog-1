@@ -27,6 +27,9 @@
                                     <segment title="월 별"/>
                                     <segment title="연도 별"/>
                                 </segments>
+                                <connections>
+                                    <action selector="indexChange:" destination="WIy-vA-3hA" eventType="valueChanged" id="2Kd-qg-jYJ"/>
+                                </connections>
                             </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CFw-Tu-JpN">
                                 <rect key="frame" x="0.0" y="120" width="375" height="133"/>
