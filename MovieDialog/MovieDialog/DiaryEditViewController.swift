@@ -44,7 +44,7 @@ class DiaryEditViewController: UIViewController, SendDataDelegate {
             saveImage(incomeImage: saveImg, imageName: imageName) //사진 저장
         }
         
-        let newDiary = Dialog(title: textTitle.text!, image: "", date: date.text!, star: countStar, simpleReview: [], review: "", createdDate: todayString)
+        let newDiary = Dialog(title: textTitle.text!, image: imageName, date: date.text!, star: countStar, simpleReview: [], review: "", createdDate: todayString)
 
         if let data=try? Data(contentsOf: URL(fileURLWithPath:documentsPath+"/dialog.plist")){
             if let decodedDialogs=try? decoder.decode([Dialog].self, from: data){
