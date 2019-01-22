@@ -194,6 +194,71 @@ class DiaryEditViewController: UIViewController, SendDataDelegate {
         }
     }
     
+    @IBOutlet weak var check1: UIButton!
+    @IBOutlet weak var check2: UIButton!
+    @IBOutlet weak var check3: UIButton!
+    @IBOutlet weak var check4: UIButton!
+    @IBOutlet weak var check5: UIButton!
+    @IBOutlet weak var check6: UIButton!
+    @IBOutlet weak var check7: UIButton!
+    @IBOutlet weak var check8: UIButton!
+    @IBOutlet weak var check9: UIButton!
+    @IBOutlet weak var check10: UIButton!
+    @IBOutlet weak var check11: UIButton!
+    @IBOutlet weak var check12: UIButton!
+    @IBOutlet weak var check13: UIButton!
+    @IBOutlet weak var check14: UIButton!
+    
+    @IBOutlet weak var label1: UILabel!
+    @IBOutlet weak var label2: UILabel!
+    @IBOutlet weak var label3: UILabel!
+    @IBOutlet weak var label4: UILabel!
+    @IBOutlet weak var label5: UILabel!
+    @IBOutlet weak var label6: UILabel!
+    @IBOutlet weak var label7: UILabel!
+    @IBOutlet weak var label8: UILabel!
+    @IBOutlet weak var label9: UILabel!
+    @IBOutlet weak var label10: UILabel!
+    @IBOutlet weak var label11: UILabel!
+    @IBOutlet weak var label12: UILabel!
+    @IBOutlet weak var label13: UILabel!
+    @IBOutlet weak var label14: UILabel!
+    
+    @IBAction func checkAction1(_ sender: Any) {
+    }
+    @IBAction func checkAction2(_ sender: Any) {
+    }
+    @IBAction func checkAction3(_ sender: Any) {
+    }
+    @IBAction func checkAction4(_ sender: Any) {
+    }
+    @IBAction func checkAction5(_ sender: Any) {
+    }
+    @IBAction func checkAction6(_ sender: Any) {
+    }
+    
+    @IBAction func checkAction7(_ sender: Any) {
+    }
+    
+    @IBAction func checkAction8(_ sender: Any) {
+    }
+    @IBAction func checkAction9(_ sender: Any) {
+    }
+    @IBAction func checkAction10(_ sender: Any) {
+    }
+    @IBAction func checkAction11(_ sender: Any) {
+    }
+    @IBAction func checkAction12(_ sender: Any) {
+    }
+    
+    @IBAction func checkAction13(_ sender: Any) {
+    }
+    
+    @IBAction func checkAction14(_ sender: Any) {
+    }
+    
+    @IBOutlet weak var reviewInputText: UITextField!
+    
     
     
     
