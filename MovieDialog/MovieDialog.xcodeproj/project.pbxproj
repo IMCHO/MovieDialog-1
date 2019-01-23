@@ -19,6 +19,7 @@
 		3F9022DA21EC5DC0002AF52F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F9022D821EC5DC0002AF52F /* Main.storyboard */; };
 		3F9022DC21EC5DC1002AF52F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F9022DB21EC5DC1002AF52F /* Assets.xcassets */; };
 		3F9022DF21EC5DC1002AF52F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F9022DD21EC5DC1002AF52F /* LaunchScreen.storyboard */; };
+		3FBAA13521F82F350025A434 /* ShowDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBAA13421F82F350025A434 /* ShowDiaryViewController.swift */; };
 		3FEFF04B21F18D4B00C04F19 /* MoviesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEFF04A21F18D4B00C04F19 /* MoviesTableViewController.swift */; };
 		3FEFF04D21F18E0700C04F19 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEFF04C21F18E0700C04F19 /* Model.swift */; };
 		3FEFF04F21F18F4F00C04F19 /* MoviesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEFF04E21F18F4F00C04F19 /* MoviesTableViewCell.swift */; };
@@ -51,6 +52,7 @@
 		3F9022DB21EC5DC1002AF52F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F9022DE21EC5DC1002AF52F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F9022E021EC5DC1002AF52F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FBAA13421F82F350025A434 /* ShowDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDiaryViewController.swift; sourceTree = "<group>"; };
 		3FEFF04A21F18D4B00C04F19 /* MoviesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesTableViewController.swift; sourceTree = "<group>"; };
 		3FEFF04C21F18E0700C04F19 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		3FEFF04E21F18F4F00C04F19 /* MoviesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesTableViewCell.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				DADEE77E21EF88290007F93A /* dialog.swift */,
 				DADEE78021EF88340007F93A /* challenge.swift */,
 				3F76C8EE21F07CD400BC98D8 /* ShowAllViewController.swift */,
+				3FBAA13421F82F350025A434 /* ShowDiaryViewController.swift */,
 				3F76C8F021F07CF000BC98D8 /* DiaryEditViewController.swift */,
 				3F76C8F221F07F5200BC98D8 /* SearchViewController.swift */,
 				3FEFF04A21F18D4B00C04F19 /* MoviesTableViewController.swift */,
@@ -209,6 +212,7 @@
 			files = (
 				3F85D6FB21F5AC7B0012FADD /* MyGoalCell.swift in Sources */,
 				DADEE77D21EF880C0007F93A /* user.swift in Sources */,
+				3FBAA13521F82F350025A434 /* ShowDiaryViewController.swift in Sources */,
 				DADEE78121EF88340007F93A /* challenge.swift in Sources */,
 				7F41CC4B21F5F46400556DC2 /* AddGoalView.swift in Sources */,
 				3F85D6F921F5ABC00012FADD /* MyGoalViewController.swift in Sources */,
