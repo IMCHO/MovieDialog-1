@@ -58,6 +58,7 @@ class ShowAllViewController: UIViewController{
         if let data=try? Data(contentsOf: URL(fileURLWithPath:documentsPath+"/dialog.plist")){
             if let decodedDialogs=try? decoder.decode([Dialog].self, from: data){
                 dialogs=decodedDialogs
+                print(dialogs)
             }else{
                 print("디코딩 실패")
             }
@@ -73,24 +74,19 @@ class ShowAllViewController: UIViewController{
 
 extension ShowAllViewController:UICollectionViewDataSource{
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell=collectionView.dequeueReusableCell(withReuseIdentifier: "defaultCollection", for: indexPath) as! DialogCollectionViewCell
         
-        if dialogs.count>0{
-            let name=dialogs[4].image
-//            print(name)
-            if getImage(imageName: name) != ""{
-//                print(getImage(imageName: name))
-                cell.movieImage.image=UIImage(contentsOfFile: getImage(imageName: name))
-            }
-        }
+        let name=dialogs[9].image
+        print(name)
+        cell.movieImage.image=UIImage(contentsOfFile: getImage(imageName: name))
         
         return cell
     }
