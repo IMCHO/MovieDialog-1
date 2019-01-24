@@ -110,9 +110,9 @@
                                 <segue destination="vYW-Lm-Jst" kind="show" id="ckP-x2-xLl"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title=" + " id="tKF-ph-QV1">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="tKF-ph-QV1">
                             <connections>
-                                <segue destination="vpp-Wp-YUu" kind="show" id="dbx-rl-OUj"/>
+                                <segue destination="vpp-Wp-YUu" kind="show" identifier="addGoal" id="dbx-rl-OUj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
