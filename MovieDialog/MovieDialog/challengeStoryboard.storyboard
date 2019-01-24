@@ -314,23 +314,6 @@
             </objects>
             <point key="canvasLocation" x="-512.79999999999995" y="-3582.4587706146931"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="wCr-jS-hD8">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="jAH-4V-by4" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="l1h-2B-Aww">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="BuL-AB-xAD" kind="relationship" relationship="viewControllers" id="Jzb-Z5-QDm"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="krT-0p-J4P" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2946.4000000000001" y="-3582.4587706146931"/>
-        </scene>
     </scenes>
     <resources>
         <image name="addDate" width="100" height="100"/>
