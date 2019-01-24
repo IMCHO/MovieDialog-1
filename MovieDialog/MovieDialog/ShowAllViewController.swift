@@ -12,6 +12,7 @@ class ShowAllViewController: UIViewController{
 
     @IBOutlet weak var sort: UISegmentedControl!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionView2: UICollectionView!
     
     @IBAction func indexChange(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0{
@@ -72,11 +73,11 @@ class ShowAllViewController: UIViewController{
 
 extension ShowAllViewController:UICollectionViewDataSource{
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return Int(dialogs.count/3)+1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return dialogs.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -86,6 +87,9 @@ extension ShowAllViewController:UICollectionViewDataSource{
 //        print(name)
 //        cell.movieImage.image=UIImage(contentsOfFile: getImage(imageName: name))
         
+        if dialogs.count>0{
+            cell.movieImage.image=UIImage(contentsOfFile: getImage(imageName: dialogs.reversed()[indexPath.row].image))
+        }
         return cell
     }
 }
