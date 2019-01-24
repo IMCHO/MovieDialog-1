@@ -16,11 +16,24 @@ class InfoViewController: UIViewController {
     @IBOutlet weak var secondMovie: UIImageView!
     @IBOutlet weak var thirdMovie: UIImageView!
     
+    var rankMovie:[UIImageView]=[]
+    
     var dialogs:[Dialog]=[]
     var timesOfMovie:[String:Int]=[:]
     let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
     let encoder = PropertyListEncoder()
     let decoder = PropertyListDecoder()
+    
+    func getImage(imageName: String) -> String{
+        let fileManager = FileManager.default
+        let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
+        
+        if fileManager.fileExists(atPath: imagePath){
+            return imagePath
+        }else{
+            return ""
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +68,7 @@ class InfoViewController: UIViewController {
                 //                print(dialogs.filter({$0.review != ""}).count)
                 
                 //                print(dialogs.filter({$0.simpleReview.count>0}).count)
-                
+                timesOfMovie=[:]
                 for dialog in dialogs{
                     if let times=timesOfMovie[dialog.title]{
                         timesOfMovie[dialog.title]=(times+1)
@@ -69,6 +82,25 @@ class InfoViewController: UIViewController {
             print("저장된 데이터 없음")
         }
         
+        rankMovie=[firstMovie,secondMovie,thirdMovie]
+        
+        //            cell.detailTextLabel?.text = timesOfMovie.sorted{$0.1>$1.1}[0].0
+        let rank=timesOfMovie.sorted{$0.1>$1.1}
+        print(rank)
+        var index=0
+        
+        for r in rank{
+            for dialog in dialogs{
+                if dialog.title==r.key{
+                    rankMovie[index].image=UIImage(contentsOfFile: getImage(imageName: dialog.image))
+                    break
+                }
+            }
+            index+=1
+            if index==3 {
+                break
+            }
+        }
         tableView.reloadData()
     }
     
@@ -94,7 +126,7 @@ extension InfoViewController:UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -110,14 +142,14 @@ extension InfoViewController:UITableViewDataSource{
         }else if indexPath.row==1{
             cell.textLabel?.text="작성 리뷰 수"
             cell.detailTextLabel?.text=String(dialogs.filter({$0.review != ""}).count)+" 개"
-        }else{
+        }else if indexPath.row==2{
             cell.textLabel?.text="작성 간편리뷰 수"
             cell.detailTextLabel?.text = String(dialogs.filter({$0.simpleReview.count>0}).count)+" 개"
         }
-//        else{
-//            cell.textLabel?.text="최다 관람 순위"
-//            cell.detailTextLabel?.text = timesOfMovie.sorted{$0.1>$1.1}[0].0
-//        }
+        else{
+            cell.textLabel?.text="최다 관람 순위"
+            cell.detailTextLabel?.text=""
+        }
         
         return cell
     }
