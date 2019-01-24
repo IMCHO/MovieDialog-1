@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--전체보기-->
+        <!--Show All View Controller-->
         <scene sceneID="0tF-Rw-EPI">
             <objects>
                 <viewController storyboardIdentifier="DialogScene" id="WIy-vA-3hA" customClass="ShowAllViewController" customModule="MovieDialog" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,37 +18,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fAy-Rx-Ir9">
-                                <rect key="frame" x="16" y="84" width="343" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="전체보기"/>
-                                    <segment title="월 별"/>
-                                </segments>
-                                <connections>
-                                    <action selector="indexChange:" destination="WIy-vA-3hA" eventType="valueChanged" id="2Kd-qg-jYJ"/>
-                                </connections>
-                            </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CFw-Tu-JpN">
-                                <rect key="frame" x="0.0" y="120" width="375" height="477"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3Cr-yy-CSB">
-                                    <size key="itemSize" width="106" height="133"/>
+                                    <size key="itemSize" width="100" height="141"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="defaultCollection" id="tb8-HI-loH" customClass="DialogCollectionViewCell" customModule="MovieDialog" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="106" height="133"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="141"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="106" height="133"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="141"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WZg-xI-2Le">
-                                                    <rect key="frame" x="0.0" y="0.0" width="106" height="133"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="141"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -60,25 +49,25 @@
                                 </cells>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SGd-8G-OfX">
-                                <rect key="frame" x="0.0" y="120" width="375" height="477"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FiJ-XY-M2p">
-                                    <size key="itemSize" width="106" height="133"/>
+                                    <size key="itemSize" width="100" height="141"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="defaultCollection2" id="lC2-Y2-iny" customClass="DialogCollectionViewCell" customModule="MovieDialog" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="106" height="133"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="141"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="106" height="133"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="141"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LII-Y4-54s">
-                                                    <rect key="frame" x="0.0" y="0.0" width="106" height="133"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="141"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -93,7 +82,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="LNR-4Y-1Sr"/>
                     </view>
-                    <navigationItem key="navigationItem" title="전체보기" id="tcb-4z-Za4">
+                    <navigationItem key="navigationItem" id="tcb-4z-Za4">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="fAy-Rx-Ir9">
+                            <rect key="frame" x="128" y="7.5" width="119" height="29"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="전체보기"/>
+                                <segment title="월 별"/>
+                            </segments>
+                            <connections>
+                                <action selector="indexChange:" destination="WIy-vA-3hA" eventType="valueChanged" id="2Kd-qg-jYJ"/>
+                            </connections>
+                        </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="W7c-1E-9Lg">
                             <connections>
                                 <segue destination="gNg-zY-EpS" kind="presentation" id="Xa2-un-zHV"/>
@@ -108,7 +109,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kGh-u0-Bcb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2717.5999999999999" y="-2835.832083958021"/>
+            <point key="canvasLocation" x="-839.20000000000005" y="-2835.832083958021"/>
         </scene>
         <!--Title-->
         <scene sceneID="TuI-FI-aQG">
@@ -578,7 +579,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tVn-eS-DZc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1930.4000000000001" y="-2835.832083958021"/>
+            <point key="canvasLocation" x="-52" y="-2835.832083958021"/>
         </scene>
         <!--Show Diary View Controller-->
         <scene sceneID="8pb-1b-J7I">
@@ -968,7 +969,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HK2-SS-OgS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-274" y="-2837"/>
+            <point key="canvasLocation" x="1604" y="-2837.6311844077964"/>
         </scene>
         <!--Title-->
         <scene sceneID="EPr-ym-CaE">
@@ -1062,7 +1063,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NuI-g9-bRC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="490" y="-2835"/>
+            <point key="canvasLocation" x="2367.1999999999998" y="-2835.832083958021"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Tj0-Pr-0IS">
@@ -1080,7 +1081,43 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ae5-4m-8oM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-993" y="-2835"/>
+            <point key="canvasLocation" x="884" y="-2835.832083958021"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="cyW-Y4-Krc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1Re-jO-44i" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="thy-fD-p9c"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="t3r-Um-BcB">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WIy-vA-3hA" kind="relationship" relationship="rootViewController" id="TJJ-FR-7ZS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w2q-bW-lhb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1778.4000000000001" y="-2835.832083958021"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="0gR-3w-5wk">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Z3a-lP-A7c" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="C2q-z2-kjd">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="1Re-jO-44i" kind="relationship" relationship="viewControllers" id="Z0Z-Qi-m5m"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6pi-vx-EXu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2717.5999999999999" y="-2835.832083958021"/>
         </scene>
     </scenes>
     <resources>
