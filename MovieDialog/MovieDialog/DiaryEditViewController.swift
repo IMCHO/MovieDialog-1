@@ -82,7 +82,7 @@ class DiaryEditViewController: UIViewController, SendDataDelegate {
     
     
     
-    @IBAction func selectPicButton(_ sender: UIButton) { //포스터 선택
+    @IBAction func selectPicButtonUpdated(_ sender: UIButton) {
         let actionSheet = UIAlertController(title:"포스터 입력 방식을 선택해 주세요", message:nil, preferredStyle:.actionSheet)
         actionSheet.addAction(UIAlertAction(title:"웹에서 검색하기", style:.default, handler:{result in
             //검색창 띄우기
@@ -102,6 +102,7 @@ class DiaryEditViewController: UIViewController, SendDataDelegate {
         actionSheet.addAction(UIAlertAction(title:"취소", style:.cancel, handler:nil))
         self.present(actionSheet, animated:true, completion:nil)
     }
+    
     
     @IBOutlet weak var star1: UIButton!
     @IBOutlet weak var star2: UIButton!
