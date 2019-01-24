@@ -71,22 +71,13 @@ class DiaryEditViewController: UIViewController, SendDataDelegate {
     
     
     func saveImage(incomeImage:UIImage, imageName:String){
-        //create an instance of the FileManager
         let fileManager = FileManager.default
-        
-        //get the image path
         let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
         
-        print(imagePath)
-        
-        //get the image
-        let image = incomeImage
-        
-        //get the PNG data for this image
-        let data = image.pngData()
-        
-        //store it in the document directory
-        fileManager.createFile(atPath: imagePath as String, contents: data, attributes: nil)
+        //print(imagePath)
+        let image = incomeImage //이미지 받아오기(매개변수)
+        let data = image.pngData() //png
+        fileManager.createFile(atPath: imagePath as String, contents: data, attributes: nil) //도큐먼트에 저장
     }
     
     

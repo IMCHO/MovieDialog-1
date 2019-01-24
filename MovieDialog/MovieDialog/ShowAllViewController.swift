@@ -16,12 +16,16 @@ class ShowAllViewController: UIViewController{
     @IBAction func indexChange(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0{
             print("1")
+            collectionView.isHidden = false
         }else if sender.selectedSegmentIndex == 1{
             print("2")
+            collectionView.isHidden = true
         }else if sender.selectedSegmentIndex == 2{
             print("3")
+            collectionView.isHidden = true
         }else if sender.selectedSegmentIndex == 3{
             print("4")
+            collectionView.isHidden = true
         }
     }
     
