@@ -22,10 +22,8 @@
                                 <rect key="frame" x="16" y="84" width="343" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
-                                    <segment title="일 별"/>
-                                    <segment title="주 별"/>
+                                    <segment title="전체보기"/>
                                     <segment title="월 별"/>
-                                    <segment title="연도 별"/>
                                 </segments>
                                 <connections>
                                     <action selector="indexChange:" destination="WIy-vA-3hA" eventType="valueChanged" id="2Kd-qg-jYJ"/>

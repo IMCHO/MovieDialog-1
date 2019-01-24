@@ -88,9 +88,9 @@ extension ShowAllViewController:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell=collectionView.dequeueReusableCell(withReuseIdentifier: "defaultCollection", for: indexPath) as! DialogCollectionViewCell
         
-        let name=dialogs[9].image
-        print(name)
-        cell.movieImage.image=UIImage(contentsOfFile: getImage(imageName: name))
+//        let name=dialogs[9].image
+//        print(name)
+//        cell.movieImage.image=UIImage(contentsOfFile: getImage(imageName: name))
         
         return cell
     }
