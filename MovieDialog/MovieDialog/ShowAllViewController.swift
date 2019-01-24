@@ -11,16 +11,18 @@ import UIKit
 class ShowAllViewController: UIViewController{
 
     @IBOutlet weak var sort: UISegmentedControl!
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionView1: UICollectionView!
     @IBOutlet weak var collectionView2: UICollectionView!
     
     @IBAction func indexChange(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0{
             print("1")
-            collectionView.isHidden = false
+            collectionView1.isHidden = false
+            collectionView2.isHidden=true
         }else if sender.selectedSegmentIndex == 1{
             print("2")
-            collectionView.isHidden = true
+            collectionView1.isHidden = true
+            collectionView2.isHidden=false
         }
     }
     
@@ -45,8 +47,11 @@ class ShowAllViewController: UIViewController{
 
         // Do any additional setup after loading the view.
         
-        collectionView.delegate = self
-        collectionView.dataSource=self
+        collectionView1.delegate = self
+        collectionView1.dataSource=self
+        
+        collectionView2.delegate = self
+        collectionView2.dataSource=self
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -65,7 +70,8 @@ class ShowAllViewController: UIViewController{
             print("기존 데이터 없음")
         }
         
-        collectionView.reloadData()
+        collectionView1.reloadData()
+        collectionView2.reloadData()
     }
     
 
@@ -73,27 +79,37 @@ class ShowAllViewController: UIViewController{
 
 extension ShowAllViewController:UICollectionViewDataSource{
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return Int(dialogs.count/3)+1
+        if collectionView==collectionView1{
+            return 1
+        }else{
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dialogs.count
+        if collectionView==collectionView1{
+            return dialogs.count
+        }else{
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell=collectionView.dequeueReusableCell(withReuseIdentifier: "defaultCollection", for: indexPath) as! DialogCollectionViewCell
-        
-//        let name=dialogs[9].image
-//        print(name)
-//        cell.movieImage.image=UIImage(contentsOfFile: getImage(imageName: name))
-        
-        if dialogs.count>0{
-            cell.movieImage.image=UIImage(contentsOfFile: getImage(imageName: dialogs.reversed()[indexPath.row].image))
+        if collectionView == collectionView1{
+            let cell=collectionView.dequeueReusableCell(withReuseIdentifier: "defaultCollection", for: indexPath) as! DialogCollectionViewCell
+
+            if dialogs.count>0{
+                cell.movieImage.image=UIImage(contentsOfFile: getImage(imageName: dialogs.reversed()[indexPath.row].image))
+            }
+            return cell
+        }else{
+            let cell2=collectionView.dequeueReusableCell(withReuseIdentifier: "defaultCollection2", for: indexPath) as! DialogCollectionViewCell
+            return cell2
         }
-        return cell
     }
+
 }
 
 extension ShowAllViewController:UICollectionViewDelegate{
-    
+
 }
