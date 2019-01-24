@@ -164,7 +164,7 @@ class DiaryEditViewController: UIViewController, SendDataDelegate {
         
         alert.addAction(UIAlertAction(title:"완료", style:.default, handler:{result in
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MMM. dd (yyyy년)"
+            dateFormatter.dateFormat = "yyyy-MM-dd"
             let dateString = dateFormatter.string(from:datePicker.date)
             self.date.font = UIFont(name:self.date.font.fontName, size:17)
             self.date.frame.origin = CGPoint(x:207, y:150)
