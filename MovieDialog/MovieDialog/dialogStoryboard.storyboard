@@ -44,6 +44,7 @@
                                         </view>
                                         <connections>
                                             <outlet property="movieImage" destination="WZg-xI-2Le" id="3H9-zy-kt6"/>
+                                            <segue destination="aZo-sU-RVN" kind="show" identifier="DETAIL_SEGUE" id="35r-qE-sD8"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
