@@ -38,6 +38,7 @@ class ShowAllViewController: UIViewController{
     }
     
     var dialogs:[Dialog]=[]
+    var monthDic:[String:[Dialog]]=[:]
     let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
     let encoder = PropertyListEncoder()
     let decoder = PropertyListDecoder()
@@ -70,6 +71,24 @@ class ShowAllViewController: UIViewController{
             print("기존 데이터 없음")
         }
         
+        monthDic=[:]
+        for dialog in dialogs{
+            if var eachDialog=monthDic[dialog.createdDate.substring(to: dialog.createdDate.index(dialog.createdDate.startIndex,offsetBy:7))]{
+                print("before")
+                print(eachDialog)
+                print(monthDic)
+                eachDialog.append(dialog)
+                print("after")
+                print(eachDialog)
+                print(monthDic)
+            }else{
+                print("ok")
+                monthDic[dialog.createdDate.substring(to: dialog.createdDate.index(dialog.createdDate.startIndex,offsetBy:7))]=[]
+                monthDic[dialog.createdDate.substring(to: dialog.createdDate.index(dialog.createdDate.startIndex,offsetBy:7))]?.append(dialog)
+            }
+        }
+        print(monthDic)
+        
         collectionView1.reloadData()
         collectionView2.reloadData()
     }
@@ -87,11 +106,7 @@ class ShowAllViewController: UIViewController{
 
 extension ShowAllViewController:UICollectionViewDataSource{
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        if collectionView==collectionView1{
-            return 1
-        }else{
-            return 0
-        }
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -100,6 +115,7 @@ extension ShowAllViewController:UICollectionViewDataSource{
         }else{
             return 0
         }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

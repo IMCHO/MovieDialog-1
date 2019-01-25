@@ -44,7 +44,7 @@
                                         </view>
                                         <connections>
                                             <outlet property="movieImage" destination="WZg-xI-2Le" id="3H9-zy-kt6"/>
-                                            <segue destination="aZo-sU-RVN" kind="show" identifier="DETAIL_SEGUE" id="35r-qE-sD8"/>
+                                            <segue destination="aZo-sU-RVN" kind="presentation" identifier="DETAIL_SEGUE" id="35r-qE-sD8"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -58,34 +58,59 @@
                                 </collectionReusableView>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SGd-8G-OfX">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="16" y="64" width="343" height="554"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FiJ-XY-M2p">
                                     <size key="itemSize" width="100" height="141"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="10" height="10"/>
+                                    <size key="footerReferenceSize" width="10" height="10"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="defaultCollection2" id="lC2-Y2-iny" customClass="DialogCollectionViewCell" customModule="MovieDialog" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="141"/>
+                                        <rect key="frame" x="0.0" y="10" width="100" height="141"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="141"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LII-Y4-54s">
+                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gr2-VY-GeS">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="141"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6Ze-y5-y3y">
+                                                            <rect key="frame" x="29" y="60" width="42" height="20.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JC5-Wr-yWF">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="6Ze-y5-y3y" secondAttribute="bottom" constant="60" id="gFv-1T-CJ4"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                         </view>
                                         <connections>
-                                            <outlet property="movieImage" destination="LII-Y4-54s" id="sfv-Je-Q6E"/>
+                                            <outlet property="monthLabel" destination="JC5-Wr-yWF" id="wqe-Rc-0Wg"/>
+                                            <outlet property="monthView" destination="gr2-VY-GeS" id="K5s-vo-8Dn"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Xxb-3I-F3z">
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="10"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionReusableView>
+                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="0dq-il-g86">
+                                    <rect key="frame" x="0.0" y="151" width="343" height="10"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionReusableView>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1012,15 +1037,44 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4di-vw-ZbW">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="My Diary" id="eFk-bo-6F7">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="Qlr-mW-QmG">
+                                            <connections>
+                                                <action selector="cancelNavButton:" destination="aZo-sU-RVN" id="9TZ-IM-mA6"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="c7D-Mg-0bN"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Qet-Xf-PkW"/>
                     </view>
                     <connections>
+                        <outlet property="check1" destination="AzO-my-cKb" id="uEw-3s-Rm4"/>
+                        <outlet property="check10" destination="dpZ-dW-dhW" id="l3m-Wr-qZr"/>
+                        <outlet property="check11" destination="Rw2-zi-J8q" id="OHW-T8-k2L"/>
+                        <outlet property="check12" destination="DLv-6O-eSj" id="e5F-F7-rgy"/>
+                        <outlet property="check13" destination="i43-qG-xlJ" id="gMs-kW-7wS"/>
+                        <outlet property="check14" destination="eAR-78-4jF" id="dTD-NO-W1u"/>
+                        <outlet property="check2" destination="EG2-zi-H1q" id="L3H-3p-fIX"/>
+                        <outlet property="check3" destination="V2G-uG-ROn" id="MI8-JX-hMv"/>
+                        <outlet property="check4" destination="vja-ef-Cc7" id="Wua-9g-jEF"/>
+                        <outlet property="check5" destination="cjf-XM-7pn" id="bQ6-be-4ma"/>
+                        <outlet property="check6" destination="Sej-Jw-dnz" id="Kje-6S-Kpb"/>
+                        <outlet property="check7" destination="mi4-gX-KTs" id="CRF-R1-KrO"/>
+                        <outlet property="check8" destination="UVM-74-4hP" id="EC9-g4-M01"/>
+                        <outlet property="check9" destination="DqJ-lr-Aoq" id="bLH-Gq-Kyf"/>
                         <outlet property="dateLabel" destination="0mq-rQ-C1v" id="ddZ-n0-Q9B"/>
                         <outlet property="imageLabel" destination="Pzv-es-wdd" id="ZTw-Q9-PZr"/>
                         <outlet property="normalView" destination="LB9-mK-5xp" id="RAh-kK-gee"/>
-                        <outlet property="reviewLabel" destination="Mnw-hy-abG" id="uwp-N1-oV3"/>
+                        <outlet property="reviewLabel" destination="Mnw-hy-abG" id="iiV-8r-ou1"/>
                         <outlet property="simpleView" destination="QfC-DX-e0E" id="6VL-5Z-px7"/>
                         <outlet property="star1" destination="Wut-jP-4Jg" id="QVa-L0-6z3"/>
                         <outlet property="star2" destination="8Jf-Et-Aqh" id="Rit-ru-Cjm"/>
@@ -1032,7 +1086,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WTl-kx-J97" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1930.4000000000001" y="-2135.0824587706147"/>
+            <point key="canvasLocation" x="-839" y="-2046"/>
         </scene>
         <!--Search-->
         <scene sceneID="K5U-C6-Ykn">
