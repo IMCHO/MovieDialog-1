@@ -7,30 +7,21 @@
 //
 
 import UIKit
-var goalTitle: UITextField!
-var goalNum: UITextField!
+var goalTitle: UITextField! //넘겨줄 목표 제목
+var goalNum: UITextField!   //넘겨줄 목표 개수
 
 class AddGoalView: UIViewController {
-
-    @IBOutlet weak var inputTitle: UITextField!
-    @IBOutlet weak var titleButton: UIButton!
-    @IBAction func insertTitle(_ sender: Any) {
-        print(inputTitle)
-        goalTitle = inputTitle
-        inputTitle.text = ""
-    }
     
+
+    //목표 제목
+    @IBOutlet weak var inputTitle: UITextField!
+    
+    //목표 개수
     @IBOutlet weak var inputNum: UITextField!
-    @IBAction func insertNum(_ sender: Any) {
-        print(inputNum)
-        goalNum = inputNum
-        inputNum.text = ""
-    }
     
     //목표 기간 선택
     @IBOutlet weak var startDay: UILabel!
     @IBOutlet weak var finishDay: UILabel!
-    
     //시작 날짜 선택
     @IBAction func startDate(_ sender: Any) {
         let startDate: UIDatePicker = UIDatePicker()
@@ -71,12 +62,19 @@ class AddGoalView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // Do any additional setup after loading the view
         
-        titleButton.layer.borderColor = UIColor.lightGray.cgColor
-        titleButton.layer.borderWidth = 1
-        titleButton.layer.cornerRadius = 10
-        
+    }
+    
+    //목표 저장
+    @IBAction func saveGoal(_ sender: Any) {
+        goalTitle = inputTitle
+        goalNum = inputNum
+        self.dismiss(animated:true, completion:nil)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        self.view.endEditing(true)
     }
 
 }
