@@ -1051,10 +1051,6 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-<<<<<<< HEAD
-
-=======
->>>>>>> 790b30453b29558732fe52a6bd2143734ae30d9b
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Qet-Xf-PkW"/>
