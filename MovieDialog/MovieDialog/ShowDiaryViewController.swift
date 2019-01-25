@@ -28,20 +28,21 @@ class ShowDiaryViewController: UIViewController {
     @IBOutlet weak var simpleView: UIView!
     @IBOutlet weak var normalView: UIView!
     
-    @IBOutlet weak var check1: UIButton!
-    @IBOutlet weak var check2: UIButton!
-    @IBOutlet weak var check3: UIButton!
-    @IBOutlet weak var check4: UIButton!
-    @IBOutlet weak var check5: UIButton!
-    @IBOutlet weak var check6: UIButton!
-    @IBOutlet weak var check7: UIButton!
-    @IBOutlet weak var check8: UIButton!
-    @IBOutlet weak var check9: UIButton!
-    @IBOutlet weak var check10: UIButton!
-    @IBOutlet weak var check11: UIButton!
-    @IBOutlet weak var check12: UIButton!
-    @IBOutlet weak var check13: UIButton!
-    @IBOutlet weak var check14: UIButton!
+    @IBOutlet weak var label1: UILabel!
+    @IBOutlet weak var label2: UILabel!
+    @IBOutlet weak var label3: UILabel!
+    @IBOutlet weak var label4: UILabel!
+    @IBOutlet weak var label5: UILabel!
+    @IBOutlet weak var label6: UILabel!
+    @IBOutlet weak var label7: UILabel!
+    @IBOutlet weak var label8: UILabel!
+    @IBOutlet weak var label9: UILabel!
+    @IBOutlet weak var label10: UILabel!
+    @IBOutlet weak var label11: UILabel!
+    @IBOutlet weak var label12: UILabel!
+    @IBOutlet weak var label13: UILabel!
+    @IBOutlet weak var label14: UILabel!
+    
     
     
     
@@ -68,42 +69,70 @@ class ShowDiaryViewController: UIViewController {
         //이미지
         switch(dialog!.star){
         case 1:
-            star1.isEnabled = true
-            star2.isEnabled = false
-            star3.isEnabled = false
-            star4.isEnabled = false
-            star5.isEnabled = false
+            star1.isSelected = true
+            star2.isSelected = false
+            star3.isSelected = false
+            star4.isSelected = false
+            star5.isSelected = false
         case 2:
-            star1.isEnabled = true
-            star2.isEnabled = true
-            star3.isEnabled = false
-            star4.isEnabled = false
-            star5.isEnabled = false
+            star1.isSelected = true
+            star2.isSelected = true
+            star3.isSelected = false
+            star4.isSelected = false
+            star5.isSelected = false
         case 3:
-            star1.isEnabled = true
-            star2.isEnabled = true
-            star3.isEnabled = true
-            star4.isEnabled = false
-            star5.isEnabled = false
+            star1.isSelected = true
+            star2.isSelected = true
+            star3.isSelected = true
+            star4.isSelected = false
+            star5.isSelected = false
         case 4:
-            star1.isEnabled = true
-            star2.isEnabled = true
-            star3.isEnabled = true
-            star4.isEnabled = true
-            star5.isEnabled = false
+            star1.isSelected = true
+            star2.isSelected = true
+            star3.isSelected = true
+            star4.isSelected = true
+            star5.isSelected = false
         case 5:
-            star1.isEnabled = true
-            star2.isEnabled = true
-            star3.isEnabled = true
-            star4.isEnabled = true
-            star5.isEnabled = true
+            star1.isSelected = true
+            star2.isSelected = true
+            star3.isSelected = true
+            star4.isSelected = true
+            star5.isSelected = true
         default:
-            star1.isEnabled = false
-            star2.isEnabled = false
-            star3.isEnabled = false
-            star4.isEnabled = false
-            star5.isEnabled = false
+            star1.isSelected = false
+            star2.isSelected = false
+            star3.isSelected = false
+            star4.isSelected = false
+            star5.isSelected = false
         }
+        
+        
+        
+        if let simpleReview = dialog?.simpleReview{
+            var count = 0
+            for item in simpleReview{
+                count += 1
+                switch(count){
+                case 1: label1.text = "#\(item)"
+                case 2: label2.text = "#\(item)"
+                case 3: label3.text = "#\(item)"
+                case 4: label4.text = "#\(item)"
+                case 5: label5.text = "#\(item)"
+                case 6: label6.text = "#\(item)"
+                case 7: label7.text = "#\(item)"
+                case 8: label8.text = "#\(item)"
+                case 9: label9.text = "#\(item)"
+                case 10: label10.text = "#\(item)"
+                case 11: label11.text = "#\(item)"
+                case 12: label12.text = "#\(item)"
+                case 13: label13.text = "#\(item)"
+                case 14: label14.text = "#\(item)"
+                default:
+                    break
+                }
+            }
+        }
+        
         
         reviewLabel.text = dialog?.review
     }
