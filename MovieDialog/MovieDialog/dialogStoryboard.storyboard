@@ -44,7 +44,7 @@
                                         </view>
                                         <connections>
                                             <outlet property="movieImage" destination="WZg-xI-2Le" id="3H9-zy-kt6"/>
-                                            <segue destination="aZo-sU-RVN" kind="show" identifier="DETAIL_SEGUE" id="35r-qE-sD8"/>
+                                            <segue destination="aZo-sU-RVN" kind="presentation" identifier="DETAIL_SEGUE" id="35r-qE-sD8"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -1012,15 +1012,43 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4di-vw-ZbW">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="My Diary" id="eFk-bo-6F7">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="Qlr-mW-QmG">
+                                            <connections>
+                                                <action selector="cancelNavButton:" destination="aZo-sU-RVN" id="9TZ-IM-mA6"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="c7D-Mg-0bN"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Qet-Xf-PkW"/>
                     </view>
                     <connections>
+                        <outlet property="check1" destination="AzO-my-cKb" id="uEw-3s-Rm4"/>
+                        <outlet property="check10" destination="dpZ-dW-dhW" id="l3m-Wr-qZr"/>
+                        <outlet property="check11" destination="Rw2-zi-J8q" id="OHW-T8-k2L"/>
+                        <outlet property="check12" destination="DLv-6O-eSj" id="e5F-F7-rgy"/>
+                        <outlet property="check13" destination="i43-qG-xlJ" id="gMs-kW-7wS"/>
+                        <outlet property="check14" destination="eAR-78-4jF" id="dTD-NO-W1u"/>
+                        <outlet property="check2" destination="EG2-zi-H1q" id="L3H-3p-fIX"/>
+                        <outlet property="check3" destination="V2G-uG-ROn" id="MI8-JX-hMv"/>
+                        <outlet property="check4" destination="vja-ef-Cc7" id="Wua-9g-jEF"/>
+                        <outlet property="check5" destination="cjf-XM-7pn" id="bQ6-be-4ma"/>
+                        <outlet property="check6" destination="Sej-Jw-dnz" id="Kje-6S-Kpb"/>
+                        <outlet property="check7" destination="mi4-gX-KTs" id="CRF-R1-KrO"/>
+                        <outlet property="check8" destination="UVM-74-4hP" id="EC9-g4-M01"/>
+                        <outlet property="check9" destination="DqJ-lr-Aoq" id="bLH-Gq-Kyf"/>
                         <outlet property="dateLabel" destination="0mq-rQ-C1v" id="ddZ-n0-Q9B"/>
                         <outlet property="imageLabel" destination="Pzv-es-wdd" id="ZTw-Q9-PZr"/>
                         <outlet property="normalView" destination="LB9-mK-5xp" id="RAh-kK-gee"/>
-                        <outlet property="reviewLabel" destination="Mnw-hy-abG" id="uwp-N1-oV3"/>
+                        <outlet property="reviewLabel" destination="Mnw-hy-abG" id="iiV-8r-ou1"/>
                         <outlet property="simpleView" destination="QfC-DX-e0E" id="6VL-5Z-px7"/>
                         <outlet property="star1" destination="Wut-jP-4Jg" id="QVa-L0-6z3"/>
                         <outlet property="star2" destination="8Jf-Et-Aqh" id="Rit-ru-Cjm"/>
@@ -1032,7 +1060,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WTl-kx-J97" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1930.4000000000001" y="-2135.0824587706147"/>
+            <point key="canvasLocation" x="-839" y="-2046"/>
         </scene>
         <!--Search-->
         <scene sceneID="K5U-C6-Ykn">

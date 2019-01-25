@@ -115,7 +115,7 @@ extension ShowAllViewController:UICollectionViewDataSource{
             return cell2
         }
     }
-
+    
 }
 
 extension ShowAllViewController:UICollectionViewDelegate{
