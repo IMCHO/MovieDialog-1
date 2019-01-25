@@ -74,6 +74,14 @@ class ShowAllViewController: UIViewController{
         collectionView2.reloadData()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DETAIL_SEGUE" {
+            if let detailVC = segue.destination as? ShowDiaryViewController, let cell = sender as? UICollectionViewCell, let indexPath = collectionView1.indexPath(for: cell) {
+                let dialog=dialogs[indexPath.row]
+                detailVC.dialog=dialog
+            }
+        }
+    }
 
 }
 

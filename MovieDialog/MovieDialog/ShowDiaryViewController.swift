@@ -25,6 +25,8 @@ class ShowDiaryViewController: UIViewController {
     
     @IBOutlet weak var reviewLabel: UILabel!
     
+    var dialog:Dialog?
+    
     @IBAction func segmentButton(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0{
             simpleView.isHidden = false
