@@ -22,6 +22,8 @@ class DiaryEditViewController: UIViewController, SendDataDelegate, UITextFieldDe
         present(alert, animated:true, completion:nil)
     }
     
+    var checkImage:Bool = false
+    
     @IBOutlet weak var movieImage: UIImageView! //영화 포스터
     @IBOutlet weak var textTitle: UITextField!//영화 제목
     @IBOutlet weak var date: UILabel! //관람일
@@ -35,6 +37,22 @@ class DiaryEditViewController: UIViewController, SendDataDelegate, UITextFieldDe
     
     //-----Save button
     @IBAction func saveNavButton(_ sender: Any) {
+        if textTitle.text == "" {
+            let alert = UIAlertController(title: "영화 제목을 입력해 주세요.", message: nil, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title:"확인", style:UIAlertAction.Style.default) { UIAlertAction in })
+            present(alert, animated:true, completion:nil)
+            return
+        } else if checkImage == false{
+            let alert = UIAlertController(title: "영화 포스터를 선택해 주세요.", message: nil, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title:"확인", style:UIAlertAction.Style.default) { UIAlertAction in })
+            present(alert, animated:true, completion:nil)
+            return
+        } else if date.text == "관람일을 선택해 주세요." {
+            let alert = UIAlertController(title: "영화 관람일을 입력해 주세요.", message: nil, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title:"확인", style:UIAlertAction.Style.default) { UIAlertAction in })
+            present(alert, animated:true, completion:nil)
+            return
+        }
         
         let today = NSDate() //현재 날짜
         let dateFormatter = DateFormatter()
@@ -401,6 +419,7 @@ class DiaryEditViewController: UIViewController, SendDataDelegate, UITextFieldDe
     func sendData(title:String, img:UIImage){
         textTitle.text = title
         movieImage.image = img
+        checkImage = true
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toSearchSegue"{
@@ -446,6 +465,7 @@ extension DiaryEditViewController : UIImagePickerControllerDelegate, UINavigatio
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
             movieImage.image = image
+            checkImage = true
             print(info)
         }
         dismiss(animated:true, completion:nil)
