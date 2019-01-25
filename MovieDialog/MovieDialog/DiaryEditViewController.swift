@@ -9,7 +9,7 @@
 import UIKit
 import Photos
 
-class DiaryEditViewController: UIViewController, SendDataDelegate {
+class DiaryEditViewController: UIViewController, SendDataDelegate, UITextFieldDelegate {
     let picker = UIImagePickerController() //갤러리 및 카메라에서 사진을 불러올 때 사용
     
     //-----Cancel button
@@ -389,6 +389,12 @@ class DiaryEditViewController: UIViewController, SendDataDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         picker.delegate = self as UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        reviewInputText.delegate = self
+        
+        
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name:UIResponder.keyboardWillShowNotification, object:nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name:UIResponder.keyboardWillHideNotification, object:nil)
     }
     
     //-----웹에서 검색한 데이터(제목, 사진)을 불러오는 함수
@@ -418,9 +424,22 @@ class DiaryEditViewController: UIViewController, SendDataDelegate {
         } else{
             print("Camera not available")
         }
-        
     }
 
+    @objc func keyboardWillShow(_ sender:Notification){
+        self.view.frame.origin.y = -150 //Move view 150 points upward
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        reviewInputText.resignFirstResponder()
+        return true
+    }
+    @objc func keyboardWillHide(_ sender: Notification){
+        self.view.frame.origin.y = 0 //Move view to original position
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        self.view.endEditing(true)
+    }
+    
 }
 
 extension DiaryEditViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
