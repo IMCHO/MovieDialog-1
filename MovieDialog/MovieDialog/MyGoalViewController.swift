@@ -14,6 +14,11 @@ class MyGoalViewController: UIViewController {
     @IBOutlet weak var starNum: UILabel!
     @IBOutlet weak var starImage: UIImageView!
     
+    var challenges:[Challenge]=[]
+    let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+    let encoder = PropertyListEncoder()
+    let decoder = PropertyListDecoder()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         goalList.dataSource = self
@@ -23,6 +28,19 @@ class MyGoalViewController: UIViewController {
         starImage.image = UIImage(named: "starLevel01")
         
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let data=try? Data(contentsOf: URL(fileURLWithPath:documentsPath+"/challenge.plist")){
+            if let decodedChallenge=try? decoder.decode([Challenge].self, from: data){
+                challenges=decodedChallenge
+                print(challenges)
+            }else{
+                print("디코딩 실패")
+            }
+        }else{
+            print("기존 데이터 없음")
+        }
     }
 
 }

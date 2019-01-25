@@ -16,11 +16,11 @@ class ShowAllViewController: UIViewController{
     
     @IBAction func indexChange(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0{
-            print("1")
+//            print("1")
             collectionView1.isHidden = false
             collectionView2.isHidden=true
         }else if sender.selectedSegmentIndex == 1{
-            print("2")
+//            print("2")
             collectionView1.isHidden = true
             collectionView2.isHidden=false
         }
@@ -74,15 +74,16 @@ class ShowAllViewController: UIViewController{
         monthDic=[:]
         for dialog in dialogs{
             if var eachDialog=monthDic[dialog.createdDate.substring(to: dialog.createdDate.index(dialog.createdDate.startIndex,offsetBy:7))]{
-                print("before")
-                print(eachDialog)
-                print(monthDic)
+//                print("before")
+//                print(eachDialog)
+//                print(monthDic)
                 eachDialog.append(dialog)
-                print("after")
-                print(eachDialog)
-                print(monthDic)
+                monthDic[dialog.createdDate.substring(to: dialog.createdDate.index(dialog.createdDate.startIndex,offsetBy:7))]=eachDialog
+//                print("after")
+//                print(eachDialog)
+//                print(monthDic)
             }else{
-                print("ok")
+//                print("ok")
                 monthDic[dialog.createdDate.substring(to: dialog.createdDate.index(dialog.createdDate.startIndex,offsetBy:7))]=[]
                 monthDic[dialog.createdDate.substring(to: dialog.createdDate.index(dialog.createdDate.startIndex,offsetBy:7))]?.append(dialog)
             }
@@ -113,7 +114,7 @@ extension ShowAllViewController:UICollectionViewDataSource{
         if collectionView==collectionView1{
             return dialogs.count
         }else{
-            return 0
+            return monthDic.count
         }
         
     }
@@ -127,7 +128,13 @@ extension ShowAllViewController:UICollectionViewDataSource{
             }
             return cell
         }else{
+        
             let cell2=collectionView.dequeueReusableCell(withReuseIdentifier: "defaultCollection2", for: indexPath) as! DialogCollectionViewCell
+            
+            for dic in monthDic{
+                print(dic.key)
+                cell2.monthLabel.text=dic.key
+            }
             return cell2
         }
     }

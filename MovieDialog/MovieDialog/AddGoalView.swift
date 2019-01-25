@@ -7,10 +7,14 @@
 //
 
 import UIKit
-var goalTitle: UITextField! //넘겨줄 목표 제목
-var goalNum: UITextField!   //넘겨줄 목표 개수
+
 
 class AddGoalView: UIViewController {
+    
+    var challenges:[Challenge]=[]
+    let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+    let encoder = PropertyListEncoder()
+    let decoder = PropertyListDecoder()
     
 
     //목표 제목
@@ -66,10 +70,30 @@ class AddGoalView: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+    
+    }
+    
     //목표 저장
     @IBAction func saveGoal(_ sender: Any) {
-        goalTitle = inputTitle
-        goalNum = inputNum
+
+        if let goalTitle=inputTitle.text, let goalNum=inputNum.text, let finishTime=finishDay.text{
+            let newChallenge=Challenge(title:goalTitle, time:finishTime, goal:Int(goalNum)!,now:0)
+            challenges.append(newChallenge)
+//            print(challenges)
+//            print(newChallenge)
+            encoder.outputFormat = .xml
+            
+            if let data = try? encoder.encode(challenges){
+                try? data.write(to: URL(fileURLWithPath: documentsPath + "/challenge.plist"))
+                print("ok")
+            }
+        }else{
+            print("데이터를 모두 입력하세요")
+        }
+        
         self.dismiss(animated:true, completion:nil)
     }
     
