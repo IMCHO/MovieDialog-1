@@ -25,45 +25,14 @@ class ShowDiaryViewController: UIViewController {
     @IBOutlet weak var star4: UIButton!
     @IBOutlet weak var star5: UIButton!
     
-    @IBOutlet weak var simpleView: UIView!
-    @IBOutlet weak var normalView: UIView!
-    
     @IBOutlet weak var label1: UILabel!
-    @IBOutlet weak var label2: UILabel!
-    @IBOutlet weak var label3: UILabel!
-    @IBOutlet weak var label4: UILabel!
-    @IBOutlet weak var label5: UILabel!
-    @IBOutlet weak var label6: UILabel!
-    @IBOutlet weak var label7: UILabel!
-    @IBOutlet weak var label8: UILabel!
-    @IBOutlet weak var label9: UILabel!
-    @IBOutlet weak var label10: UILabel!
-    @IBOutlet weak var label11: UILabel!
-    @IBOutlet weak var label12: UILabel!
-    @IBOutlet weak var label13: UILabel!
-    @IBOutlet weak var label14: UILabel!
-    
-    
-    
     
     @IBOutlet weak var reviewLabel: UILabel!
     
     var dialog:Dialog?
     
-    @IBAction func segmentButton(_ sender: UISegmentedControl) {
-        if sender.selectedSegmentIndex == 0{
-            simpleView.isHidden = false
-            normalView.isHidden = true
-        } else {
-            simpleView.isHidden = true
-            normalView.isHidden = false
-        }
-    }
     
     override func viewWillAppear(_ animated: Bool) {
-        simpleView.isHidden = false
-        normalView.isHidden = true
-        
         titleLabel.text = dialog?.title
         dateLabel.text = dialog?.date
         //이미지
@@ -114,28 +83,30 @@ class ShowDiaryViewController: UIViewController {
                 count += 1
                 switch(count){
                 case 1: label1.text = "#\(item)"
-                case 2: label2.text = "#\(item)"
-                case 3: label3.text = "#\(item)"
-                case 4: label4.text = "#\(item)"
-                case 5: label5.text = "#\(item)"
-                case 6: label6.text = "#\(item)"
-                case 7: label7.text = "#\(item)"
-                case 8: label8.text = "#\(item)"
-                case 9: label9.text = "#\(item)"
-                case 10: label10.text = "#\(item)"
-                case 11: label11.text = "#\(item)"
-                case 12: label12.text = "#\(item)"
-                case 13: label13.text = "#\(item)"
-                case 14: label14.text = "#\(item)"
+                //case 2: label2.text = "#\(item)"
+                //case 3: label3.text = "#\(item)"
+                //case 4: label4.text = "#\(item)"
+                //case 5: label5.text = "#\(item)"
+                //case 6: label6.text = "#\(item)"
+                //case 7: label7.text = "#\(item)"
+                //case 8: label8.text = "#\(item)"
+                //case 9: label9.text = "#\(item)"
+                //case 10: label10.text = "#\(item)"
+                //case 11: label11.text = "#\(item)"
+                //case 12: label12.text = "#\(item)"
+                //case 13: label13.text = "#\(item)"
+                //case 14: label14.text = "#\(item)"
                 default:
                     break
                 }
             }
         }
         
-        
         reviewLabel.text = dialog?.review
     }
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
