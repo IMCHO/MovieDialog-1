@@ -14,7 +14,15 @@ class ShowDiaryViewController: UIViewController {
     @IBAction func cancelNavButton(_ sender: Any) {
         self.dismiss(animated:true, completion:nil)
     }
-
+    
+    //-----edit button
+    @IBAction func editNavButton(_ sender: Any) {
+        if let editView = self.storyboard!.instantiateViewController(withIdentifier: "EditID") as? EditViewController{
+            editView.dialog = self.dialog
+            self.performSegue(withIdentifier: "EditSegue", sender: nil)
+        }
+    }
+    
     @IBOutlet weak var titleLabel: UILabel! //영화 이름
     @IBOutlet weak var dateLabel: UILabel! //관람일
     @IBOutlet weak var imageLabel: UIImageView! //영화 포스터

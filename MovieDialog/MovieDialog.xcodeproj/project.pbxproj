@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F047F4721FDA2F1007EC403 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F047F4621FDA2F1007EC403 /* EditViewController.swift */; };
 		3F76C8EF21F07CD400BC98D8 /* ShowAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F76C8EE21F07CD400BC98D8 /* ShowAllViewController.swift */; };
 		3F76C8F121F07CF000BC98D8 /* DiaryEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F76C8F021F07CF000BC98D8 /* DiaryEditViewController.swift */; };
 		3F76C8F321F07F5200BC98D8 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F76C8F221F07F5200BC98D8 /* SearchViewController.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F047F4621FDA2F1007EC403 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		3F76C8EE21F07CD400BC98D8 /* ShowAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAllViewController.swift; sourceTree = "<group>"; };
 		3F76C8F021F07CF000BC98D8 /* DiaryEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEditViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		3F76C8F221F07F5200BC98D8 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -53,7 +55,7 @@
 		3F9022DB21EC5DC1002AF52F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F9022DE21EC5DC1002AF52F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F9022E021EC5DC1002AF52F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3FBAA13421F82F350025A434 /* ShowDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDiaryViewController.swift; sourceTree = "<group>"; };
+		3FBAA13421F82F350025A434 /* ShowDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDiaryViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		3FEFF04A21F18D4B00C04F19 /* MoviesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesTableViewController.swift; sourceTree = "<group>"; };
 		3FEFF04C21F18E0700C04F19 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		3FEFF04E21F18F4F00C04F19 /* MoviesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesTableViewCell.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				3F76C8EE21F07CD400BC98D8 /* ShowAllViewController.swift */,
 				3FBAA13421F82F350025A434 /* ShowDiaryViewController.swift */,
 				3F76C8F021F07CF000BC98D8 /* DiaryEditViewController.swift */,
+				3F047F4621FDA2F1007EC403 /* EditViewController.swift */,
 				3F76C8F221F07F5200BC98D8 /* SearchViewController.swift */,
 				3FEFF04A21F18D4B00C04F19 /* MoviesTableViewController.swift */,
 				3FEFF04E21F18F4F00C04F19 /* MoviesTableViewCell.swift */,
@@ -233,6 +236,7 @@
 				3FEFF04B21F18D4B00C04F19 /* MoviesTableViewController.swift in Sources */,
 				3F9022D521EC5DC0002AF52F /* AppDelegate.swift in Sources */,
 				DADC4FBC21FD814F00C3DB05 /* MonthCollectionViewController.swift in Sources */,
+				3F047F4721FDA2F1007EC403 /* EditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
