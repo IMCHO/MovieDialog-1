@@ -46,13 +46,16 @@ class MyGoalViewController: UIViewController {
 }
 
 extension MyGoalViewController: UITableViewDataSource{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyGoalCell", for: indexPath) as! MyGoalCell
-        cell.goalName.text = "목표 제목"
+        cell.goalName.text = challenges[indexPath.row].title
         cell.goalRate.text = "목표 달성률"
         
         return cell
