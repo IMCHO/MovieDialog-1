@@ -28,6 +28,7 @@
 		DAD4F2AC21F5A6C000465DFD /* infoStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAD4F2AB21F5A6C000465DFD /* infoStoryboard.storyboard */; };
 		DAD4F2AE21F5A82300465DFD /* challengeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAD4F2AD21F5A82300465DFD /* challengeStoryboard.storyboard */; };
 		DAD4F2B021F5A88C00465DFD /* dialogStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAD4F2AF21F5A88C00465DFD /* dialogStoryboard.storyboard */; };
+		DADC4FBC21FD814F00C3DB05 /* MonthCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC4FBB21FD814F00C3DB05 /* MonthCollectionViewController.swift */; };
 		DADEE77521EF80950007F93A /* user.plist in Resources */ = {isa = PBXBuildFile; fileRef = DADEE77421EF80950007F93A /* user.plist */; };
 		DADEE77721EF80BB0007F93A /* dialog.plist in Resources */ = {isa = PBXBuildFile; fileRef = DADEE77621EF80BB0007F93A /* dialog.plist */; };
 		DADEE77921EF81050007F93A /* challenge.plist in Resources */ = {isa = PBXBuildFile; fileRef = DADEE77821EF81050007F93A /* challenge.plist */; };
@@ -61,6 +62,7 @@
 		DAD4F2AB21F5A6C000465DFD /* infoStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = infoStoryboard.storyboard; sourceTree = "<group>"; };
 		DAD4F2AD21F5A82300465DFD /* challengeStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = challengeStoryboard.storyboard; sourceTree = "<group>"; };
 		DAD4F2AF21F5A88C00465DFD /* dialogStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = dialogStoryboard.storyboard; sourceTree = "<group>"; };
+		DADC4FBB21FD814F00C3DB05 /* MonthCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthCollectionViewController.swift; sourceTree = "<group>"; };
 		DADEE77421EF80950007F93A /* user.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = user.plist; sourceTree = "<group>"; };
 		DADEE77621EF80BB0007F93A /* dialog.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = dialog.plist; sourceTree = "<group>"; };
 		DADEE77821EF81050007F93A /* challenge.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = challenge.plist; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				3F85D6FE21F5BF4B0012FADD /* MyGoalListCell.swift */,
 				7F41CC4A21F5F46400556DC2 /* AddGoalView.swift */,
 				DAFA11FB21F7098F0071C33A /* DialogCollectionViewCell.swift */,
+				DADC4FBB21FD814F00C3DB05 /* MonthCollectionViewController.swift */,
 			);
 			path = MovieDialog;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				3FEFF04D21F18E0700C04F19 /* Model.swift in Sources */,
 				3FEFF04B21F18D4B00C04F19 /* MoviesTableViewController.swift in Sources */,
 				3F9022D521EC5DC0002AF52F /* AppDelegate.swift in Sources */,
+				DADC4FBC21FD814F00C3DB05 /* MonthCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

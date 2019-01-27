@@ -15,4 +15,5 @@ class DialogCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var monthView: UIView!
     @IBOutlet weak var monthLabel: UILabel!
     
+    @IBOutlet weak var monthMovieImage: UIImageView!
 }

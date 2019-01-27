@@ -18,11 +18,11 @@ class ShowAllViewController: UIViewController{
         if sender.selectedSegmentIndex == 0{
 //            print("1")
             collectionView1.isHidden = false
-            collectionView2.isHidden=true
+            collectionView2.isHidden = true
         }else if sender.selectedSegmentIndex == 1{
 //            print("2")
             collectionView1.isHidden = true
-            collectionView2.isHidden=false
+            collectionView2.isHidden = false
         }
     }
     
@@ -39,6 +39,7 @@ class ShowAllViewController: UIViewController{
     
     var dialogs:[Dialog]=[]
     var monthDic:[String:[Dialog]]=[:]
+    var month:[String]=[]
     let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
     let encoder = PropertyListEncoder()
     let decoder = PropertyListDecoder()
@@ -70,6 +71,7 @@ class ShowAllViewController: UIViewController{
         }else{
             print("기존 데이터 없음")
         }
+        dialogs=dialogs.reversed()
         
         monthDic=[:]
         for dialog in dialogs{
@@ -88,7 +90,10 @@ class ShowAllViewController: UIViewController{
                 monthDic[dialog.createdDate.substring(to: dialog.createdDate.index(dialog.createdDate.startIndex,offsetBy:7))]?.append(dialog)
             }
         }
+//        monthDic=monthDic.sorted{$0.0>$1.0}
+        month=Array(monthDic.keys)
         print(monthDic)
+        print(month)
         
         collectionView1.reloadData()
         collectionView2.reloadData()
@@ -97,8 +102,16 @@ class ShowAllViewController: UIViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "DETAIL_SEGUE" {
             if let detailVC = segue.destination as? ShowDiaryViewController, let cell = sender as? UICollectionViewCell, let indexPath = collectionView1.indexPath(for: cell) {
+                
                 let dialog=dialogs[indexPath.row]
                 detailVC.dialog=dialog
+            }
+        }else if segue.identifier == "MONTH_SEGUE"{
+            if let detailVC=segue.destination as? MonthCollectionViewController, let cell = sender as? UICollectionViewCell, let indexPath=collectionView2.indexPath(for: cell){
+                
+                let dialogs=monthDic[month[indexPath.row]]
+                detailVC.dialogs = dialogs
+                detailVC.month=month[indexPath.row]
             }
         }
     }
@@ -114,6 +127,7 @@ extension ShowAllViewController:UICollectionViewDataSource{
         if collectionView==collectionView1{
             return dialogs.count
         }else{
+//            print(monthDic.count)
             return monthDic.count
         }
         
@@ -124,7 +138,7 @@ extension ShowAllViewController:UICollectionViewDataSource{
             let cell=collectionView.dequeueReusableCell(withReuseIdentifier: "defaultCollection", for: indexPath) as! DialogCollectionViewCell
 
             if dialogs.count>0{
-                cell.movieImage.image=UIImage(contentsOfFile: getImage(imageName: dialogs.reversed()[indexPath.row].image))
+                cell.movieImage.image=UIImage(contentsOfFile: getImage(imageName: dialogs[indexPath.row].image))
             }
             return cell
         }else{
@@ -132,8 +146,11 @@ extension ShowAllViewController:UICollectionViewDataSource{
             let cell2=collectionView.dequeueReusableCell(withReuseIdentifier: "defaultCollection2", for: indexPath) as! DialogCollectionViewCell
             
             for dic in monthDic{
-                print(dic.key)
+//                print(dic.key)
                 cell2.monthLabel.text=dic.key
+                cell2.monthView.layer.cornerRadius=20
+                cell2.monthView.layer.borderColor = UIColor.black.cgColor
+                cell2.monthView.layer.borderWidth = 2
             }
             return cell2
         }
