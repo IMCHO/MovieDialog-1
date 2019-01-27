@@ -9,7 +9,7 @@
 import UIKit
 import Photos
 
-class DiaryEditViewController: UIViewController, SendDataDelegate, UITextFieldDelegate {
+class DiaryEditViewController: UIViewController, SendDataDelegate, UITextFieldDelegate, UITextViewDelegate {
     let picker = UIImagePickerController() //갤러리 및 카메라에서 사진을 불러올 때 사용
     
     //-----Cancel button
@@ -54,22 +54,32 @@ class DiaryEditViewController: UIViewController, SendDataDelegate, UITextFieldDe
             return
         }
         
+        //-----일기 생성일 계산
         let today = NSDate() //현재 날짜
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let todayString = dateFormatter.string(from: today as Date)
         
+        //-----사진 저장시 이름 계산
         let dateFormatterForFileName = DateFormatter()
-        dateFormatterForFileName.dateFormat = "yyyy_MM_dd_HH_mm"
+        dateFormatterForFileName.dateFormat = "yyyy_MM_dd_HH_mm_ss"
         let imageName = dateFormatterForFileName.string(from: today as Date)+".png"
         
+        //-----사진 저장
         if let saveImg = movieImage.image{
             saveImage(incomeImage: saveImg, imageName: imageName) //사진 저장
         }
+        
+        //-----리뷰
         var optionalFreeReviewText = ""
-        if let tempReviewText = reviewInputText.text{
+        if let tempReviewText = reviewInputText.text{ //리뷰가 비어있지 않다면 저장
             optionalFreeReviewText = tempReviewText
         }
+        if reviewInputText.textColor == UIColor.lightGray { //리뷰가 placeholder라면
+            optionalFreeReviewText = "               해당 일기에 기록된 리뷰가 없습니다."
+        }
+        
+        //-----객체 생성
         let newDiary = Dialog(title: textTitle.text!, image: imageName, date: date.text!, star: countStar, simpleReview: checkBoxChecked(), review: optionalFreeReviewText, createdDate: todayString)
 
         if let data=try? Data(contentsOf: URL(fileURLWithPath:documentsPath+"/dialog.plist")){
@@ -548,17 +558,39 @@ class DiaryEditViewController: UIViewController, SendDataDelegate, UITextFieldDe
     }
     
     
-    @IBOutlet weak var reviewInputText: UITextField!
+    //@IBOutlet weak var reviewInputText: UITextField!
+    @IBOutlet weak var reviewInputText: UITextView!
     
+    //리뷰 글자 수 제한
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        guard let str = textView.text else { return true }
+        let newLength = str.characters.count + text.characters.count - range.length
+        return newLength <= 450
+    }
+
+    //리뷰 입력을 시작할 때 placeholder 지워주기
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
     
-    
-    
+    //리뷰를 작성하지 않았을 때 placeholder 생성해주기
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "  이곳에 리뷰를 입력해 주세요.                                  최대 450자까지 입력 가능합니다."
+            textView.textColor = UIColor.lightGray
+        }
+    }
     
     
     override func viewWillAppear(_ animated: Bool) {
         simpleView.isHidden = false
         normalView.isHidden = true
-        self.textTitle.placeholder = "영화 제목을 입력해 주세요"
+        textTitle.placeholder = "영화 제목을 입력해 주세요"
+        reviewInputText.text = "  이곳에 리뷰를 입력해 주세요.                                  최대 450자까지 입력 가능합니다." //placeholder
+        reviewInputText.textColor = UIColor.lightGray
     }
     
     override func viewDidLoad() {
@@ -602,7 +634,7 @@ class DiaryEditViewController: UIViewController, SendDataDelegate, UITextFieldDe
 
     @objc func keyboardWillShow(_ sender:Notification){
         if reviewInputText.isFirstResponder{
-            self.view.frame.origin.y = -220 //Move view 150 points upward
+            self.view.frame.origin.y = -240 //Move view 150 points upward
         }
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
