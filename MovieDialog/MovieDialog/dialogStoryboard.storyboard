@@ -965,13 +965,13 @@
                                 <rect key="frame" x="16" y="301" width="343" height="349"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="       리뷰를 작성해 주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YYf-aW-SLg">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KTL-jW-ZRc">
                                         <rect key="frame" x="15" y="13" width="314" height="324"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <nil key="textColor"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -1038,7 +1038,7 @@
                         <outlet property="label9" destination="UgS-Ma-NQg" id="qNQ-Eq-Gja"/>
                         <outlet property="movieImage" destination="0Fq-fX-RAB" id="cLX-7s-dg1"/>
                         <outlet property="normalView" destination="VwN-PM-hS0" id="YLY-xh-6la"/>
-                        <outlet property="reviewInputText" destination="YYf-aW-SLg" id="MFf-65-nsg"/>
+                        <outlet property="reviewInputText" destination="KTL-jW-ZRc" id="7hq-X6-I6k"/>
                         <outlet property="simpleView" destination="8cs-Au-MmJ" id="USI-50-7t0"/>
                         <outlet property="star1" destination="7Wt-Vp-sWj" id="XbD-sh-5Ev"/>
                         <outlet property="star2" destination="u6e-YK-SMx" id="Clm-Yc-oLC"/>
