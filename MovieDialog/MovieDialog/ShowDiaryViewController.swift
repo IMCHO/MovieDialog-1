@@ -78,28 +78,11 @@ class ShowDiaryViewController: UIViewController {
         
         
         if let simpleReview = dialog?.simpleReview{
-            var count = 0
+            var simpleString = ""
             for item in simpleReview{
-                count += 1
-                switch(count){
-                case 1: label1.text = "#\(item)"
-                //case 2: label2.text = "#\(item)"
-                //case 3: label3.text = "#\(item)"
-                //case 4: label4.text = "#\(item)"
-                //case 5: label5.text = "#\(item)"
-                //case 6: label6.text = "#\(item)"
-                //case 7: label7.text = "#\(item)"
-                //case 8: label8.text = "#\(item)"
-                //case 9: label9.text = "#\(item)"
-                //case 10: label10.text = "#\(item)"
-                //case 11: label11.text = "#\(item)"
-                //case 12: label12.text = "#\(item)"
-                //case 13: label13.text = "#\(item)"
-                //case 14: label14.text = "#\(item)"
-                default:
-                    break
-                }
+                simpleString += "#\(item)   "
             }
+            label1.text = simpleString
         }
         
         reviewLabel.text = dialog?.review
