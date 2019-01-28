@@ -9,7 +9,11 @@
 import UIKit
 
 class MyGoalListCell: UITableViewCell {
-
+    @IBOutlet weak var goalListTitle: UILabel!
+    @IBOutlet weak var goalListDate: UILabel!
+    @IBOutlet weak var goalListNum: UILabel!
+    @IBOutlet weak var goalListImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
