@@ -23,6 +23,8 @@ class ShowDiaryViewController: UIViewController {
             editView.dialog = self.dialog
         }
     }
+    @IBAction func deleteDialog(_ sender: Any) {
+    }
     
     @IBOutlet weak var titleLabel: UILabel! //영화 이름
     @IBOutlet weak var dateLabel: UILabel! //관람일

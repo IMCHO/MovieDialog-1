@@ -1235,7 +1235,11 @@
                                                     <action selector="editNavButton:" destination="aZo-sU-RVN" id="N7p-Hz-0hY"/>
                                                 </connections>
                                             </barButtonItem>
-                                            <barButtonItem systemItem="trash" id="KKy-Ha-T67"/>
+                                            <barButtonItem systemItem="trash" id="KKy-Ha-T67">
+                                                <connections>
+                                                    <action selector="deleteDialog:" destination="aZo-sU-RVN" id="1v6-XC-DKs"/>
+                                                </connections>
+                                            </barButtonItem>
                                         </rightBarButtonItems>
                                     </navigationItem>
                                 </items>
