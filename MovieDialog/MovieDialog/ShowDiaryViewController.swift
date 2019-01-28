@@ -125,11 +125,17 @@ class ShowDiaryViewController: UIViewController {
             label1.text = simpleString
         }
         
+        if dialog?.simpleReview.count == 0 {
+            label1.text = "간편리뷰가 없습니다."
+        }
+        
         reviewLabel.text = dialog?.review
         
-        if reviewLabel.text == "해당 일기에 기록된 리뷰가 없습니다." {
+        if reviewLabel.text == "" {
+            reviewLabel.text = "해당 일기에 기록된 리뷰가 없습니다."
             reviewLabel.textAlignment = NSTextAlignment.center
         }
+        
     }
     
     
