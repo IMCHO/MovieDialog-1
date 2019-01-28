@@ -174,11 +174,11 @@
                             <size key="itemSize" width="100" height="141"/>
                             <size key="headerReferenceSize" width="10" height="10"/>
                             <size key="footerReferenceSize" width="10" height="10"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="17" minY="0.0" maxX="10" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="monthCollection" id="CvF-NW-fdW" customClass="DialogCollectionViewCell" customModule="MovieDialog" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="10" width="100" height="141"/>
+                                <rect key="frame" x="17" y="10" width="100" height="141"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="141"/>
@@ -2386,6 +2386,6 @@
         <image name="unchecked" width="180" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="35r-qE-sD8"/>
+        <segue reference="mVx-H1-Wy5"/>
     </inferredMetricsTieBreakers>
 </document>
