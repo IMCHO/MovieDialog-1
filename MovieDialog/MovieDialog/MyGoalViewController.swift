@@ -15,6 +15,8 @@ class MyGoalViewController: UIViewController {
     @IBOutlet weak var starImage: UIImageView!
     
     var challenges:[Challenge]=[]
+    var dialogs:[Dialog]=[]
+    var allStar:Int=0
     let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
     let encoder = PropertyListEncoder()
     let decoder = PropertyListDecoder()
@@ -25,7 +27,6 @@ class MyGoalViewController: UIViewController {
         goalList.dataSource = self
         goalList.delegate = self
         // Do any additional setup after loading the view.
-        starNum.text = "총 몇개"
         starImage.image = UIImage(named: "starLevel01")
         
         
@@ -66,6 +67,23 @@ class MyGoalViewController: UIViewController {
             print("기존 데이터 없음")
         }
         
+        if let data=try? Data(contentsOf: URL(fileURLWithPath:documentsPath+"/dialog.plist")){
+            if let decodedDialog=try? decoder.decode([Dialog].self, from: data){
+                dialogs=decodedDialog
+                allStar=0
+                for dialog in dialogs{
+                    allStar+=dialog.star
+                }
+                print(challenges)
+            }else{
+                print("디코딩 실패")
+            }
+        }else{
+            print("기존 데이터 없음")
+        }
+        
+        starNum.text = String(allStar)
+
         goalList.reloadData()
     }
 
