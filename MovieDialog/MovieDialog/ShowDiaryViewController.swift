@@ -136,6 +136,7 @@ class ShowDiaryViewController: UIViewController {
             reviewLabel.textAlignment = NSTextAlignment.center
         }
         
+        
     }
     
     
