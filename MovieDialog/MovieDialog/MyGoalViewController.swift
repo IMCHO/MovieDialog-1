@@ -37,7 +37,7 @@ class MyGoalViewController: UIViewController {
             if let decodedChallenge=try? decoder.decode([Challenge].self, from: data){
                 challenges=decodedChallenge
                 if challenges.count > 0 {
-                    let challenge = challenges[0]
+                    let challenge = challenges[challenges.count - 1]
                     //challenge.time
                     //challenge.time -> Date
                     let startDate = challenge.startTime
@@ -80,7 +80,8 @@ extension MyGoalViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyGoalCell", for: indexPath) as! MyGoalCell
-        if challenges.count > 0 {
+        if challenges.count > 0{
+            challenges = challenges.reversed()
             cell.goalName.text = challenges[indexPath.row].title
             //달성률
             cell.goalRate.text = "\((challenges[indexPath.row].now / challenges[indexPath.row].goal) * 100)%"
