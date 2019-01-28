@@ -23,7 +23,37 @@ class ShowDiaryViewController: UIViewController {
             editView.dialog = self.dialog
         }
     }
+    
+    var dialogs:[Dialog]=[]
+    let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+    let encoder = PropertyListEncoder()
+    let decoder = PropertyListDecoder()
+    
     @IBAction func deleteDialog(_ sender: Any) {
+        if let data=try? Data(contentsOf: URL(fileURLWithPath:documentsPath+"/dialog.plist")){
+            if let decodedDialogs=try? decoder.decode([Dialog].self, from: data){
+                dialogs=decodedDialogs
+                print(dialogs)
+            }else{
+                print("디코딩 실패")
+            }
+        }else{
+            print("기존 데이터 없음")
+        }
+        
+        for (index,d) in dialogs.enumerated(){
+            if dialog?.image==d.image{
+                dialogs.remove(at: index)
+                break
+            }
+        }
+        
+        if let data = try? encoder.encode(dialogs){
+            try? data.write(to: URL(fileURLWithPath: documentsPath + "/dialog.plist"))
+            self.dismiss(animated:true, completion:nil)
+        }else{
+            print("변경사항이 저장되지 않았습니다!")
+        }
     }
     
     @IBOutlet weak var titleLabel: UILabel! //영화 이름
