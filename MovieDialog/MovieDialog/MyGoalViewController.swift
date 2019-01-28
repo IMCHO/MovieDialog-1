@@ -28,12 +28,42 @@ class MyGoalViewController: UIViewController {
         starImage.image = UIImage(named: "starLevel01")
         
         
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         if let data=try? Data(contentsOf: URL(fileURLWithPath:documentsPath+"/challenge.plist")){
             if let decodedChallenge=try? decoder.decode([Challenge].self, from: data){
                 challenges=decodedChallenge
+                if challenges.count > 0 {
+                    let challenge = challenges[0]
+                    //challenge.time
+                    //challenge.time -> Date
+                    let dateString:String = challenge.time
+                    
+                    let dateFormatter = DateFormatter()
+                    
+                    dateFormatter.dateFormat = "yyyy.MM.dd HH:mm:ss"
+                    dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone?
+                    
+                    let date:Date = dateFormatter.date(from: dateString)!
+                    
+                    _ = dateString
+                    let today = Date()
+                    
+                    let calendar = Calendar.current
+                    
+                    // Replace the hour (time) of both dates with 00:00
+                    let date1 = calendar.startOfDay(for: date)
+                    let date2 = calendar.startOfDay(for: today)
+                    
+                    let components = calendar.dateComponents([.day], from: date1, to: date2)
+                    print(components.day)
+                    
+                }
+                
+                
                 print(challenges)
             }else{
                 print("디코딩 실패")
@@ -55,8 +85,15 @@ extension MyGoalViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyGoalCell", for: indexPath) as! MyGoalCell
-        cell.goalName.text = challenges[indexPath.row].title
-        cell.goalRate.text = "목표 달성률"
+        if challenges.count > 0 {
+            cell.goalName.text = challenges[indexPath.row].title
+            //달성률
+            cell.goalRate.text = "\((challenges[indexPath.row].now / challenges[indexPath.row].goal) * 100)%"
+            
+        }
+        cell.progressBack.layer.cornerRadius = 10
+        cell.progressFront.layer.cornerRadius = 7
+        
         
         return cell
     }
@@ -64,7 +101,7 @@ extension MyGoalViewController: UITableViewDataSource{
 
 extension MyGoalViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 130
     }
 }
 

@@ -10,8 +10,11 @@ import UIKit
 
 class MyGoalCell: UITableViewCell {
     
-    @IBOutlet weak var goalName: UILabel!
-    @IBOutlet weak var goalRate: UILabel!
+    @IBOutlet weak var goalName: UILabel!   //목표 이름
+    @IBOutlet weak var goalRate: UILabel!   //목표 달성률
+    @IBOutlet weak var progressFront: UIView!   //목표 진행 바
+    @IBOutlet weak var progressBack: UIView!    //목표 진행 바 배경
+    @IBOutlet weak var goalDday: UILabel!   //목표 디데이
     
     override func awakeFromNib() {
         super.awakeFromNib()
