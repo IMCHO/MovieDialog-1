@@ -18,6 +18,7 @@ class MyGoalViewController: UIViewController {
     let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
     let encoder = PropertyListEncoder()
     let decoder = PropertyListDecoder()
+    var components: DateComponents!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +52,7 @@ class MyGoalViewController: UIViewController {
                     let date1 = calendar.startOfDay(for: startDate)
                     let date2 = calendar.startOfDay(for: finishDate)
                     
-                    let components = calendar.dateComponents([.day], from: date1, to: date2)
+                    components = calendar.dateComponents([.day], from: date1, to: date2)
                     print(components.day)
                     
                 }
@@ -91,6 +92,10 @@ extension MyGoalViewController: UITableViewDataSource{
         }
         cell.progressBack.layer.cornerRadius = 10
         cell.progressFront.layer.cornerRadius = 7
+     
+        if let day = components.day {
+            cell.goalDday.text = "D - \(day)"
+        }
         
         
         return cell
