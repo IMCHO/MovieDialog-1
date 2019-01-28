@@ -78,6 +78,14 @@ class AddGoalView: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        if let data=try? Data(contentsOf: URL(fileURLWithPath:documentsPath+"/challenge.plist")){
+            if let decodedChallenge=try? decoder.decode([Challenge].self, from: data){
+                challenges=decodedChallenge
+                print(challenges)
+            }else{
+                print("디코딩 실패")
+            }
+        }
     
     }
     
