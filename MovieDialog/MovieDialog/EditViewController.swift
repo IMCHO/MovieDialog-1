@@ -72,6 +72,20 @@ class EditViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
             optionalFreeReviewText = ""
         }
         
+        if star5.isSelected == true{
+            countStar = 5
+        } else if star4.isSelected == true {
+            countStar = 4
+        } else if star3.isSelected == true {
+            countStar = 3
+        } else if star2.isSelected == true {
+            countStar = 2
+        } else if star1.isSelected == true {
+            countStar = 1
+        } else {
+            countStar = 0
+        }
+        
         //-----객체 생성
         let newDiary = Dialog(title: textTitle.text!, image: imageName, date: date.text!, star: countStar, simpleReview: checkBoxChecked(), review: optionalFreeReviewText, createdDate: originalCreatedDate!)
         
@@ -232,6 +246,7 @@ class EditViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
     @IBOutlet weak var star4: UIButton!
     @IBOutlet weak var star5: UIButton!
     var countStar:Int = 0
+    
     
     @IBAction func handleStar1(_ sender: Any) {
         star1.isSelected = true
