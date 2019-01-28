@@ -33,7 +33,16 @@ class EditViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
     
     //-----Save button
     @IBAction func saveNavButton(_ sender: Any) {
-    
+        if textTitle.text == "" {
+            let alert = UIAlertController(title: "영화 제목을 입력해 주세요.", message: nil, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title:"확인", style:UIAlertAction.Style.default) { UIAlertAction in })
+            present(alert, animated:true, completion:nil)
+            return
+        }
+        
+        //기존 데이터 수정
+        
+        self.dismiss(animated:true, completion:nil)
     }
     
     @IBAction func selectPicButtonUpdated(_ sender: UIButton) {

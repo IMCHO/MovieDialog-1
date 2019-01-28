@@ -9,7 +9,13 @@
 import UIKit
 
 class ShowAllViewController: UIViewController{
-
+    var check = true
+    @IBOutlet weak var onboard: UIView!
+    @IBAction func onboardButton(_ sender: Any) {
+        check = false
+        onboard.isHidden = true
+    }
+    
     @IBOutlet weak var sort: UISegmentedControl!
     @IBOutlet weak var collectionView1: UICollectionView!
     @IBOutlet weak var collectionView2: UICollectionView!
@@ -58,6 +64,12 @@ class ShowAllViewController: UIViewController{
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        if check == true {
+            onboard.isHidden = false
+        } else {
+            onboard.isHidden = true
+        }
         
         indexChange(sort)
         
