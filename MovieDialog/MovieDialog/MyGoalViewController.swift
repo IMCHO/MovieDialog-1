@@ -43,7 +43,6 @@ class MyGoalViewController: UIViewController {
                     let dateString:String = challenge.time
                     
                     let dateFormatter = DateFormatter()
-                    
                     dateFormatter.dateFormat = "yyyy.MM.dd HH:mm:ss"
                     dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone?
                     
@@ -93,7 +92,7 @@ extension MyGoalViewController: UITableViewDataSource{
         }
         cell.progressBack.layer.cornerRadius = 10
         cell.progressFront.layer.cornerRadius = 7
-        
+        cell.progressFront.frame.size.width = CGFloat(298 * (challenges[indexPath.row].now / challenges[indexPath.row].goal))
         
         return cell
     }
