@@ -33,7 +33,7 @@ class ShowDiaryViewController: UIViewController {
         if let data=try? Data(contentsOf: URL(fileURLWithPath:documentsPath+"/dialog.plist")){
             if let decodedDialogs=try? decoder.decode([Dialog].self, from: data){
                 dialogs=decodedDialogs
-                print(dialogs)
+//                print(dialogs)
             }else{
                 print("디코딩 실패")
             }

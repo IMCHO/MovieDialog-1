@@ -12,6 +12,10 @@ import Photos
 class EditViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
     var dialog:Dialog?
+    var dialogs:[Dialog]=[]
+    let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+    let encoder = PropertyListEncoder()
+    let decoder = PropertyListDecoder()
     
     let picker = UIImagePickerController() //갤러리 및 카메라에서 사진을 불러올 때 사용
     
@@ -72,7 +76,33 @@ class EditViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
         let newDiary = Dialog(title: textTitle.text!, image: imageName, date: date.text!, star: countStar, simpleReview: checkBoxChecked(), review: optionalFreeReviewText, createdDate: originalCreatedDate!)
         
         //createdDate 비교
-
+        
+        dialog=newDiary
+        
+        if let data=try? Data(contentsOf: URL(fileURLWithPath:documentsPath+"/dialog.plist")){
+            if let decodedDialogs=try? decoder.decode([Dialog].self, from: data){
+                dialogs=decodedDialogs
+                print(dialogs)
+            }else{
+                print("디코딩 실패")
+            }
+        }else{
+            print("기존 데이터 없음")
+        }
+        
+        for (index,d) in dialogs.enumerated(){
+            if dialog?.createdDate==d.createdDate{
+                dialogs[index]=dialog!
+                break
+            }
+        }
+        
+        if let data = try? encoder.encode(dialogs){
+            try? data.write(to: URL(fileURLWithPath: documentsPath + "/dialog.plist"))
+            self.dismiss(animated:true, completion:nil)
+        }else{
+            print("변경사항이 저장되지 않았습니다!")
+        }
         
         self.dismiss(animated:true, completion:nil)
     }
