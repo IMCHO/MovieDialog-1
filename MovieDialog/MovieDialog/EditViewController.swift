@@ -40,9 +40,138 @@ class EditViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
             return
         }
         
-        //기존 데이터 수정
+        let originalCreatedDate = dialog?.createdDate
+        
+        
+        //-----일기 생성일 계산
+        let today = NSDate() //현재 날짜
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd-HH-mm-ss"
+        //let todayString = dateFormatter.string(from: today as Date)
+        
+        //-----사진 저장시 이름 계산
+        let dateFormatterForFileName = DateFormatter()
+        dateFormatterForFileName.dateFormat = "yyyy_MM_dd_HH_mm_ss"
+        let imageName = dateFormatterForFileName.string(from: today as Date)+".png"
+        
+        //-----사진 저장
+        if let saveImg = movieImage.image{
+            saveImage(incomeImage: saveImg, imageName: imageName) //사진 저장
+        }
+        
+        //-----리뷰
+        var optionalFreeReviewText = ""
+        if let tempReviewText = reviewInputText.text{ //리뷰가 비어있지 않다면 저장
+            optionalFreeReviewText = tempReviewText
+        }
+        if reviewInputText.textColor == UIColor.lightGray { //리뷰가 placeholder라면
+            optionalFreeReviewText = ""
+        }
+        
+        //-----객체 생성
+        let newDiary = Dialog(title: textTitle.text!, image: imageName, date: date.text!, star: countStar, simpleReview: checkBoxChecked(), review: optionalFreeReviewText, createdDate: originalCreatedDate!)
+        
+        //createdDate 비교
+
         
         self.dismiss(animated:true, completion:nil)
+    }
+    
+    func saveImage(incomeImage:UIImage, imageName:String){
+        let fileManager = FileManager.default
+        let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
+        
+        //print(imagePath)
+        let image = incomeImage //이미지 받아오기(매개변수)
+        let data = image.pngData() //png
+        fileManager.createFile(atPath: imagePath as String, contents: data, attributes: nil) //도큐먼트에 저장
+    }
+    
+    func checkBoxChecked() -> [String] {
+        var simpleReviewResult:[String] = []
+        if check1.isSelected == true{
+            simpleReviewResult += [label1.text!]
+        }
+        if check2.isSelected == true{
+            simpleReviewResult += [label2.text!]
+        }
+        if check3.isSelected == true{
+            simpleReviewResult += [label3.text!]
+        }
+        if check4.isSelected == true{
+            simpleReviewResult += [label4.text!]
+        }
+        if check5.isSelected == true{
+            simpleReviewResult += [label5.text!]
+        }
+        if check6.isSelected == true{
+            simpleReviewResult += [label6.text!]
+        }
+        if check7.isSelected == true{
+            simpleReviewResult += [label7.text!]
+        }
+        if check8.isSelected == true{
+            simpleReviewResult += [label8.text!]
+        }
+        if check9.isSelected == true{
+            simpleReviewResult += [label9.text!]
+        }
+        if check10.isSelected == true{
+            simpleReviewResult += [label10.text!]
+        }
+        if check11.isSelected == true{
+            simpleReviewResult += [label11.text!]
+        }
+        if check12.isSelected == true{
+            simpleReviewResult += [label12.text!]
+        }
+        if check13.isSelected == true{
+            simpleReviewResult += [label13.text!]
+        }
+        if check14.isSelected == true{
+            simpleReviewResult += [label14.text!]
+        }
+        if check15.isSelected == true{
+            simpleReviewResult += [label15.text!]
+        }
+        if check16.isSelected == true{
+            simpleReviewResult += [label16.text!]
+        }
+        if check17.isSelected == true{
+            simpleReviewResult += [label17.text!]
+        }
+        if check18.isSelected == true{
+            simpleReviewResult += [label18.text!]
+        }
+        if check19.isSelected == true{
+            simpleReviewResult += [label19.text!]
+        }
+        if check20.isSelected == true{
+            simpleReviewResult += [label20.text!]
+        }
+        if check21.isSelected == true{
+            simpleReviewResult += [label21.text!]
+        }
+        if check22.isSelected == true{
+            simpleReviewResult += [label22.text!]
+        }
+        if check23.isSelected == true{
+            simpleReviewResult += [label23.text!]
+        }
+        if check24.isSelected == true{
+            simpleReviewResult += [label24.text!]
+        }
+        if check25.isSelected == true{
+            simpleReviewResult += [label25.text!]
+        }
+        if check26.isSelected == true{
+            simpleReviewResult += [label26.text!]
+        }
+        if check27.isSelected == true{
+            simpleReviewResult += [label27.text!]
+        }
+        
+        return simpleReviewResult
     }
     
     @IBAction func selectPicButtonUpdated(_ sender: UIButton) {
