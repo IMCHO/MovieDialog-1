@@ -76,7 +76,7 @@ class DiaryEditViewController: UIViewController, SendDataDelegate, UITextFieldDe
             optionalFreeReviewText = tempReviewText
         }
         if reviewInputText.textColor == UIColor.lightGray { //리뷰가 placeholder라면
-            optionalFreeReviewText = "해당 일기에 기록된 리뷰가 없습니다."
+            optionalFreeReviewText = ""
         }
         
         //-----객체 생성
