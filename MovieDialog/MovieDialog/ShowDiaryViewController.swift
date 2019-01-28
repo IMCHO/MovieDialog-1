@@ -59,6 +59,7 @@ class ShowDiaryViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel! //영화 이름
     @IBOutlet weak var dateLabel: UILabel! //관람일
     @IBOutlet weak var imageLabel: UIImageView! //영화 포스터
+    @IBOutlet weak var imageBackground: UIImageView! //영화 포스터
     
     @IBOutlet weak var star1: UIButton!
     @IBOutlet weak var star2: UIButton!
@@ -116,8 +117,6 @@ class ShowDiaryViewController: UIViewController {
             star5.isSelected = false
         }
         
-        
-        
         if let simpleReview = dialog?.simpleReview{
             var simpleString = ""
             for item in simpleReview{
@@ -127,6 +126,10 @@ class ShowDiaryViewController: UIViewController {
         }
         
         reviewLabel.text = dialog?.review
+        
+        if reviewLabel.text == "해당 일기에 기록된 리뷰가 없습니다." {
+            reviewLabel.textAlignment = NSTextAlignment.center
+        }
     }
     
     
@@ -144,6 +147,7 @@ class ShowDiaryViewController: UIViewController {
         let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
         if fileManager.fileExists(atPath:imagePath){
             imageLabel.image = UIImage(contentsOfFile:imagePath)
+            imageBackground.image = UIImage(contentsOfFile:imagePath)
         } else{
             print("no image")
         }

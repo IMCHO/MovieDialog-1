@@ -76,7 +76,7 @@ class DiaryEditViewController: UIViewController, SendDataDelegate, UITextFieldDe
             optionalFreeReviewText = tempReviewText
         }
         if reviewInputText.textColor == UIColor.lightGray { //리뷰가 placeholder라면
-            optionalFreeReviewText = "               해당 일기에 기록된 리뷰가 없습니다."
+            optionalFreeReviewText = "해당 일기에 기록된 리뷰가 없습니다."
         }
         
         //-----객체 생성
@@ -573,6 +573,7 @@ class DiaryEditViewController: UIViewController, SendDataDelegate, UITextFieldDe
         if textView.textColor == UIColor.lightGray {
             textView.text = nil
             textView.textColor = UIColor.black
+            textView.textAlignment = NSTextAlignment.left
         }
     }
     
@@ -581,6 +582,7 @@ class DiaryEditViewController: UIViewController, SendDataDelegate, UITextFieldDe
         if textView.text.isEmpty {
             textView.text = "  이곳에 리뷰를 입력해 주세요.                                  최대 450자까지 입력 가능합니다."
             textView.textColor = UIColor.lightGray
+            textView.textAlignment = NSTextAlignment.center
         }
     }
     
@@ -591,6 +593,7 @@ class DiaryEditViewController: UIViewController, SendDataDelegate, UITextFieldDe
         textTitle.placeholder = "영화 제목을 입력해 주세요"
         reviewInputText.text = "  이곳에 리뷰를 입력해 주세요.                                  최대 450자까지 입력 가능합니다." //placeholder
         reviewInputText.textColor = UIColor.lightGray
+        reviewInputText.textAlignment = NSTextAlignment.center
     }
     
     override func viewDidLoad() {
