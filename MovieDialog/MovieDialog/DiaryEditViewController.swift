@@ -57,7 +57,7 @@ class DiaryEditViewController: UIViewController, SendDataDelegate, UITextFieldDe
         //-----일기 생성일 계산
         let today = NSDate() //현재 날짜
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = "yyyy-MM-dd-HH-mm-ss"
         let todayString = dateFormatter.string(from: today as Date)
         
         //-----사진 저장시 이름 계산
