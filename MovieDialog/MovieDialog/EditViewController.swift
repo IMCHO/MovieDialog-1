@@ -469,6 +469,42 @@ class EditViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
             star5.isSelected = false
         }
         
+        if let simple = dialog?.simpleReview {
+            for item in simple {
+                switch(item) {
+                case label1.text: check1.isSelected = true
+                case label2.text: check2.isSelected = true
+                case label3.text: check3.isSelected = true
+                case label4.text: check4.isSelected = true
+                case label5.text: check5.isSelected = true
+                case label6.text: check6.isSelected = true
+                case label7.text: check7.isSelected = true
+                case label8.text: check8.isSelected = true
+                case label9.text: check9.isSelected = true
+                case label10.text: check10.isSelected = true
+                case label11.text: check11.isSelected = true
+                case label12.text: check12.isSelected = true
+                case label13.text: check13.isSelected = true
+                case label13.text: check14.isSelected = true
+                case label15.text: check15.isSelected = true
+                case label16.text: check16.isSelected = true
+                case label17.text: check17.isSelected = true
+                case label18.text: check18.isSelected = true
+                case label19.text: check19.isSelected = true
+                case label20.text: check20.isSelected = true
+                case label21.text: check21.isSelected = true
+                case label22.text: check22.isSelected = true
+                case label23.text: check23.isSelected = true
+                case label24.text: check24.isSelected = true
+                case label25.text: check25.isSelected = true
+                case label26.text: check26.isSelected = true
+                case label27.text: check27.isSelected = true
+                default:
+                    break
+                }
+            }
+        }
+        
         reviewInputText.text = dialog?.review
         
     }
