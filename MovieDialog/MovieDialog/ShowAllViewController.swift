@@ -76,7 +76,7 @@ class ShowAllViewController: UIViewController{
         if let data=try? Data(contentsOf: URL(fileURLWithPath:documentsPath+"/dialog.plist")){
             if let decodedDialogs=try? decoder.decode([Dialog].self, from: data){
                 dialogs=decodedDialogs
-                print(dialogs)
+//                print(dialogs)
             }else{
                 print("디코딩 실패")
             }
@@ -104,8 +104,8 @@ class ShowAllViewController: UIViewController{
         }
 //        monthDic=monthDic.sorted{$0.0>$1.0}
         month=Array(monthDic.keys)
-        print(monthDic)
-        print(month)
+//        print(monthDic)
+//        print(month)
         
         collectionView1.reloadData()
         collectionView2.reloadData()
