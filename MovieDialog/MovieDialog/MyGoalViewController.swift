@@ -64,6 +64,8 @@ class MyGoalViewController: UIViewController {
         }else{
             print("기존 데이터 없음")
         }
+        
+        goalList.reloadData()
     }
 
 }
