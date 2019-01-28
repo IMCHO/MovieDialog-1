@@ -61,6 +61,27 @@
                                 <rect key="frame" x="243" y="411" width="100" height="141"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dO-qg-Jai">
+                                <rect key="frame" x="164" y="421" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1U-0X-RgG">
+                                <rect key="frame" x="56" y="560" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RjK-oa-n17">
+                                <rect key="frame" x="272" y="560" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="T02-1t-JBm"/>
@@ -68,9 +89,12 @@
                     <navigationItem key="navigationItem" title="내 정보" id="0bh-eq-9S5"/>
                     <connections>
                         <outlet property="firstMovie" destination="Tbm-Mz-iYG" id="lkD-f6-mwe"/>
+                        <outlet property="firstTimes" destination="8dO-qg-Jai" id="xqO-pT-Ktq"/>
                         <outlet property="secondMovie" destination="Van-qU-xTp" id="tur-do-1hD"/>
+                        <outlet property="secondTimes" destination="D1U-0X-RgG" id="cB3-MM-hwK"/>
                         <outlet property="tableView" destination="bjg-3h-43V" id="2I3-GY-3Af"/>
                         <outlet property="thirdMovie" destination="uXm-Ap-Cck" id="2r6-re-s9j"/>
+                        <outlet property="thirdTimes" destination="RjK-oa-n17" id="KvI-Vd-3g9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lcd-gt-y0c" userLabel="First Responder" sceneMemberID="firstResponder"/>

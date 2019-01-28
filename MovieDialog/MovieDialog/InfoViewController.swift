@@ -16,7 +16,12 @@ class InfoViewController: UIViewController {
     @IBOutlet weak var secondMovie: UIImageView!
     @IBOutlet weak var thirdMovie: UIImageView!
     
+    @IBOutlet weak var firstTimes: UILabel!
+    @IBOutlet weak var secondTimes: UILabel!
+    @IBOutlet weak var thirdTimes: UILabel!
+    
     var rankMovie:[UIImageView]=[]
+    var rankTimes:[UILabel]=[]
     
     var dialogs:[Dialog]=[]
     var timesOfMovie:[String:Int]=[:]
@@ -83,7 +88,7 @@ class InfoViewController: UIViewController {
         }
         
         rankMovie=[firstMovie,secondMovie,thirdMovie]
-        
+        rankTimes=[firstTimes,secondTimes,thirdTimes]
         //            cell.detailTextLabel?.text = timesOfMovie.sorted{$0.1>$1.1}[0].0
         let rank=timesOfMovie.sorted{$0.1>$1.1}
         print(rank)
@@ -93,6 +98,7 @@ class InfoViewController: UIViewController {
             for dialog in dialogs{
                 if dialog.title==r.key{
                     rankMovie[index].image=UIImage(contentsOfFile: getImage(imageName: dialog.image))
+                    rankTimes[index].text=String(r.value)+"번"
                     break
                 }
             }
