@@ -431,8 +431,7 @@ class EditViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
         simpleView.isHidden = false
         normalView.isHidden = true
         textTitle.placeholder = "영화 제목을 입력해 주세요"
-        reviewInputText.text = "  이곳에 리뷰를 입력해 주세요.                                  최대 450자까지 입력 가능합니다." //placeholder
-        reviewInputText.textColor = UIColor.lightGray
+        
         
         textTitle.text = dialog?.title //제목 설정
         getImage(imageName: (dialog?.image)!)
@@ -515,6 +514,11 @@ class EditViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
         }
         
         reviewInputText.text = dialog?.review
+        if reviewInputText.text.count == 0 {
+            reviewInputText.text = "  이곳에 리뷰를 입력해 주세요.                                  최대 450자까지 입력 가능합니다." //placeholder
+            reviewInputText.textColor = UIColor.lightGray
+            reviewInputText.textAlignment = NSTextAlignment.center
+        }
         
     }
     
