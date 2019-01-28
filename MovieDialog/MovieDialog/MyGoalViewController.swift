@@ -82,11 +82,13 @@ extension MyGoalViewController: UITableViewDataSource{
             cell.goalName.text = challenges[indexPath.row].title
             //달성률
             cell.goalRate.text = "\((challenges[indexPath.row].now / challenges[indexPath.row].goal) * 100)%"
+            //진행바
+            cell.progressFront.frame.size.width = CGFloat(298 * (challenges[indexPath.row].now / challenges[indexPath.row].goal))
             
         }
         cell.progressBack.layer.cornerRadius = 10
         cell.progressFront.layer.cornerRadius = 7
-        cell.progressFront.frame.size.width = CGFloat(298 * (challenges[indexPath.row].now / challenges[indexPath.row].goal))
+        
         
         return cell
     }
@@ -97,5 +99,6 @@ extension MyGoalViewController: UITableViewDelegate{
         return 130
     }
 }
+
 
 
