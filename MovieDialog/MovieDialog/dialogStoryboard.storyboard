@@ -1234,7 +1234,7 @@
                         <outlet property="star4" destination="qGs-oR-G06" id="x5R-bK-7DU"/>
                         <outlet property="star5" destination="tc6-Cv-Daa" id="Jcm-Yz-YP2"/>
                         <outlet property="titleLabel" destination="GTb-8F-K0k" id="fwo-T8-kJE"/>
-                        <segue destination="VFK-j6-LGm" kind="showDetail" identifier="EditSegue" id="diP-to-Iq3"/>
+                        <segue destination="VFK-j6-LGm" kind="presentation" identifier="EditSegue" id="diP-to-Iq3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WTl-kx-J97" userLabel="First Responder" sceneMemberID="firstResponder"/>

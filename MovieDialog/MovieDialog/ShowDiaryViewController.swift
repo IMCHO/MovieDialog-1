@@ -18,8 +18,9 @@ class ShowDiaryViewController: UIViewController {
     //-----edit button
     @IBAction func editNavButton(_ sender: Any) {
         if let editView = self.storyboard!.instantiateViewController(withIdentifier: "EditID") as? EditViewController{
+            //self.performSegue(withIdentifier: "EditSegue", sender: nil)
+            present(editView, animated: true, completion:nil)
             editView.dialog = self.dialog
-            self.performSegue(withIdentifier: "EditSegue", sender: nil)
         }
     }
     

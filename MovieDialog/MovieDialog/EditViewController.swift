@@ -426,8 +426,10 @@ class EditViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
         reviewInputText.textColor = UIColor.lightGray
         
         textTitle.text = dialog?.title //제목 설정
-        //getImage(imageName: (dialog?.image)!)
+        getImage(imageName: (dialog?.image)!)
         date.text = dialog?.date //관람일 설정
+        self.date.font = UIFont(name:self.date.font.fontName, size:17)
+        self.date.frame.origin = CGPoint(x:207, y:150)
         switch(dialog?.star) {
         case 1:
             star1.isSelected = true
@@ -468,6 +470,7 @@ class EditViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
         }
         
         reviewInputText.text = dialog?.review
+        
     }
     
     func getImage(imageName:String){
