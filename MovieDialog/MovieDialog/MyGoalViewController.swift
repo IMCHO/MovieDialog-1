@@ -107,13 +107,14 @@ extension MyGoalViewController: UITableViewDataSource{
             //진행바
             cell.progressFront.frame.size.width = CGFloat(298 * (challenges[indexPath.row].now / challenges[indexPath.row].goal))
             
+            if let day = components.day {
+                cell.goalDday.text = "D - \(day)"
+            }
         }
         cell.progressBack.layer.cornerRadius = 10
         cell.progressFront.layer.cornerRadius = 7
      
-        if let day = components.day {
-            cell.goalDday.text = "D - \(day)"
-        }
+        
         
         
         return cell
