@@ -26,13 +26,15 @@ class MyGoalListView: UITableViewController {
             if let decodedChallenge=try? decoder.decode([Challenge].self, from: data){
                 challenges=decodedChallenge
                 
-                print(challenges)
             }else{
                 print("디코딩 실패")
             }
         }else{
             print("기존 데이터 없음")
         }
+        
+        challenges = challenges.reversed()
+        print(challenges)
     }
 
     // MARK: - Table view data source
@@ -47,9 +49,8 @@ class MyGoalListView: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyGoalListCell", for: indexPath) as! MyGoalListCell
-        
+
         if challenges.count > 0 {
-            challenges = challenges.reversed()
             cell.goalListTitle.text = challenges[indexPath.row].title
             cell.goalListDate.text = "\(challenges[indexPath.row].startTime) - \(challenges[indexPath.row].time)"
             cell.goalListNum.text = "목표 영화 개수 : \(challenges[indexPath.row].goal)"

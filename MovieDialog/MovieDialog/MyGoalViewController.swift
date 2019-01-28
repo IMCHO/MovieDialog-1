@@ -54,12 +54,12 @@ class MyGoalViewController: UIViewController {
                     let date2 = calendar.startOfDay(for: finishDate)
                     
                     components = calendar.dateComponents([.day], from: date1, to: date2)
-                    print(components.day)
+//                    print(components.day)
                     
                 }
                 
                 
-                print(challenges)
+//                print(challenges)
             }else{
                 print("디코딩 실패")
             }
@@ -74,7 +74,7 @@ class MyGoalViewController: UIViewController {
                 for dialog in dialogs{
                     allStar+=dialog.star
                 }
-                print(challenges)
+//                print(challenges)
             }else{
                 print("디코딩 실패")
             }
@@ -83,6 +83,7 @@ class MyGoalViewController: UIViewController {
         }
         
         starNum.text = String(allStar)
+        challenges = challenges.reversed()
 
         goalList.reloadData()
     }
@@ -99,11 +100,11 @@ extension MyGoalViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyGoalCell", for: indexPath) as! MyGoalCell
+        
         if challenges.count > 0{
-            challenges = challenges.reversed()
             cell.goalName.text = challenges[indexPath.row].title
             //달성률
-            cell.goalRate.text = "\((challenges[indexPath.row].now / challenges[indexPath.row].goal) * 100)%"
+            cell.goalRate.text = String(Float(challenges[indexPath.row].now*100 / challenges[indexPath.row].goal))+"%"
             //진행바
             cell.progressFront.frame.size.width = CGFloat(298 * (challenges[indexPath.row].now / challenges[indexPath.row].goal))
             

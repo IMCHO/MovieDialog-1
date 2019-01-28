@@ -29,6 +29,7 @@ class DiaryEditViewController: UIViewController, SendDataDelegate, UITextFieldDe
     @IBOutlet weak var date: UILabel! //관람일
     
     var dialogs:[Dialog]=[]
+    var challenges:[Challenge]=[]
     let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
     let encoder = PropertyListEncoder()
     let decoder = PropertyListDecoder()
@@ -96,7 +97,35 @@ class DiaryEditViewController: UIViewController, SendDataDelegate, UITextFieldDe
         
         if let data = try? encoder.encode(dialogs){
             try? data.write(to: URL(fileURLWithPath: documentsPath + "/dialog.plist"))
+            if let data = try? Data(contentsOf: URL(fileURLWithPath: documentsPath+"/challenge.plist")){
+                if let decodedChallenges=try? decoder.decode([Challenge].self, from: data){
+                    challenges=decodedChallenges
+//                    print(challenges)
+                    
+                    let calendar = Calendar.current
+                    
+                    // Replace the hour (time) of both dates with 00:00
+                    let date1 = calendar.startOfDay(for: challenges[challenges.count-1].startTime)
+                    let date2 = calendar.startOfDay(for: Date())
+                    let date3 = calendar.startOfDay(for: challenges[challenges.count-1].time)
+                    
+                    let components = calendar.dateComponents([.day], from: date1, to: date2)
+                    let components2 = calendar.dateComponents([.day],from:date2,to:date3)
+                    if components.day! >= 0, components2.day! >= 0{
+                        challenges[challenges.count-1].now+=1
+                        
+                        if let data=try? encoder.encode(challenges){
+                            try? data.write(to: URL(fileURLWithPath: documentsPath+"/challenge.plist"))
+                        }
+//                        print(challenges)
+                    }else{
+                        print("시간 조건에 맞지 않음")
+                    }
+                    
+                }
+            }
         }
+
 
         self.dismiss(animated:true, completion:nil)
     }
