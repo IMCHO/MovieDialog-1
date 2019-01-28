@@ -40,22 +40,16 @@ class MyGoalViewController: UIViewController {
                     let challenge = challenges[0]
                     //challenge.time
                     //challenge.time -> Date
-                    let dateString:String = challenge.time
+                    let startDate = challenge.startTime
+                    let finishDate=challenge.time
                     
-                    let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "yyyy.MM.dd HH:mm:ss"
-                    dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone?
-                    
-                    let date:Date = dateFormatter.date(from: dateString)!
-                    
-                    _ = dateString
                     let today = Date()
                     
                     let calendar = Calendar.current
                     
                     // Replace the hour (time) of both dates with 00:00
-                    let date1 = calendar.startOfDay(for: date)
-                    let date2 = calendar.startOfDay(for: today)
+                    let date1 = calendar.startOfDay(for: startDate)
+                    let date2 = calendar.startOfDay(for: finishDate)
                     
                     let components = calendar.dateComponents([.day], from: date1, to: date2)
                     print(components.day)

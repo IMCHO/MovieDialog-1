@@ -10,13 +10,15 @@ import Foundation
 
 class Challenge: Codable {
     var title:String
-    var time:String
+    var time:Date
+    var startTime:Date
     var goal:Int
     var now:Int
     
-    init(title:String,time:String,goal:Int,now:Int) {
+    init(title:String,time:Date,startTime:Date,goal:Int,now:Int) {
         self.title=title
         self.time=time
+        self.startTime=startTime
         self.goal=goal
         self.now=now
     }
@@ -24,6 +26,6 @@ class Challenge: Codable {
 
 extension Challenge: CustomStringConvertible {
     var description: String {
-        return "Challenge<\(title), \(time), \(goal), \(now)>"
+        return "\(title), \(time), \(startTime), \(goal), \(now)"
     }
 }

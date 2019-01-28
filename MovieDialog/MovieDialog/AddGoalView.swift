@@ -26,6 +26,9 @@ class AddGoalView: UIViewController {
     //목표 기간 선택
     @IBOutlet weak var startDay: UILabel!
     @IBOutlet weak var finishDay: UILabel!
+    
+    var finish:Date!
+    var start:Date!
     //시작 날짜 선택
     @IBAction func startDate(_ sender: Any) {
         let startDate: UIDatePicker = UIDatePicker()
@@ -37,6 +40,7 @@ class AddGoalView: UIViewController {
         alert.addAction(UIAlertAction(title:"완료", style:.default, handler:{result in
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy.MM.dd"
+            self.start=startDate.date
             let dateString = dateFormatter.string(from:startDate.date)
             self.startDay.text = dateString //시작 날짜 받아와서 저장
             
@@ -56,6 +60,7 @@ class AddGoalView: UIViewController {
         alert.addAction(UIAlertAction(title:"완료", style:.default, handler:{result in
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy.MM.dd"
+            self.finish=finishDate.date
             let dateString = dateFormatter.string(from:finishDate.date)
             self.finishDay.text = dateString //종료 날짜 받아와서 저장
             
@@ -79,8 +84,8 @@ class AddGoalView: UIViewController {
     //목표 저장
     @IBAction func saveGoal(_ sender: Any) {
 
-        if let goalTitle=inputTitle.text, let goalNum=inputNum.text, let finishTime=finishDay.text{
-            let newChallenge=Challenge(title:goalTitle, time:finishTime, goal:Int(goalNum)!,now:0)
+        if let goalTitle=inputTitle.text, let goalNum=inputNum.text, let finishTime=finish, let startTime=start{
+            let newChallenge=Challenge(title:goalTitle, time:finishTime, startTime:startTime,goal:Int(goalNum)!,now:0)
             challenges.append(newChallenge)
 //            print(challenges)
 //            print(newChallenge)
