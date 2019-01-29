@@ -60,7 +60,11 @@ extension MyGoalViewController: UITableViewDataSource{
         if section==0{
             return 1
         }else{
-            return challenges.count-1
+            if challenges.count==0{
+                return 0
+            }else{
+                return challenges.count-1
+            }
         }
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -76,13 +80,11 @@ extension MyGoalViewController: UITableViewDataSource{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         
-        if indexPath.section==0{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "MyGoalCell", for: indexPath) as! MyGoalCell
-            
-            if challenges.count>0{
-                
+        if challenges.count>0{
+            if indexPath.section==0{
+                let cell = tableView.dequeueReusableCell(withIdentifier: "MyGoalCell", for: indexPath) as! MyGoalCell
                 let challenge = challenges[indexPath.row]
-
+                
                 cell.goalName.text = challenge.title
                 //달성률
                 
@@ -100,7 +102,7 @@ extension MyGoalViewController: UITableViewDataSource{
                 let date1 = calendar.startOfDay(for: startDate)
                 let date2 = calendar.startOfDay(for: finishDate)
                 let date3 = calendar.startOfDay(for: today)
-
+                
                 let start = dateFormatter.string(from: challenge.startTime)
                 let finish = dateFormatter.string(from: challenge.time)
                 
@@ -118,27 +120,31 @@ extension MyGoalViewController: UITableViewDataSource{
                 
                 cell.progressBack.layer.cornerRadius = 10
                 cell.progressFront.layer.cornerRadius = 7
-            }
-            
-            return cell
-        }else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "MyGoalListCell", for: indexPath) as! MyGoalListCell
-            
-            if challenges.count>0{
+                
+                
+                return cell
+            }else{
+                let cell = tableView.dequeueReusableCell(withIdentifier: "MyGoalListCell", for: indexPath) as! MyGoalListCell
+                
                 cell.goalListTitle.text = challenges[indexPath.row+1].title
-
+                
                 let start = dateFormatter.string(from: challenges[indexPath.row+1].startTime)
                 let finish = dateFormatter.string(from: challenges[indexPath.row+1].time)
                 
                 cell.goalListDate.text=String(start[start.startIndex...start.index(start.endIndex, offsetBy:-10)]) + " ~ " + String(finish[finish.startIndex...finish.index(finish.endIndex, offsetBy:-10)])
                 cell.goalListNum.text = "목표 영화 개수 : \(challenges[indexPath.row+1].goal)"
-            
+                
                 if challenges[indexPath.row+1].now == challenges[indexPath.row+1].goal{
-                    
+                    //                    cell.goalListImage
+                    // 달성 시
+                }else{
+                    // 미 달성시
                 }
+                
+                return cell
             }
-            return cell
         }
+        return tableView.dequeueReusableCell(withIdentifier: "MyGoalListCell", for: indexPath) as! MyGoalListCell
     }
 }
 
