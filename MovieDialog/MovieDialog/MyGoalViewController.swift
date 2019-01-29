@@ -17,7 +17,6 @@ class MyGoalViewController: UIViewController {
     let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
     let encoder = PropertyListEncoder()
     let decoder = PropertyListDecoder()
-    var components: DateComponents!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,27 +33,11 @@ class MyGoalViewController: UIViewController {
             if let decodedChallenge=try? decoder.decode([Challenge].self, from: data){
                 challenges=decodedChallenge
                 if challenges.count > 0 {
-                    let challenge = challenges[challenges.count - 1]
-                    //challenge.time
-                    //challenge.time -> Date
-                    let startDate = challenge.startTime
-                    let finishDate=challenge.time
-                    
-                    let today = Date()
-                    
-                    let calendar = Calendar.current
-                    
-                    // Replace the hour (time) of both dates with 00:00
-                    let date1 = calendar.startOfDay(for: startDate)
-                    let date2 = calendar.startOfDay(for: finishDate)
-                    
-                    components = calendar.dateComponents([.day], from: date1, to: date2)
-                    //                    print(components.day)
-                    
+
                 }
                 
                 
-                //                print(challenges)
+                print(challenges)
             }else{
                 print("디코딩 실패")
             }
@@ -71,26 +54,66 @@ class MyGoalViewController: UIViewController {
 
 extension MyGoalViewController: UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return challenges.count+1
+        if section==0{
+            return 1
+        }else{
+            return challenges.count-1
+        }
     }
-    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section==0{
+            return "진행 중인 목표"
+        }else{
+            return "지난 목표들"
+        }
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        if indexPath.row==0{
+        
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        if indexPath.section==0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "MyGoalCell", for: indexPath) as! MyGoalCell
             
             if challenges.count>0{
-                cell.goalName.text = challenges[indexPath.row].title
-                //달성률
-                cell.goalRate.text = String(Float(challenges[indexPath.row].now*100 / challenges[indexPath.row].goal))+"%"
-                //진행바
-                cell.progressFront.frame.size.width = CGFloat(298 * challenges[indexPath.row].now / challenges[indexPath.row].goal)
                 
-                if let day = components.day {
-                    cell.goalDday.text = "D - \(day)"
+                let challenge = challenges[indexPath.row]
+
+                cell.goalName.text = challenge.title
+                //달성률
+                
+                cell.goalRate.text = String(Float(challenge.now*100 / challenge.goal))+"%"
+                //진행바
+                cell.progressFront.frame.size.width = CGFloat(298 * challenge.now / challenge.goal)
+                
+                let startDate = challenge.startTime
+                let finishDate=challenge.time
+                
+                let today = Date()
+                
+                let calendar = Calendar.current
+                
+                let date1 = calendar.startOfDay(for: startDate)
+                let date2 = calendar.startOfDay(for: finishDate)
+                let date3 = calendar.startOfDay(for: today)
+
+                let start = dateFormatter.string(from: challenge.startTime)
+                let finish = dateFormatter.string(from: challenge.time)
+                
+                var components1 = calendar.dateComponents([.day], from: date3, to: date1)
+                var components2 = calendar.dateComponents([.day], from: date3,to:date2)
+                if components1.day! > 0{
+                    cell.goalDday.text=String(start[start.startIndex...start.index(start.endIndex, offsetBy:-10)]) + " ~ " + String(finish[finish.startIndex...finish.index(finish.endIndex, offsetBy:-10)]) + "   진행 예정"
+                }else if components1.day! <= 0, components2.day! > 0{
+                    if let day=components2.day{
+                        cell.goalDday.text = String(start[start.startIndex...start.index(start.endIndex, offsetBy:-10)]) + " ~ " + String(finish[finish.startIndex...finish.index(finish.endIndex, offsetBy:-10)]) + "   D - \(day)"
+                    }
+                }else if components2.day! <= 0{
+                    cell.goalDday.text="마감"
                 }
                 
                 cell.progressBack.layer.cornerRadius = 10
@@ -100,12 +123,20 @@ extension MyGoalViewController: UITableViewDataSource{
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "MyGoalListCell", for: indexPath) as! MyGoalListCell
-            if indexPath.row != challenges.count{
-                cell.goalListTitle.text = challenges[indexPath.row].title
-                cell.goalListDate.text = "\(challenges[indexPath.row].startTime) - \(challenges[indexPath.row].time)"
-                cell.goalListNum.text = "목표 영화 개수 : \(challenges[indexPath.row].goal)"
-            }
             
+            if challenges.count>0{
+                cell.goalListTitle.text = challenges[indexPath.row+1].title
+
+                let start = dateFormatter.string(from: challenges[indexPath.row+1].startTime)
+                let finish = dateFormatter.string(from: challenges[indexPath.row+1].time)
+                
+                cell.goalListDate.text=String(start[start.startIndex...start.index(start.endIndex, offsetBy:-10)]) + " ~ " + String(finish[finish.startIndex...finish.index(finish.endIndex, offsetBy:-10)])
+                cell.goalListNum.text = "목표 영화 개수 : \(challenges[indexPath.row+1].goal)"
+            
+                if challenges[indexPath.row+1].now == challenges[indexPath.row+1].goal{
+                    
+                }
+            }
             return cell
         }
     }

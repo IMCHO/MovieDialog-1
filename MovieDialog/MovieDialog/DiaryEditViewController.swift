@@ -105,14 +105,16 @@ class DiaryEditViewController: UIViewController, SendDataDelegate, UITextFieldDe
                     let calendar = Calendar.current
                     
                     // Replace the hour (time) of both dates with 00:00
-                    let date1 = calendar.startOfDay(for: challenges[challenges.count-1].startTime)
+                    
+                    let challenge=challenges[challenges.count-1]
+                    let date1 = calendar.startOfDay(for: challenge.startTime)
                     let date2 = calendar.startOfDay(for: Date())
-                    let date3 = calendar.startOfDay(for: challenges[challenges.count-1].time)
+                    let date3 = calendar.startOfDay(for: challenge.time)
                     
                     let components = calendar.dateComponents([.day], from: date1, to: date2)
                     let components2 = calendar.dateComponents([.day],from:date2,to:date3)
-                    if components.day! >= 0, components2.day! >= 0{
-                        challenges[challenges.count-1].now+=1
+                    if components.day! >= 0, components2.day! >= 0, challenge.now<challenge.goal{
+                        challenge.now+=1
                         
                         if let data=try? encoder.encode(challenges){
                             try? data.write(to: URL(fileURLWithPath: documentsPath+"/challenge.plist"))
