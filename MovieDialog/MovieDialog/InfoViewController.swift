@@ -93,7 +93,7 @@ class InfoViewController: UIViewController {
         }else{
             print("저장된 데이터 없음")
         }
-        starNum.text = String(allStar)
+        starNum.text = String(allStar)+" Stars"
 
 //        rankMovie=[firstMovie,secondMovie,thirdMovie]
 //        rankTimes=[firstTimes,secondTimes,thirdTimes]
