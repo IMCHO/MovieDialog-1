@@ -74,32 +74,40 @@ extension MyGoalViewController: UITableViewDataSource{
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return challenges.count+1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MyGoalCell", for: indexPath) as! MyGoalCell
-        
-        if challenges.count > 0{
-            //noGoal.isHidden = true
+
+        if indexPath.row==0{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MyGoalCell", for: indexPath) as! MyGoalCell
             
-            cell.goalName.text = challenges[indexPath.row].title
-            //달성률
-            cell.goalRate.text = String(Float(challenges[indexPath.row].now*100 / challenges[indexPath.row].goal))+"%"
-            //진행바
-            cell.progressFront.frame.size.width = CGFloat(298 * challenges[indexPath.row].now / challenges[indexPath.row].goal)
-            
-            if let day = components.day {
-                cell.goalDday.text = "D - \(day)"
+            if challenges.count>0{
+                cell.goalName.text = challenges[indexPath.row].title
+                //달성률
+                cell.goalRate.text = String(Float(challenges[indexPath.row].now*100 / challenges[indexPath.row].goal))+"%"
+                //진행바
+                cell.progressFront.frame.size.width = CGFloat(298 * challenges[indexPath.row].now / challenges[indexPath.row].goal)
+                
+                if let day = components.day {
+                    cell.goalDday.text = "D - \(day)"
+                }
+                
+                cell.progressBack.layer.cornerRadius = 10
+                cell.progressFront.layer.cornerRadius = 7
             }
+            
+            return cell
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MyGoalListCell", for: indexPath) as! MyGoalListCell
+            if indexPath.row != challenges.count{
+                cell.goalListTitle.text = challenges[indexPath.row].title
+                cell.goalListDate.text = "\(challenges[indexPath.row].startTime) - \(challenges[indexPath.row].time)"
+                cell.goalListNum.text = "목표 영화 개수 : \(challenges[indexPath.row].goal)"
+            }
+            
+            return cell
         }
-        cell.progressBack.layer.cornerRadius = 10
-        cell.progressFront.layer.cornerRadius = 7
-        
-        
-        
-        
-        return cell
     }
 }
 
