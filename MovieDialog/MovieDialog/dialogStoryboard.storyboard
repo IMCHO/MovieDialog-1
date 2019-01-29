@@ -239,12 +239,12 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Diary Edit" id="zjt-Ka-JP4">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="qe6-dA-rhQ">
+                                        <barButtonItem key="leftBarButtonItem" title="취소" id="qe6-dA-rhQ">
                                             <connections>
                                                 <action selector="cancelNavButton:" destination="gNg-zY-EpS" id="5tb-MQ-QQy"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="XER-Ds-Qvc">
+                                        <barButtonItem key="rightBarButtonItem" title="저장" id="XER-Ds-Qvc">
                                             <connections>
                                                 <action selector="saveNavButton:" destination="gNg-zY-EpS" id="ioE-Zo-Djz"/>
                                             </connections>
@@ -711,13 +711,13 @@
                                 </constraints>
                                 <items>
                                     <navigationItem title="My Diary" id="eFk-bo-6F7">
-                                        <barButtonItem key="leftBarButtonItem" title="&lt;" id="Qlr-mW-QmG">
+                                        <barButtonItem key="leftBarButtonItem" title="확인" id="Qlr-mW-QmG">
                                             <connections>
                                                 <action selector="cancelNavButton:" destination="aZo-sU-RVN" id="39g-1v-axu"/>
                                             </connections>
                                         </barButtonItem>
                                         <rightBarButtonItems>
-                                            <barButtonItem systemItem="edit" id="c7D-Mg-0bN">
+                                            <barButtonItem title="수정" id="c7D-Mg-0bN">
                                                 <connections>
                                                     <action selector="editNavButton:" destination="aZo-sU-RVN" id="N7p-Hz-0hY"/>
                                                 </connections>
@@ -881,7 +881,7 @@
                         <viewLayoutGuide key="safeArea" id="NeI-bZ-w31"/>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="IFW-hJ-poi">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="n4c-5p-yeU">
+                        <barButtonItem key="leftBarButtonItem" title="취소" id="n4c-5p-yeU">
                             <connections>
                                 <action selector="cancelNavButton:" destination="0hX-fe-hML" id="Icv-7o-Yzt"/>
                             </connections>
@@ -1070,12 +1070,12 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Diary Edit" id="zl1-dp-gCo">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ANA-Q8-Ys6">
+                                        <barButtonItem key="leftBarButtonItem" title="취소" id="ANA-Q8-Ys6">
                                             <connections>
                                                 <action selector="cancelNavButton:" destination="VFK-j6-LGm" id="CPn-6N-8ag"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="8Hu-EW-hty">
+                                        <barButtonItem key="rightBarButtonItem" title="저장" id="8Hu-EW-hty">
                                             <connections>
                                                 <action selector="saveNavButton:" destination="VFK-j6-LGm" id="GU2-hF-dwK"/>
                                             </connections>
