@@ -106,7 +106,7 @@ extension MyGoalViewController: UITableViewDataSource{
             //달성률
             cell.goalRate.text = String(Float(challenges[indexPath.row].now*100 / challenges[indexPath.row].goal))+"%"
             //진행바
-            cell.progressFront.frame.size.width = CGFloat(298 * (challenges[indexPath.row].now / challenges[indexPath.row].goal))
+            cell.progressFront.frame.size.width = CGFloat(298 * challenges[indexPath.row].now / challenges[indexPath.row].goal)
             
             if let day = components.day {
                 cell.goalDday.text = "D - \(day)"
