@@ -13,6 +13,7 @@ class MyGoalViewController: UIViewController {
     @IBOutlet weak var goalList: UITableView!
     @IBOutlet weak var starNum: UILabel!
     @IBOutlet weak var starImage: UIImageView!
+    @IBOutlet weak var noGoal: UIView!
     
     var challenges:[Challenge]=[]
     var dialogs:[Dialog]=[]
@@ -82,7 +83,7 @@ class MyGoalViewController: UIViewController {
             print("기존 데이터 없음")
         }
         
-        starNum.text = String(allStar)
+        starNum.text = "\(String(allStar)) Stars"
         challenges = challenges.reversed()
 
         goalList.reloadData()
@@ -102,6 +103,8 @@ extension MyGoalViewController: UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyGoalCell", for: indexPath) as! MyGoalCell
         
         if challenges.count > 0{
+            //noGoal.isHidden = true
+            
             cell.goalName.text = challenges[indexPath.row].title
             //달성률
             cell.goalRate.text = String(Float(challenges[indexPath.row].now*100 / challenges[indexPath.row].goal))+"%"
