@@ -114,4 +114,8 @@ class AddGoalView: UIViewController {
         self.view.endEditing(true)
     }
 
+    @IBAction func cancelGoal(_ sender: Any) {
+        self.dismiss(animated:true, completion:nil)
+
+    }
 }
