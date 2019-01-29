@@ -9,10 +9,11 @@
 import UIKit
 
 class MyGoalViewController: UIViewController {
-
+    
     @IBOutlet weak var goalList: UITableView!
     @IBOutlet weak var starNum: UILabel!
     @IBOutlet weak var starImage: UIImageView!
+    @IBOutlet weak var noGoal: UIView!
     
     var challenges:[Challenge]=[]
     var dialogs:[Dialog]=[]
@@ -54,12 +55,12 @@ class MyGoalViewController: UIViewController {
                     let date2 = calendar.startOfDay(for: finishDate)
                     
                     components = calendar.dateComponents([.day], from: date1, to: date2)
-//                    print(components.day)
+                    //                    print(components.day)
                     
                 }
                 
                 
-//                print(challenges)
+                //                print(challenges)
             }else{
                 print("디코딩 실패")
             }
@@ -74,7 +75,7 @@ class MyGoalViewController: UIViewController {
                 for dialog in dialogs{
                     allStar+=dialog.star
                 }
-//                print(challenges)
+                //                print(challenges)
             }else{
                 print("디코딩 실패")
             }
@@ -82,12 +83,12 @@ class MyGoalViewController: UIViewController {
             print("기존 데이터 없음")
         }
         
-        starNum.text = String(allStar)
+        starNum.text = "\(String(allStar)) Stars"
         challenges = challenges.reversed()
-
+        
         goalList.reloadData()
     }
-
+    
 }
 
 extension MyGoalViewController: UITableViewDataSource{
@@ -102,6 +103,8 @@ extension MyGoalViewController: UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyGoalCell", for: indexPath) as! MyGoalCell
         
         if challenges.count > 0{
+            //noGoal.isHidden = true
+            
             cell.goalName.text = challenges[indexPath.row].title
             //달성률
             cell.goalRate.text = String(Float(challenges[indexPath.row].now*100 / challenges[indexPath.row].goal))+"%"
@@ -114,7 +117,7 @@ extension MyGoalViewController: UITableViewDataSource{
         }
         cell.progressBack.layer.cornerRadius = 10
         cell.progressFront.layer.cornerRadius = 7
-     
+        
         
         
         
