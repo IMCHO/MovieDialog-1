@@ -21,12 +21,7 @@ class EditViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
     
     //-----Cancel button
     @IBAction func cancelNavButton(_ sender: Any) {
-        let alert = UIAlertController(title: "저장하지 않은 데이터는 사라집니다", message: "창을 닫으시겠습니까?", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title:"확인", style:UIAlertAction.Style.default) { UIAlertAction in
-            self.dismiss(animated:true, completion:nil)
-        })
-        alert.addAction(UIAlertAction(title:"취소", style:UIAlertAction.Style.cancel){ UIAlertAction in })
-        present(alert, animated:true, completion:nil)
+        self.dismiss(animated:true, completion:nil)
     }
     
     var checkImage:Bool = false

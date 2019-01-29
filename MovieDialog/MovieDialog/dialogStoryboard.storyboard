@@ -1137,7 +1137,7 @@
                                 </constraints>
                                 <items>
                                     <navigationItem title="My Diary" id="eFk-bo-6F7">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="Qlr-mW-QmG">
+                                        <barButtonItem key="leftBarButtonItem" title="&lt;" id="Qlr-mW-QmG">
                                             <connections>
                                                 <action selector="cancelNavButton:" destination="aZo-sU-RVN" id="39g-1v-axu"/>
                                             </connections>

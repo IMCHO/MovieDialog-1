@@ -24,7 +24,7 @@
         <scene sceneID="7eW-RC-pkh">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vC8-zG-Evf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="전체보기" id="sTj-7R-cMJ"/>
+                    <tabBarItem key="tabBarItem" title="전체보기" image="리스트" id="sTj-7R-cMJ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dsB-jv-sgf">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -53,7 +53,7 @@
         <scene sceneID="eSz-me-cWa">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HYd-a8-j42" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="내정보" id="jam-sS-bkC"/>
+                    <tabBarItem key="tabBarItem" title="내정보" image="내 정보 아이콘" id="jam-sS-bkC"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="N9h-U8-thA">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -99,4 +99,8 @@
             <point key="canvasLocation" x="-4596" y="-2834.9325337331338"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="내 정보 아이콘" width="30" height="30"/>
+        <image name="리스트" width="30" height="30"/>
+    </resources>
 </document>

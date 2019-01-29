@@ -29,31 +29,40 @@ class ShowDiaryViewController: UIViewController {
     let encoder = PropertyListEncoder()
     let decoder = PropertyListDecoder()
     
+    //-----delete button
     @IBAction func deleteDialog(_ sender: Any) {
-        if let data=try? Data(contentsOf: URL(fileURLWithPath:documentsPath+"/dialog.plist")){
-            if let decodedDialogs=try? decoder.decode([Dialog].self, from: data){
-                dialogs=decodedDialogs
-//                print(dialogs)
+        let alert = UIAlertController(title: "일기가 삭제됩니다", message: "정말 삭제하시겠습니까?", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title:"확인", style:UIAlertAction.Style.default) { UIAlertAction in
+            if let data=try? Data(contentsOf: URL(fileURLWithPath:self.documentsPath+"/dialog.plist")){
+                if let decodedDialogs=try? self.decoder.decode([Dialog].self, from: data){
+                    self.dialogs=decodedDialogs
+                    //                print(dialogs)
+                }else{
+                    print("디코딩 실패")
+                }
             }else{
-                print("디코딩 실패")
+                print("기존 데이터 없음")
             }
-        }else{
-            print("기존 데이터 없음")
-        }
-        
-        for (index,d) in dialogs.enumerated(){
-            if dialog?.image==d.image{
-                dialogs.remove(at: index)
-                break
+            
+            for (index,d) in self.dialogs.enumerated(){
+                if self.dialog?.image==d.image{
+                    self.dialogs.remove(at: index)
+                    break
+                }
             }
-        }
+            
+            if let data = try? self.encoder.encode(self.dialogs){
+                try? data.write(to: URL(fileURLWithPath: self.documentsPath + "/dialog.plist"))
+                self.dismiss(animated:true, completion:nil)
+            }else{
+                print("변경사항이 저장되지 않았습니다!")
+            }
+        })
+        alert.addAction(UIAlertAction(title:"취소", style:UIAlertAction.Style.cancel){ UIAlertAction in })
+        present(alert, animated:true, completion:nil)
         
-        if let data = try? encoder.encode(dialogs){
-            try? data.write(to: URL(fileURLWithPath: documentsPath + "/dialog.plist"))
-            self.dismiss(animated:true, completion:nil)
-        }else{
-            print("변경사항이 저장되지 않았습니다!")
-        }
+        
+        
     }
     
     @IBOutlet weak var titleLabel: UILabel! //영화 이름
