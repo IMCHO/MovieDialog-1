@@ -164,51 +164,6 @@ class EditViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
         if check12.isSelected == true{
             simpleReviewResult += [label12.text!]
         }
-        if check13.isSelected == true{
-            simpleReviewResult += [label13.text!]
-        }
-        if check14.isSelected == true{
-            simpleReviewResult += [label14.text!]
-        }
-        if check15.isSelected == true{
-            simpleReviewResult += [label15.text!]
-        }
-        if check16.isSelected == true{
-            simpleReviewResult += [label16.text!]
-        }
-        if check17.isSelected == true{
-            simpleReviewResult += [label17.text!]
-        }
-        if check18.isSelected == true{
-            simpleReviewResult += [label18.text!]
-        }
-        if check19.isSelected == true{
-            simpleReviewResult += [label19.text!]
-        }
-        if check20.isSelected == true{
-            simpleReviewResult += [label20.text!]
-        }
-        if check21.isSelected == true{
-            simpleReviewResult += [label21.text!]
-        }
-        if check22.isSelected == true{
-            simpleReviewResult += [label22.text!]
-        }
-        if check23.isSelected == true{
-            simpleReviewResult += [label23.text!]
-        }
-        if check24.isSelected == true{
-            simpleReviewResult += [label24.text!]
-        }
-        if check25.isSelected == true{
-            simpleReviewResult += [label25.text!]
-        }
-        if check26.isSelected == true{
-            simpleReviewResult += [label26.text!]
-        }
-        if check27.isSelected == true{
-            simpleReviewResult += [label27.text!]
-        }
         
         return simpleReviewResult
     }
@@ -333,22 +288,6 @@ class EditViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
     @IBOutlet weak var check10: UIButton!
     @IBOutlet weak var check11: UIButton!
     @IBOutlet weak var check12: UIButton!
-    @IBOutlet weak var check13: UIButton!
-    @IBOutlet weak var check14: UIButton!
-    @IBOutlet weak var check15: UIButton!
-    @IBOutlet weak var check16: UIButton!
-    @IBOutlet weak var check17: UIButton!
-    @IBOutlet weak var check18: UIButton!
-    @IBOutlet weak var check19: UIButton!
-    @IBOutlet weak var check20: UIButton!
-    @IBOutlet weak var check21: UIButton!
-    @IBOutlet weak var check22: UIButton!
-    @IBOutlet weak var check23: UIButton!
-    @IBOutlet weak var check24: UIButton!
-    @IBOutlet weak var check25: UIButton!
-    @IBOutlet weak var check26: UIButton!
-    @IBOutlet weak var check27: UIButton!
-    
     
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var label2: UILabel!
@@ -362,21 +301,6 @@ class EditViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
     @IBOutlet weak var label10: UILabel!
     @IBOutlet weak var label11: UILabel!
     @IBOutlet weak var label12: UILabel!
-    @IBOutlet weak var label13: UILabel!
-    @IBOutlet weak var label14: UILabel!
-    @IBOutlet weak var label15: UILabel!
-    @IBOutlet weak var label16: UILabel!
-    @IBOutlet weak var label17: UILabel!
-    @IBOutlet weak var label18: UILabel!
-    @IBOutlet weak var label19: UILabel!
-    @IBOutlet weak var label20: UILabel!
-    @IBOutlet weak var label21: UILabel!
-    @IBOutlet weak var label22: UILabel!
-    @IBOutlet weak var label23: UILabel!
-    @IBOutlet weak var label24: UILabel!
-    @IBOutlet weak var label25: UILabel!
-    @IBOutlet weak var label26: UILabel!
-    @IBOutlet weak var label27: UILabel!
     
     
     @IBAction func checkAction1(_ sender: Any) {
@@ -461,111 +385,6 @@ class EditViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
             check12.isSelected = false
         } else {
             check12.isSelected = true
-        }
-    }
-    @IBAction func checkAction13(_ sender: Any) {
-        if check13.isSelected == true{
-            check13.isSelected = false
-        } else {
-            check13.isSelected = true
-        }
-    }
-    @IBAction func checkAction14(_ sender: Any) {
-        if check14.isSelected == true{
-            check14.isSelected = false
-        } else {
-            check14.isSelected = true
-        }
-    }
-    @IBAction func checkAction15(_ sender: Any) {
-        if check15.isSelected == true{
-            check15.isSelected = false
-        } else {
-            check15.isSelected = true
-        }
-    }
-    @IBAction func checkAction16(_ sender: Any) {
-        if check16.isSelected == true{
-            check16.isSelected = false
-        } else {
-            check16.isSelected = true
-        }
-    }
-    @IBAction func checkAction17(_ sender: Any) {
-        if check17.isSelected == true{
-            check17.isSelected = false
-        } else {
-            check17.isSelected = true
-        }
-    }
-    @IBAction func checkAction18(_ sender: Any) {
-        if check18.isSelected == true{
-            check18.isSelected = false
-        } else {
-            check18.isSelected = true
-        }
-    }
-    @IBAction func checkAction19(_ sender: Any) {
-        if check19.isSelected == true{
-            check19.isSelected = false
-        } else {
-            check19.isSelected = true
-        }
-    }
-    @IBAction func checkAction20(_ sender: Any) {
-        if check20.isSelected == true{
-            check20.isSelected = false
-        } else {
-            check20.isSelected = true
-        }
-    }
-    @IBAction func checkAction21(_ sender: Any) {
-        if check21.isSelected == true{
-            check21.isSelected = false
-        } else {
-            check21.isSelected = true
-        }
-    }
-    @IBAction func checkAction22(_ sender: Any) {
-        if check22.isSelected == true{
-            check22.isSelected = false
-        } else {
-            check22.isSelected = true
-        }
-    }
-    @IBAction func checkAction23(_ sender: Any) {
-        if check23.isSelected == true{
-            check23.isSelected = false
-        } else {
-            check23.isSelected = true
-        }
-    }
-    @IBAction func checkAction24(_ sender: Any) {
-        if check24.isSelected == true{
-            check24.isSelected = false
-        } else {
-            check24.isSelected = true
-        }
-    }
-    @IBAction func checkAction25(_ sender: Any) {
-        if check25.isSelected == true{
-            check25.isSelected = false
-        } else {
-            check25.isSelected = true
-        }
-    }
-    @IBAction func checkAction26(_ sender: Any) {
-        if check26.isSelected == true{
-            check26.isSelected = false
-        } else {
-            check26.isSelected = true
-        }
-    }
-    @IBAction func checkAction27(_ sender: Any) {
-        if check27.isSelected == true{
-            check27.isSelected = false
-        } else {
-            check27.isSelected = true
         }
     }
     
@@ -661,21 +480,6 @@ class EditViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
                 case label10.text: check10.isSelected = true
                 case label11.text: check11.isSelected = true
                 case label12.text: check12.isSelected = true
-                case label13.text: check13.isSelected = true
-                case label13.text: check14.isSelected = true
-                case label15.text: check15.isSelected = true
-                case label16.text: check16.isSelected = true
-                case label17.text: check17.isSelected = true
-                case label18.text: check18.isSelected = true
-                case label19.text: check19.isSelected = true
-                case label20.text: check20.isSelected = true
-                case label21.text: check21.isSelected = true
-                case label22.text: check22.isSelected = true
-                case label23.text: check23.isSelected = true
-                case label24.text: check24.isSelected = true
-                case label25.text: check25.isSelected = true
-                case label26.text: check26.isSelected = true
-                case label27.text: check27.isSelected = true
                 default:
                     break
                 }
