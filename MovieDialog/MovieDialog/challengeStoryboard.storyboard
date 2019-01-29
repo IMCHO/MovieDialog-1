@@ -94,7 +94,7 @@
                                         <rect key="frame" x="0.0" y="158" width="375" height="137"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hNO-Pm-XTZ" id="yqs-l0-h1p">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="137"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="136.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFP-GS-Sg6">
@@ -123,7 +123,7 @@
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.071354694664478302" green="0.029797542840242386" blue="0.018169790506362915" alpha="0.11" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aA5-II-F6n">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aA5-II-F6n">
                                                     <rect key="frame" x="11" y="57" width="173" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -260,8 +260,8 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="목표 추가" id="9tW-IE-LEj">
-                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="dt1-tg-CxF"/>
-                                        <barButtonItem key="rightBarButtonItem" title="Save" id="JoV-ah-hFI">
+                                        <barButtonItem key="leftBarButtonItem" title="취소" id="dt1-tg-CxF"/>
+                                        <barButtonItem key="rightBarButtonItem" title="저장" id="JoV-ah-hFI">
                                             <connections>
                                                 <action selector="saveGoal:" destination="vpp-Wp-YUu" id="TcM-qk-ZRc"/>
                                             </connections>
