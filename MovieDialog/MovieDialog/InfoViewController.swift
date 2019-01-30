@@ -51,7 +51,7 @@ class InfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        starImage.image = UIImage(named: "starLevel01")
+        //starImage.image = UIImage(named: "starLevel01")
 
         // Do any additional setup after loading the view.
         tableView.dataSource = self
@@ -100,6 +100,33 @@ class InfoViewController: UIViewController {
             print("저장된 데이터 없음")
         }
         starNum.text = String(allStar)+" Stars"
+        
+        if allStar >= 220 {
+            starImage.image = UIImage(named: "starLevel12")
+        } else if allStar >= 200 {
+            starImage.image = UIImage(named: "starLevel11")
+        } else if allStar >= 180 {
+            starImage.image = UIImage(named: "starLevel10")
+        } else if allStar >= 160 {
+            starImage.image = UIImage(named: "starLevel09")
+        } else if allStar >= 140 {
+            starImage.image = UIImage(named: "starLevel08")
+        } else if allStar >= 120 {
+            starImage.image = UIImage(named: "starLevel07")
+        } else if allStar >= 100 {
+            starImage.image = UIImage(named: "starLevel06")
+        } else if allStar >= 80 {
+            starImage.image = UIImage(named: "starLevel05")
+        } else if allStar >= 60 {
+            starImage.image = UIImage(named: "starLevel04")
+        } else if allStar >= 40 {
+            starImage.image = UIImage(named: "starLevel03")
+        } else if allStar >= 20 {
+            starImage.image = UIImage(named: "starLevel02")
+        } else {
+            starImage.image = UIImage(named: "starLevel01")
+        }
+        
 
 //        rankMovie=[firstMovie,secondMovie,thirdMovie]
 //        rankTimes=[firstTimes,secondTimes,thirdTimes]
