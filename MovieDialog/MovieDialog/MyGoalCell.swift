@@ -15,6 +15,7 @@ class MyGoalCell: UITableViewCell {
     @IBOutlet weak var progressFront: UIView!   //목표 진행 바
     @IBOutlet weak var progressBack: UIView!    //목표 진행 바 배경
     @IBOutlet weak var goalDday: UILabel!   //목표 디데이
+    @IBOutlet weak var status: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
