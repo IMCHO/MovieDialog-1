@@ -136,11 +136,15 @@ extension MyGoalViewController: UITableViewDataSource{
                 cell.goalListDate.text=String(start[start.startIndex...start.index(start.endIndex, offsetBy:-10)]) + " ~ " + String(finish[finish.startIndex...finish.index(finish.endIndex, offsetBy:-10)])
                 cell.goalListNum.text = "목표 영화 개수 : \(challenges[indexPath.row+1].goal)"
                 
+                //image rotate
+                cell.goalListImage.transform = rotation
+                
                 if challenges[indexPath.row+1].now == challenges[indexPath.row+1].goal{
-                    //                    cell.goalListImage
+                    cell.goalListImage.image = UIImage(named: "missioncomplete")
                     // 달성 시
                 }else{
                     // 미 달성시
+                    cell.goalListImage.image = UIImage(named: "missionfail")
                 }
                 
                 return cell
