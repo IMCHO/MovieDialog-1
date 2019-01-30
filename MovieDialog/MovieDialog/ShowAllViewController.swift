@@ -76,19 +76,19 @@ class ShowAllViewController: UIViewController{
         
         monthDic=[:]
         for dialog in dialogs{
-            if var eachDialog=monthDic[dialog.createdDate.substring(to: dialog.createdDate.index(dialog.createdDate.startIndex,offsetBy:7))]{
+            if var eachDialog=monthDic[dialog.date.substring(to: dialog.date.index(dialog.date.startIndex,offsetBy:7))]{
 //                print("before")
 //                print(eachDialog)
 //                print(monthDic)
                 eachDialog.append(dialog)
-                monthDic[dialog.createdDate.substring(to: dialog.createdDate.index(dialog.createdDate.startIndex,offsetBy:7))]=eachDialog
+                monthDic[dialog.date.substring(to: dialog.date.index(dialog.date.startIndex,offsetBy:7))]=eachDialog
 //                print("after")
 //                print(eachDialog)
 //                print(monthDic)
             }else{
 //                print("ok")
-                monthDic[dialog.createdDate.substring(to: dialog.createdDate.index(dialog.createdDate.startIndex,offsetBy:7))]=[]
-                monthDic[dialog.createdDate.substring(to: dialog.createdDate.index(dialog.createdDate.startIndex,offsetBy:7))]?.append(dialog)
+                monthDic[dialog.date.substring(to: dialog.date.index(dialog.date.startIndex,offsetBy:7))]=[]
+                monthDic[dialog.date.substring(to: dialog.date.index(dialog.date.startIndex,offsetBy:7))]?.append(dialog)
             }
         }
 //        monthDic=monthDic.sorted{$0.0>$1.0}
