@@ -29,9 +29,9 @@ class MyGoalViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if let data=try? Data(contentsOf: URL(fileURLWithPath:documentsPath+"/challenge.plist")){
-            if let decodedChallenge=try? decoder.decode([Challenge].self, from: data){
-                challenges=decodedChallenge
+        if let data = try? Data(contentsOf: URL(fileURLWithPath:documentsPath + "/challenge.plist")){
+            if let decodedChallenge = try? decoder.decode([Challenge].self, from: data){
+                challenges = decodedChallenge
                 if challenges.count > 0 {
 
                 }
@@ -48,6 +48,29 @@ class MyGoalViewController: UIViewController {
         challenges = challenges.reversed()
         
         goalList.reloadData()
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String?, sender: Any?) -> Bool {
+        let calendar = Calendar.current
+        
+        let date1 = calendar.startOfDay(for: Date())
+        let date2 = calendar.startOfDay(for: challenges[0].time)
+        var components1 = calendar.dateComponents([.day], from: date2, to: date1)
+        
+        // 목표를 추가 못하는 경우! 현재 진행중인 마감 안된 목표가 있을 경우
+        if let ident = identifier , let day = components1.day {
+            if ident == "addGoal" {
+                if challenges[0].goal > challenges[0].now , day < 0 {
+                    let alert = UIAlertController(title: "현재 진행중인 목표가 있습니다.", message: "목표를 추가할 수 없습니다.", preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title:"확인", style:UIAlertAction.Style.default) { UIAlertAction in
+                        self.dismiss(animated:true, completion:nil)
+                    })
+                    present(alert, animated:true, completion:nil)
+                    return false
+                }
+            }
+        }
+        return true
     }
     
 }
@@ -93,7 +116,7 @@ extension MyGoalViewController: UITableViewDataSource{
                 cell.progressFront.frame.size.width = CGFloat(298 * challenge.now / challenge.goal)
                 
                 let startDate = challenge.startTime
-                let finishDate=challenge.time
+                let finishDate = challenge.time
                 
                 let today = Date()
                 
@@ -107,7 +130,7 @@ extension MyGoalViewController: UITableViewDataSource{
                 let finish = dateFormatter.string(from: challenge.time)
                 
                 var components1 = calendar.dateComponents([.day], from: date3, to: date1)
-                var components2 = calendar.dateComponents([.day], from: date3,to:date2)
+                var components2 = calendar.dateComponents([.day], from: date3, to:date2)
                 if components1.day! > 0{
                     cell.goalDday.text=String(start[start.startIndex...start.index(start.endIndex, offsetBy:-10)]) + " ~ " + String(finish[finish.startIndex...finish.index(finish.endIndex, offsetBy:-10)])
                     cell.status.text="진행 예정"
@@ -138,7 +161,7 @@ extension MyGoalViewController: UITableViewDataSource{
                 cell.goalListNum.text = "목표 영화 개수 : \(challenges[indexPath.row+1].goal)"
                 
                 //image rotate
-                //cell.goalListImage.transform = rotation
+                cell.goalListImage.transform = CGAffineTransform(rotationAngle: (-7.0 * .pi) / 180.0)
                 
                 if challenges[indexPath.row+1].now == challenges[indexPath.row+1].goal{
                     cell.goalListImage.image = UIImage(named: "missioncomplete")
@@ -153,6 +176,8 @@ extension MyGoalViewController: UITableViewDataSource{
         }
         return tableView.dequeueReusableCell(withIdentifier: "MyGoalListCell", for: indexPath) as! MyGoalListCell
     }
+    
+    
 }
 
 extension MyGoalViewController: UITableViewDelegate{
