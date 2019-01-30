@@ -112,11 +112,12 @@ extension MyGoalViewController: UITableViewDataSource{
                     cell.goalDday.text=String(start[start.startIndex...start.index(start.endIndex, offsetBy:-10)]) + " ~ " + String(finish[finish.startIndex...finish.index(finish.endIndex, offsetBy:-10)])
                     cell.status.text="진행 예정"
                 }else if components1.day! <= 0, components2.day! > 0{
+                    cell.goalDday.text = String(start[start.startIndex...start.index(start.endIndex, offsetBy:-10)]) + " ~ " + String(finish[finish.startIndex...finish.index(finish.endIndex, offsetBy:-10)])
                     if let day=components2.day{
-                        cell.goalDday.text = String(start[start.startIndex...start.index(start.endIndex, offsetBy:-10)]) + " ~ " + String(finish[finish.startIndex...finish.index(finish.endIndex, offsetBy:-10)])
                         cell.status.text="D - \(day)"
                     }
-                }else if components2.day! <= 0{
+                }else{
+                    cell.goalDday.text = String(start[start.startIndex...start.index(start.endIndex, offsetBy:-10)]) + " ~ " + String(finish[finish.startIndex...finish.index(finish.endIndex, offsetBy:-10)])
                     cell.status.text="마감"
                 }
                 
