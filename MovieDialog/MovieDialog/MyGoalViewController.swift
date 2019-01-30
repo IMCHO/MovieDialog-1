@@ -137,7 +137,7 @@ extension MyGoalViewController: UITableViewDataSource{
                 cell.goalListNum.text = "목표 영화 개수 : \(challenges[indexPath.row+1].goal)"
                 
                 //image rotate
-                cell.goalListImage.transform = rotation
+                //cell.goalListImage.transform = rotation
                 
                 if challenges[indexPath.row+1].now == challenges[indexPath.row+1].goal{
                     cell.goalListImage.image = UIImage(named: "missioncomplete")
