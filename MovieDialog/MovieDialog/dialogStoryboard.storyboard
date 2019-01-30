@@ -166,8 +166,11 @@
                                                 <segment title="전체보기"/>
                                                 <segment title="월 별"/>
                                             </segments>
+                                            <color key="tintColor" red="0.098039215690000001" green="0.1647058824" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </segmentedControl>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="tmS-rc-BOe"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="tmS-rc-BOe">
+                                            <color key="tintColor" red="0.098039215690000001" green="0.1647058824" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -1180,7 +1183,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vlG-dj-TlN">
                                 <rect key="frame" x="45" y="260" width="69" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="포스터 선택"/>
+                                <state key="normal" title="포스터 선택">
+                                    <color key="titleColor" red="0.098039215690000001" green="0.1647058824" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <action selector="selectPicButton:" destination="VFK-j6-LGm" eventType="touchUpInside" id="5ze-kY-AQf"/>
                                 </connections>
@@ -1263,6 +1268,7 @@
                                     <segment title="간편 리뷰"/>
                                     <segment title="리뷰"/>
                                 </segments>
+                                <color key="tintColor" red="0.098039215690000001" green="0.1647058824" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <action selector="segControl:" destination="VFK-j6-LGm" eventType="valueChanged" id="YwG-61-FTo"/>
                                 </connections>
