@@ -404,6 +404,7 @@ class EditViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
         if textView.textColor == UIColor.lightGray {
             textView.text = nil
             textView.textColor = UIColor.black
+            textView.textAlignment = NSTextAlignment.left
         }
     }
     
