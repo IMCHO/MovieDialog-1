@@ -79,10 +79,14 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="141"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2R9-eR-A7h">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="movie-146704_1280" translatesAutoresizingMaskIntoConstraints="NO" id="8NJ-0H-bb7">
+                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="141"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2019.01" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2R9-eR-A7h">
                                                             <rect key="frame" x="6" y="47" width="88" height="46"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -1510,9 +1514,10 @@
         <image name="default-image" width="275" height="275"/>
         <image name="empty_star" width="180" height="180"/>
         <image name="full_star" width="180" height="180"/>
+        <image name="movie-146704_1280" width="1280" height="1174"/>
         <image name="unchecked" width="180" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mVx-H1-Wy5"/>
+        <segue reference="35r-qE-sD8"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -113,8 +113,6 @@ class EditViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
             print("변경사항이 저장되지 않았습니다!")
         }
         
-        //self.dismiss(animated:true, completion:nil)
-        //[self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
         self.presentingViewController?.dismiss(animated: true, completion: nil)
         
     }

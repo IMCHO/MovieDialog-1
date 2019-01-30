@@ -147,9 +147,11 @@ extension ShowAllViewController:UICollectionViewDataSource{
             let cell2=collectionView.dequeueReusableCell(withReuseIdentifier: "defaultCollection2", for: indexPath) as! DialogCollectionViewCell
             
             cell2.monthLabel.text=month[indexPath.row]
-            cell2.monthView.layer.cornerRadius=20
-            cell2.monthView.layer.borderColor = UIColor.black.cgColor
-            cell2.monthView.layer.borderWidth = 2
+            
+            //cell2.monthView.layer.cornerRadius=20
+            //cell2.monthView.layer.borderColor = UIColor.black.cgColor
+            //cell2.monthView.layer.borderWidth = 2
+            cell2.monthView.layer.backgroundColor = UIColor.white.cgColor
             
             return cell2
         }
