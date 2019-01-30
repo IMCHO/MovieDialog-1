@@ -141,12 +141,9 @@
 				7F41CC4A21F5F46400556DC2 /* AddGoalView.swift */,
 				DAFA11FB21F7098F0071C33A /* DialogCollectionViewCell.swift */,
 				DADC4FBB21FD814F00C3DB05 /* MonthCollectionViewController.swift */,
-<<<<<<< HEAD
 				DA08A68822018C060014BDA5 /* detailReviewTableViewController.swift */,
 				DA08A68A220196910014BDA5 /* detailReviewTableViewCell.swift */,
-=======
-				3F0CC058220184FC001109AA /* OnboardViewController.swift */,
->>>>>>> 764c9ef5bfa9d76db3451f485c80f64f76aba4eb
+                3F0CC058220184FC001109AA /* OnboardViewController.swift */,
 			);
 			path = MovieDialog;
 			sourceTree = "<group>";
