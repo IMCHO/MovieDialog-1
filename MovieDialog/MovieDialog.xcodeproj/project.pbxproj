@@ -143,7 +143,7 @@
 				DADC4FBB21FD814F00C3DB05 /* MonthCollectionViewController.swift */,
 				DA08A68822018C060014BDA5 /* detailReviewTableViewController.swift */,
 				DA08A68A220196910014BDA5 /* detailReviewTableViewCell.swift */,
-                3F0CC058220184FC001109AA /* OnboardViewController.swift */,
+				3F0CC058220184FC001109AA /* OnboardViewController.swift */,
 			);
 			path = MovieDialog;
 			sourceTree = "<group>";
