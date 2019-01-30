@@ -13,7 +13,10 @@ class InfoViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var starNum: UILabel!
     @IBOutlet weak var starImage: UIImageView!
-//    @IBOutlet weak var firstMovie: UIImageView!
+    @IBOutlet weak var total: UIView!
+    @IBOutlet weak var now: UIView!
+    @IBOutlet weak var planetName: UILabel!
+    //    @IBOutlet weak var firstMovie: UIImageView!
 //    @IBOutlet weak var secondMovie: UIImageView!
 //    @IBOutlet weak var thirdMovie: UIImageView!
 //
@@ -56,6 +59,9 @@ class InfoViewController: UIViewController {
         // Do any additional setup after loading the view.
         tableView.dataSource = self
         tableView.delegate = self
+        
+        total.layer.cornerRadius=10
+        now.layer.cornerRadius=7
 //
 //
 //        if let path = Bundle.main.path(forResource: "dialog", ofType: "plist") {
@@ -101,30 +107,44 @@ class InfoViewController: UIViewController {
         }
         starNum.text = String(allStar)+" Stars"
         
-        if allStar >= 220 {
+        now.frame.size.width = CGFloat(343 * allStar / 200)
+
+        if allStar >= 200 {
             starImage.image = UIImage(named: "starLevel12")
-        } else if allStar >= 200 {
-            starImage.image = UIImage(named: "starLevel11")
+            planetName.text="은하계"
         } else if allStar >= 180 {
-            starImage.image = UIImage(named: "starLevel10")
+            starImage.image = UIImage(named: "starLevel11")
+            planetName.text="태양"
         } else if allStar >= 160 {
-            starImage.image = UIImage(named: "starLevel09")
+            starImage.image = UIImage(named: "starLevel10")
+            planetName.text="해왕성"
         } else if allStar >= 140 {
-            starImage.image = UIImage(named: "starLevel08")
+            starImage.image = UIImage(named: "starLevel09")
+            planetName.text="천왕성"
         } else if allStar >= 120 {
-            starImage.image = UIImage(named: "starLevel07")
+            starImage.image = UIImage(named: "starLevel08")
+            planetName.text="토성"
         } else if allStar >= 100 {
-            starImage.image = UIImage(named: "starLevel06")
+            starImage.image = UIImage(named: "starLevel07")
+            planetName.text="목성"
         } else if allStar >= 80 {
-            starImage.image = UIImage(named: "starLevel05")
+            starImage.image = UIImage(named: "starLevel06")
+            planetName.text="화성"
         } else if allStar >= 60 {
-            starImage.image = UIImage(named: "starLevel04")
+            starImage.image = UIImage(named: "starLevel05")
+            planetName.text="지구"
         } else if allStar >= 40 {
-            starImage.image = UIImage(named: "starLevel03")
+            starImage.image = UIImage(named: "starLevel04")
+            planetName.text="달"
         } else if allStar >= 20 {
+            starImage.image = UIImage(named: "starLevel03")
+            planetName.text="금성"
+        } else if allStar >= 1 {
             starImage.image = UIImage(named: "starLevel02")
+            planetName.text="수성"
         } else {
             starImage.image = UIImage(named: "starLevel01")
+            planetName.text="소행성"
         }
         
 
@@ -152,6 +172,33 @@ class InfoViewController: UIViewController {
         tableView.reloadData()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        dialogs=dialogs.reversed()
+        if segue.identifier=="REVIEW_SEGUE"{
+            if let detailVC = segue.destination as? detailReviewTableViewController, let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) {
+                if indexPath.row == 1{
+                    let reviewD=dialogs.filter{$0.review.count>0}
+                    detailVC.dialogs=reviewD
+                    detailVC.isReview=true
+                }else if indexPath.row == 2{
+                    let simpleReviewD=dialogs.filter{$0.simpleReview.count>0}
+                    detailVC.dialogs=simpleReviewD
+                    detailVC.isSimpleReview=true
+                }
+
+            }
+        }
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        if identifier=="REVIEW_SEGUE", let cell = sender as? UITableViewCell, let indexPath=tableView.indexPath(for: cell){
+            if indexPath.row==0{
+                return false
+            }
+        }
+        return true
+    }
     
     /*
      // MARK: - Navigation
@@ -187,12 +234,15 @@ extension InfoViewController:UITableViewDataSource{
         if indexPath.row == 0 {
             cell.textLabel?.text="관람 작품 수"
             cell.detailTextLabel?.text = String(dialogs.count)+" 개"
+            cell.accessoryType = .none
         }else if indexPath.row==1{
             cell.textLabel?.text="작성 리뷰 수"
             cell.detailTextLabel?.text=String(dialogs.filter({$0.review != ""}).count)+" 개"
+            cell.accessoryType = .disclosureIndicator
         }else{
             cell.textLabel?.text="작성 간편리뷰 수"
             cell.detailTextLabel?.text = String(dialogs.filter({$0.simpleReview.count>0}).count)+" 개"
+            cell.accessoryType = .disclosureIndicator
         }
         
         return cell
