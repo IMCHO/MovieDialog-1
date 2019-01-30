@@ -91,7 +91,28 @@ class AddGoalView: UIViewController {
     
     //목표 저장
     @IBAction func saveGoal(_ sender: Any) {
-
+        if inputTitle.text == "" {
+            let alert = UIAlertController(title: "내용을 모두 입력해 주세요.", message: nil, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title:"확인", style:UIAlertAction.Style.default) { UIAlertAction in })
+            present(alert, animated:true, completion:nil)
+            return
+        } else if inputNum.text == "" {
+            let alert = UIAlertController(title: "내용을 모두 입력해 주세요.", message: nil, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title:"확인", style:UIAlertAction.Style.default) { UIAlertAction in })
+            present(alert, animated:true, completion:nil)
+            return
+        } else if finish == nil {
+            let alert = UIAlertController(title: "내용을 모두 입력해 주세요.", message: nil, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title:"확인", style:UIAlertAction.Style.default) { UIAlertAction in })
+            present(alert, animated:true, completion:nil)
+            return
+        } else if start == nil {
+            let alert = UIAlertController(title: "내용을 모두 입력해 주세요.", message: nil, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title:"확인", style:UIAlertAction.Style.default) { UIAlertAction in })
+            present(alert, animated:true, completion:nil)
+            return
+        }
+        
         if let goalTitle=inputTitle.text, let goalNum=inputNum.text, let finishTime=finish, let startTime=start{
             let newChallenge=Challenge(title:goalTitle, time:finishTime, startTime:startTime,goal:Int(goalNum)!,now:0)
             challenges.append(newChallenge)

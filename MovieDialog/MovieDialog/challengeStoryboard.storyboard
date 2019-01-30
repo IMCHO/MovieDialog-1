@@ -229,7 +229,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="목표 추가" id="9tW-IE-LEj">
-                                        <barButtonItem key="leftBarButtonItem" title="취소" id="dt1-tg-CxF"/>
+                                        <barButtonItem key="leftBarButtonItem" title="취소" id="dt1-tg-CxF">
+                                            <connections>
+                                                <action selector="cancelGoal:" destination="vpp-Wp-YUu" id="48c-8w-MNE"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="저장" id="JoV-ah-hFI">
                                             <connections>
                                                 <action selector="saveGoal:" destination="vpp-Wp-YUu" id="TcM-qk-ZRc"/>
@@ -267,6 +271,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="K31-vA-q7J" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AyZ-8h-sHe">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
