@@ -23,6 +23,12 @@ class InfoViewController: UIViewController {
     
 //    var rankMovie:[UIImageView]=[]
 //    var rankTimes:[UILabel]=[]
+    @IBAction func helpButton(_ sender: Any) {
+        let alert = UIAlertController(title: "My Movie Planet", message: "영화 일기를 작성하며 매긴 별점을 모아 다음 단계의 별로 성장할 수 있습니다! 열심히 일기를 작성해서 나만의 행성을 키워보세요.", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title:"확인", style:UIAlertAction.Style.default) { UIAlertAction in })
+        present(alert, animated:true, completion:nil)
+        return
+    }
     
     var dialogs:[Dialog]=[]
     var allStar:Int=0
