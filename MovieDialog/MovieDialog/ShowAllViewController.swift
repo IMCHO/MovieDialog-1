@@ -46,7 +46,7 @@ class ShowAllViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         collectionView1.delegate = self
@@ -55,10 +55,11 @@ class ShowAllViewController: UIViewController{
         collectionView2.delegate = self
         collectionView2.dataSource=self
     }
+    
+    var checkOnboard = true
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
         
         indexChange(sort)
         
@@ -71,6 +72,14 @@ class ShowAllViewController: UIViewController{
             }
         }else{
             print("기존 데이터 없음")
+            if checkOnboard == true {
+                if let onboard = self.storyboard!.instantiateViewController(withIdentifier: "OnboardID") as? OnboardViewController{
+                    //self.performSegue(withIdentifier: "EditSegue", sender: nil)
+                    checkOnboard = false
+                    present(onboard, animated: false, completion:nil)
+                }
+            }
+            
         }
         dialogs=dialogs.reversed()
         

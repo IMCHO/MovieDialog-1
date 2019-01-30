@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3F047F4721FDA2F1007EC403 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F047F4621FDA2F1007EC403 /* EditViewController.swift */; };
+		3F0CC059220184FC001109AA /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0CC058220184FC001109AA /* OnboardViewController.swift */; };
 		3F76C8EF21F07CD400BC98D8 /* ShowAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F76C8EE21F07CD400BC98D8 /* ShowAllViewController.swift */; };
 		3F76C8F121F07CF000BC98D8 /* DiaryEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F76C8F021F07CF000BC98D8 /* DiaryEditViewController.swift */; };
 		3F76C8F321F07F5200BC98D8 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F76C8F221F07F5200BC98D8 /* SearchViewController.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		3F047F4621FDA2F1007EC403 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
+		3F0CC058220184FC001109AA /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
 		3F76C8EE21F07CD400BC98D8 /* ShowAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAllViewController.swift; sourceTree = "<group>"; };
 		3F76C8F021F07CF000BC98D8 /* DiaryEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEditViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		3F76C8F221F07F5200BC98D8 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				7F41CC4A21F5F46400556DC2 /* AddGoalView.swift */,
 				DAFA11FB21F7098F0071C33A /* DialogCollectionViewCell.swift */,
 				DADC4FBB21FD814F00C3DB05 /* MonthCollectionViewController.swift */,
+				3F0CC058220184FC001109AA /* OnboardViewController.swift */,
 			);
 			path = MovieDialog;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				DADEE77D21EF880C0007F93A /* user.swift in Sources */,
 				3FBAA13521F82F350025A434 /* ShowDiaryViewController.swift in Sources */,
 				DADEE78121EF88340007F93A /* challenge.swift in Sources */,
+				3F0CC059220184FC001109AA /* OnboardViewController.swift in Sources */,
 				7F41CC4B21F5F46400556DC2 /* AddGoalView.swift in Sources */,
 				3F85D6F921F5ABC00012FADD /* MyGoalViewController.swift in Sources */,
 				3F85D6FF21F5BF4B0012FADD /* MyGoalListCell.swift in Sources */,
