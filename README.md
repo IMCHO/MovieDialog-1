@@ -1,4 +1,4 @@
-# MovieDialog
+# Movie Planet
 
 영화 팬들을 위해 사용자의 영화 관람 이력 및 작성 평론을 관리해주는 영화 일기 앱
 # 
