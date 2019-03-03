@@ -499,7 +499,7 @@ class EditViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
     
     func getImage(imageName:String){
         let fileManager = FileManager.default
-        let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
+        let imagePath = (NSSearchPathForDirectoriesInDomains(.cachesDirectory,.userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
         if fileManager.fileExists(atPath:imagePath){
             movieImage.image = UIImage(contentsOfFile:imagePath)
         } else{
