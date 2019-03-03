@@ -17,7 +17,7 @@ class MonthCollectionViewController: UICollectionViewController {
     
     func getImage(imageName: String) -> String{
         let fileManager = FileManager.default
-        let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
+        let imagePath = (NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
         
         if fileManager.fileExists(atPath: imagePath){
             return imagePath
