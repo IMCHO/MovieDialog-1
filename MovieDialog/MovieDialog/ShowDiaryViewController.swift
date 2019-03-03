@@ -160,7 +160,7 @@ class ShowDiaryViewController: UIViewController {
 
     func getImage(imageName:String){
         let fileManager = FileManager.default
-        let imagePath = (NSSearchPathForDirectoriesInDomains(.Directory,.userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
+        let imagePath = (NSSearchPathForDirectoriesInDomains(.cachesDirectory,.userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
         if fileManager.fileExists(atPath:imagePath){
             imageLabel.image = UIImage(contentsOfFile:imagePath)
             imageBackground.image = UIImage(contentsOfFile:imagePath)
