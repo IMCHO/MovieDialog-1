@@ -416,7 +416,7 @@ class DiaryEditViewController: UIViewController, SendDataDelegate, UITextFieldDe
     //리뷰 글자 수 제한
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         guard let str = textView.text else { return true }
-        let newLength = str.characters.count + text.characters.count - range.length
+        let newLength = str.count + text.count - range.length
         return newLength <= 450
     }
 
