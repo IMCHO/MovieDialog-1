@@ -36,8 +36,8 @@
 		DADEE77721EF80BB0007F93A /* dialog.plist in Resources */ = {isa = PBXBuildFile; fileRef = DADEE77621EF80BB0007F93A /* dialog.plist */; };
 		DADEE77921EF81050007F93A /* challenge.plist in Resources */ = {isa = PBXBuildFile; fileRef = DADEE77821EF81050007F93A /* challenge.plist */; };
 		DADEE77D21EF880C0007F93A /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADEE77C21EF880C0007F93A /* user.swift */; };
-		DADEE77F21EF88290007F93A /* dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADEE77E21EF88290007F93A /* dialog.swift */; };
-		DADEE78121EF88340007F93A /* challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADEE78021EF88340007F93A /* challenge.swift */; };
+		DADEE77F21EF88290007F93A /* Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADEE77E21EF88290007F93A /* Dialog.swift */; };
+		DADEE78121EF88340007F93A /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADEE78021EF88340007F93A /* Challenge.swift */; };
 		DAF764F12405506B003697A6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAF764F02405506B003697A6 /* Default-568h@2x.png */; };
 		DAFA11FC21F7098F0071C33A /* DialogCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFA11FB21F7098F0071C33A /* DialogCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -74,8 +74,8 @@
 		DADEE77621EF80BB0007F93A /* dialog.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = dialog.plist; sourceTree = "<group>"; };
 		DADEE77821EF81050007F93A /* challenge.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = challenge.plist; sourceTree = "<group>"; };
 		DADEE77C21EF880C0007F93A /* user.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
-		DADEE77E21EF88290007F93A /* dialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dialog.swift; sourceTree = "<group>"; };
-		DADEE78021EF88340007F93A /* challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = challenge.swift; sourceTree = "<group>"; };
+		DADEE77E21EF88290007F93A /* Dialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dialog.swift; sourceTree = "<group>"; };
+		DADEE78021EF88340007F93A /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		DAF764F02405506B003697A6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		DAFA11FB21F7098F0071C33A /* DialogCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,8 +121,8 @@
 				DADEE77621EF80BB0007F93A /* dialog.plist */,
 				DADEE77821EF81050007F93A /* challenge.plist */,
 				DADEE77C21EF880C0007F93A /* user.swift */,
-				DADEE77E21EF88290007F93A /* dialog.swift */,
-				DADEE78021EF88340007F93A /* challenge.swift */,
+				DADEE77E21EF88290007F93A /* Dialog.swift */,
+				DADEE78021EF88340007F93A /* Challenge.swift */,
 				3F76C8EE21F07CD400BC98D8 /* ShowAllViewController.swift */,
 				3FBAA13421F82F350025A434 /* ShowDiaryViewController.swift */,
 				3F047F4621FDA2F1007EC403 /* EditViewController.swift */,
@@ -238,14 +238,14 @@
 				3F85D6FB21F5AC7B0012FADD /* MyGoalCell.swift in Sources */,
 				DADEE77D21EF880C0007F93A /* user.swift in Sources */,
 				3FBAA13521F82F350025A434 /* ShowDiaryViewController.swift in Sources */,
-				DADEE78121EF88340007F93A /* challenge.swift in Sources */,
+				DADEE78121EF88340007F93A /* Challenge.swift in Sources */,
 				3F0CC059220184FC001109AA /* OnboardViewController.swift in Sources */,
 				7F41CC4B21F5F46400556DC2 /* AddGoalView.swift in Sources */,
 				3F85D6F921F5ABC00012FADD /* MyGoalViewController.swift in Sources */,
 				3F85D6FF21F5BF4B0012FADD /* MyGoalListCell.swift in Sources */,
 				DA08A68B220196910014BDA5 /* detailReviewTableViewCell.swift in Sources */,
 				3F76C8F321F07F5200BC98D8 /* SearchViewController.swift in Sources */,
-				DADEE77F21EF88290007F93A /* dialog.swift in Sources */,
+				DADEE77F21EF88290007F93A /* Dialog.swift in Sources */,
 				3F76C8EF21F07CD400BC98D8 /* ShowAllViewController.swift in Sources */,
 				3FEFF04F21F18F4F00C04F19 /* MoviesTableViewCell.swift in Sources */,
 				3F76C8F121F07CF000BC98D8 /* DiaryEditViewController.swift in Sources */,
