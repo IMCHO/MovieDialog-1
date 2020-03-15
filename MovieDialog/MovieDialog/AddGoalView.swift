@@ -9,7 +9,7 @@
 import UIKit
 
 
-class AddGoalView: UIViewController {
+class AddGoalViewController: UIViewController {
     
     var challenges:[Challenge]=[]
     let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
