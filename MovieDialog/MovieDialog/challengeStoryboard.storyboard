@@ -76,14 +76,15 @@
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="xFP-GS-Sg6" firstAttribute="top" secondItem="yqs-l0-h1p" secondAttribute="top" constant="20" id="1iq-vI-bXO"/>
-                                                <constraint firstAttribute="bottom" secondItem="Ynz-Rz-Hnk" secondAttribute="bottom" constant="24" id="2Nj-Lx-tvC"/>
+                                                <constraint firstItem="Ynz-Rz-Hnk" firstAttribute="top" secondItem="aA5-II-F6n" secondAttribute="bottom" constant="27" id="2Ji-BS-B31"/>
                                                 <constraint firstItem="xFP-GS-Sg6" firstAttribute="height" secondItem="Y2x-ZE-djp" secondAttribute="height" id="4K0-WU-f7Z"/>
                                                 <constraint firstItem="Y2x-ZE-djp" firstAttribute="leading" secondItem="xFP-GS-Sg6" secondAttribute="trailing" constant="-8" id="5dM-Ex-Ayf"/>
                                                 <constraint firstItem="xFP-GS-Sg6" firstAttribute="height" secondItem="FNh-Q4-FDZ" secondAttribute="height" multiplier="1.30435" id="5pe-7V-BZY"/>
+                                                <constraint firstItem="xFP-GS-Sg6" firstAttribute="top" secondItem="yqs-l0-h1p" secondAttribute="top" constant="20" id="7kR-44-LUr"/>
                                                 <constraint firstItem="aA5-II-F6n" firstAttribute="top" secondItem="xFP-GS-Sg6" secondAttribute="bottom" constant="24" id="8Gs-SD-nze"/>
                                                 <constraint firstItem="Ynz-Rz-Hnk" firstAttribute="centerY" secondItem="FNh-Q4-FDZ" secondAttribute="centerY" id="CXb-fR-ePM"/>
                                                 <constraint firstItem="aA5-II-F6n" firstAttribute="centerY" secondItem="yqs-l0-h1p" secondAttribute="centerY" id="FrG-wD-VZu"/>
+                                                <constraint firstItem="Y2x-ZE-djp" firstAttribute="top" secondItem="yqs-l0-h1p" secondAttribute="top" constant="20" id="G2Y-ib-5wu"/>
                                                 <constraint firstItem="xFP-GS-Sg6" firstAttribute="centerY" secondItem="Y2x-ZE-djp" secondAttribute="centerY" id="Hfm-Is-USo"/>
                                                 <constraint firstAttribute="trailing" secondItem="Y2x-ZE-djp" secondAttribute="trailing" constant="8" id="L6m-WQ-HIt"/>
                                                 <constraint firstItem="xFP-GS-Sg6" firstAttribute="height" secondItem="Ynz-Rz-Hnk" secondAttribute="height" multiplier="1.30435" id="O0B-fm-9Qb"/>
@@ -91,11 +92,10 @@
                                                 <constraint firstItem="aA5-II-F6n" firstAttribute="leading" secondItem="yqs-l0-h1p" secondAttribute="leading" constant="8" id="Z7x-3H-56v"/>
                                                 <constraint firstItem="aA5-II-F6n" firstAttribute="top" secondItem="Y2x-ZE-djp" secondAttribute="bottom" constant="24" id="Zmj-fK-GWg"/>
                                                 <constraint firstItem="xFP-GS-Sg6" firstAttribute="leading" secondItem="yqs-l0-h1p" secondAttribute="leading" constant="8" id="b0M-0R-vn9"/>
-                                                <constraint firstAttribute="bottom" secondItem="FNh-Q4-FDZ" secondAttribute="bottom" constant="24" id="buf-Fv-G14"/>
                                                 <constraint firstItem="Ynz-Rz-Hnk" firstAttribute="leading" secondItem="FNh-Q4-FDZ" secondAttribute="trailing" constant="24" id="eoN-LP-u7c"/>
                                                 <constraint firstAttribute="trailing" secondItem="Ynz-Rz-Hnk" secondAttribute="trailing" constant="8" id="kf2-Z1-ev6"/>
                                                 <constraint firstItem="xFP-GS-Sg6" firstAttribute="height" secondItem="aA5-II-F6n" secondAttribute="height" multiplier="0.9375" id="l0M-ok-erE"/>
-                                                <constraint firstItem="Y2x-ZE-djp" firstAttribute="top" secondItem="yqs-l0-h1p" secondAttribute="top" constant="20" id="nu9-7y-3Ua"/>
+                                                <constraint firstItem="FNh-Q4-FDZ" firstAttribute="top" secondItem="aA5-II-F6n" secondAttribute="bottom" constant="27" id="uTX-CZ-xoe"/>
                                                 <constraint firstAttribute="trailing" secondItem="aA5-II-F6n" secondAttribute="trailing" constant="8" id="xcg-Ou-Fdq"/>
                                             </constraints>
                                         </tableViewCellContentView>
