@@ -131,6 +131,15 @@ class AddGoalViewController: UIViewController {
         self.dismiss(animated:true, completion:nil)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if let presentingView=presentingViewController as? MyGoalViewController{
+            DispatchQueue.main.async {
+                presentingView.goalList.reloadData()
+            }
+        }
+    }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         self.view.endEditing(true)
     }
