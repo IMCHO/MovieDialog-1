@@ -86,7 +86,6 @@ class AddGoalViewController: UIViewController {
                 print("디코딩 실패")
             }
         }
-    
     }
     
     //목표 저장
@@ -127,18 +126,26 @@ class AddGoalViewController: UIViewController {
         }else{
             print("데이터를 모두 입력하세요")
         }
+
+        print("modal view disappears")
+        if let tbc=presentingViewController as? UITabBarController{
+            if let nvc=tbc.selectedViewController as? UINavigationController{
+                if let presentingView=nvc.topViewController as? MyGoalViewController{
+                    print("reload data in modal")
+                    presentingView.goalList.reloadData()
+                }
+            }
+        }else{
+            print("nothing")
+        }
         
         self.dismiss(animated:true, completion:nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+
         
-        if let presentingView=presentingViewController as? MyGoalViewController{
-            DispatchQueue.main.async {
-                presentingView.goalList.reloadData()
-            }
-        }
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         self.view.endEditing(true)
@@ -146,6 +153,5 @@ class AddGoalViewController: UIViewController {
 
     @IBAction func cancelGoal(_ sender: Any) {
         self.dismiss(animated:true, completion:nil)
-
     }
 }
