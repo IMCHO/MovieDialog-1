@@ -132,6 +132,10 @@ class AddGoalViewController: UIViewController {
             if let nvc=tbc.selectedViewController as? UINavigationController{
                 if let presentingView=nvc.topViewController as? MyGoalViewController{
                     print("reload data in modal")
+                    print(presentingView.challenges)
+                    presentingView.challenges=challenges.reversed()
+                    print(challenges)
+                    print(presentingView.challenges)
                     presentingView.goalList.reloadData()
                 }
             }
