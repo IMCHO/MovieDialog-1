@@ -127,30 +127,24 @@ class AddGoalViewController: UIViewController {
             print("데이터를 모두 입력하세요")
         }
 
-        print("modal view disappears")
         if let tbc=presentingViewController as? UITabBarController{
             if let nvc=tbc.selectedViewController as? UINavigationController{
                 if let presentingView=nvc.topViewController as? MyGoalViewController{
-                    print("reload data in modal")
-                    print(presentingView.challenges)
                     presentingView.challenges=challenges.reversed()
-                    print(challenges)
-                    print(presentingView.challenges)
                     presentingView.goalList.reloadData()
+                }else{
+                    print("Something is wrong to convert view to MyGoalViewController.")
                 }
+            }else{
+                print("Something is wrong to convert view to UINavigationController.")
             }
         }else{
-            print("nothing")
+            print("Something is wrong to convert view to UITabBarController.")
         }
         
         self.dismiss(animated:true, completion:nil)
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-
-        
-    }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         self.view.endEditing(true)
     }
