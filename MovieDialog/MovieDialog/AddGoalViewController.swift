@@ -9,7 +9,7 @@
 import UIKit
 
 
-class AddGoalViewController: UIViewController {
+class AddGoalViewController: UIViewController, UITextFieldDelegate {
     
     var challenges:[Challenge]=[]
     let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
@@ -18,10 +18,18 @@ class AddGoalViewController: UIViewController {
     
 
     //목표 제목
-    @IBOutlet weak var inputTitle: UITextField!
+    @IBOutlet weak var inputTitle: UITextField!{
+        didSet{
+            inputTitle.delegate = self
+        }
+    }
     
     //목표 개수
-    @IBOutlet weak var inputNum: UITextField!
+    @IBOutlet weak var inputNum: UITextField!{
+        didSet{
+            inputNum.delegate = self
+        }
+    }
     
     //목표 기간 선택
     @IBOutlet weak var startDay: UILabel!
@@ -29,8 +37,21 @@ class AddGoalViewController: UIViewController {
     
     var finish:Date!
     var start:Date!
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     //시작 날짜 선택
     @IBAction func startDate(_ sender: Any) {
+        if inputTitle.canResignFirstResponder{
+            inputTitle.resignFirstResponder()
+        }
+        if inputNum.canResignFirstResponder{
+            inputNum.resignFirstResponder()
+        }
+        
         let startDate: UIDatePicker = UIDatePicker()
         startDate.datePickerMode = .date
         
@@ -51,6 +72,13 @@ class AddGoalViewController: UIViewController {
     
     //종료 날짜 선택
     @IBAction func finishDate(_ sender: Any) {
+        if inputTitle.canResignFirstResponder{
+            inputTitle.resignFirstResponder()
+        }
+        if inputNum.canResignFirstResponder{
+            inputNum.resignFirstResponder()
+        }
+        
         let finishDate: UIDatePicker = UIDatePicker()
         finishDate.datePickerMode = .date
         
