@@ -43,7 +43,6 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    //시작 날짜 선택
     @IBAction func setDate(_ sender: Any) {
         
         if inputTitle.canResignFirstResponder{
@@ -77,48 +76,15 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate {
         self.present(alert, animated:true, completion:nil)
     }
     
-    //종료 날짜 선택
-    @IBAction func finishDate(_ sender: Any) {
-        if inputTitle.canResignFirstResponder{
-            inputTitle.resignFirstResponder()
-        }
-        if inputNum.canResignFirstResponder{
-            inputNum.resignFirstResponder()
-        }
-        
-        let finishDate: UIDatePicker = UIDatePicker()
-        finishDate.datePickerMode = .date
-        
-        let alert = UIAlertController(title: "\n\n\n\n\n\n\n\n\n\n\n", message: nil, preferredStyle: .actionSheet)
-        alert.view.addSubview(finishDate)
-        
-        alert.addAction(UIAlertAction(title:"완료", style:.default, handler:{result in
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy.MM.dd"
-            self.finish=finishDate.date
-            let dateString = dateFormatter.string(from:finishDate.date)
-            self.finishDay.text = dateString //종료 날짜 받아와서 저장
-            
-        }))
-        alert.addAction(UIAlertAction(title:"취소", style:.cancel, handler:nil))
-        self.present(alert, animated:true, completion:nil)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view
-        
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         if let data=try? Data(contentsOf: URL(fileURLWithPath:documentsPath+"/challenge.plist")){
             if let decodedChallenge=try? decoder.decode([Challenge].self, from: data){
                 challenges=decodedChallenge
-                print(challenges)
+//                print(challenges)
             }else{
-                print("디코딩 실패")
+                print("Can't find any challenges")
             }
         }
     }
@@ -156,10 +122,10 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate {
             
             if let data = try? encoder.encode(challenges){
                 try? data.write(to: URL(fileURLWithPath: documentsPath + "/challenge.plist"))
-                print("ok")
+//                print("ok")
             }
         }else{
-            print("데이터를 모두 입력하세요")
+            print("Need all data to be input")
         }
 
         if let tbc=presentingViewController as? UITabBarController{
@@ -176,7 +142,7 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate {
         }else{
             print("Something is wrong to convert view to UITabBarController.")
         }
-        
+
         self.dismiss(animated:true, completion:nil)
     }
     
