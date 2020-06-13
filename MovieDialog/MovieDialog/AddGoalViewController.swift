@@ -44,7 +44,8 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate {
     }
     
     //시작 날짜 선택
-    @IBAction func startDate(_ sender: Any) {
+    @IBAction func setDate(_ sender: Any) {
+        
         if inputTitle.canResignFirstResponder{
             inputTitle.resignFirstResponder()
         }
@@ -52,19 +53,25 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate {
             inputNum.resignFirstResponder()
         }
         
-        let startDate: UIDatePicker = UIDatePicker()
-        startDate.datePickerMode = .date
+        let datePicked: UIDatePicker = UIDatePicker()
+        datePicked.datePickerMode = .date
         
         let alert = UIAlertController(title: "\n\n\n\n\n\n\n\n\n\n\n", message: nil, preferredStyle: .actionSheet)
-        alert.view.addSubview(startDate)
+        alert.view.addSubview(datePicked)
         
         alert.addAction(UIAlertAction(title:"완료", style:.default, handler:{result in
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy.MM.dd"
-            self.start=startDate.date
-            let dateString = dateFormatter.string(from:startDate.date)
-            self.startDay.text = dateString //시작 날짜 받아와서 저장
             
+            if (sender as! UIButton).restorationIdentifier == "start"{
+                self.start=datePicked.date
+                let dateString = dateFormatter.string(from:datePicked.date)
+                self.startDay.text = dateString //시작 날짜 받아와서 저장
+            }else{
+                self.finish = datePicked.date
+                let dateString = dateFormatter.string(from:datePicked.date)
+                self.finishDay.text = dateString
+            }
         }))
         alert.addAction(UIAlertAction(title:"취소", style:.cancel, handler:nil))
         self.present(alert, animated:true, completion:nil)
