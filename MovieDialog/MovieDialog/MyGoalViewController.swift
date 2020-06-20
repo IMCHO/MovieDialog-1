@@ -47,6 +47,9 @@ class MyGoalViewController: UIViewController {
 
         challenges = challenges.reversed()
         print("reload data")
+        
+        checkDateForButton()
+        
         goalList.reloadData()
     }
     
@@ -74,43 +77,32 @@ class MyGoalViewController: UIViewController {
 //        return true
 //    }
     
-    @IBAction func addChallenge(_ sender: UIBarButtonItem) {
-        let view = self.storyboard?.instantiateViewController(withIdentifier: "addGoal")
-        
-        if challenges.count > 0 {
+    func checkDateForButton(){
+        if challenges.count > 0{
             let calendar = Calendar.current
             let date1 = calendar.startOfDay(for: Date())
             let date2 = calendar.startOfDay(for: challenges[0].time)
-            var components1 = calendar.dateComponents([.day], from: date2, to: date1)
+            let components1 = calendar.dateComponents([.day], from: date2, to: date1)
             
-            // 목표를 추가 못하는 경우! 현재 진행중인 마감 안된 목표가 있을 경우
-            if let day = components1.day {
+            if let day = components1.day{
                 if challenges[0].goal > challenges[0].now , day < 0 {
-                    let alert = UIAlertController(title: "현재 진행중인 목표가 있습니다.", message: "목표를 추가할 수 없습니다.", preferredStyle: UIAlertController.Style.alert)
-                    alert.addAction(UIAlertAction(title:"확인", style:UIAlertAction.Style.default) { UIAlertAction in
-                        self.dismiss(animated:true, completion:nil)
-                    })
-                    present(alert, animated:true, completion:nil)
+                    addButton.isEnabled = false
                 }else{
-                    print("add")
-                    present(view!, animated: true) {
-                        
-                    }
+                    addButton.isEnabled = true
                 }
-            }else{
-                print("add")
-                present(view!, animated: true) {
-                    
-                }
-            }
-        }else{
-            print("add")
-            present(view!, animated: true) {
-                
             }
         }
     }
     
+    @IBOutlet weak var addButton: UIBarButtonItem!
+    
+    @IBAction func addChallenge(_ sender: UIBarButtonItem) {
+        if let view = self.storyboard?.instantiateViewController(withIdentifier: "addGoal"){
+            present(view,animated: true)
+        }else{
+            print("Can't not present addGoalView")
+        }
+    }
 }
 
 extension MyGoalViewController: UITableViewDataSource{

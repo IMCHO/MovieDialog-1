@@ -133,6 +133,7 @@ class AddGoalViewController: UIViewController, UITextFieldDelegate {
                 if let presentingView=nvc.topViewController as? MyGoalViewController{
                     presentingView.challenges=challenges.reversed()
                     presentingView.goalList.reloadData()
+                    presentingView.addButton.isEnabled = false
                 }else{
                     print("Something is wrong to convert view to MyGoalViewController.")
                 }
