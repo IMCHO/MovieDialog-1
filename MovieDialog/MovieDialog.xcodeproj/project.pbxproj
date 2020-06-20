@@ -14,7 +14,6 @@
 		3F76C8F321F07F5200BC98D8 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F76C8F221F07F5200BC98D8 /* SearchViewController.swift */; };
 		3F85D6F921F5ABC00012FADD /* MyGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F85D6F821F5ABC00012FADD /* MyGoalViewController.swift */; };
 		3F85D6FB21F5AC7B0012FADD /* MyGoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F85D6FA21F5AC7B0012FADD /* MyGoalCell.swift */; };
-		3F85D6FD21F5BEF70012FADD /* MyGoalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F85D6FC21F5BEF70012FADD /* MyGoalListView.swift */; };
 		3F85D6FF21F5BF4B0012FADD /* MyGoalListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F85D6FE21F5BF4B0012FADD /* MyGoalListCell.swift */; };
 		3F9022D521EC5DC0002AF52F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9022D421EC5DC0002AF52F /* AppDelegate.swift */; };
 		3F9022DA21EC5DC0002AF52F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F9022D821EC5DC0002AF52F /* Main.storyboard */; };
@@ -50,7 +49,6 @@
 		3F76C8F221F07F5200BC98D8 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		3F85D6F821F5ABC00012FADD /* MyGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGoalViewController.swift; sourceTree = "<group>"; };
 		3F85D6FA21F5AC7B0012FADD /* MyGoalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGoalCell.swift; sourceTree = "<group>"; };
-		3F85D6FC21F5BEF70012FADD /* MyGoalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGoalListView.swift; sourceTree = "<group>"; };
 		3F85D6FE21F5BF4B0012FADD /* MyGoalListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGoalListCell.swift; sourceTree = "<group>"; };
 		3F9022D121EC5DC0002AF52F /* MovieDialog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieDialog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F9022D421EC5DC0002AF52F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -134,7 +132,6 @@
 				DA148D5321F59A5F00E66E82 /* InfoViewController.swift */,
 				3F85D6F821F5ABC00012FADD /* MyGoalViewController.swift */,
 				3F85D6FA21F5AC7B0012FADD /* MyGoalCell.swift */,
-				3F85D6FC21F5BEF70012FADD /* MyGoalListView.swift */,
 				3F85D6FE21F5BF4B0012FADD /* MyGoalListCell.swift */,
 				DA29D7C7242738F700955F49 /* AddGoalViewController.swift */,
 				DAFA11FB21F7098F0071C33A /* DialogCollectionViewCell.swift */,
@@ -251,7 +248,6 @@
 				3F76C8F121F07CF000BC98D8 /* DiaryEditViewController.swift in Sources */,
 				DAFA11FC21F7098F0071C33A /* DialogCollectionViewCell.swift in Sources */,
 				DA08A68922018C060014BDA5 /* detailReviewTableViewController.swift in Sources */,
-				3F85D6FD21F5BEF70012FADD /* MyGoalListView.swift in Sources */,
 				DA148D5421F59A5F00E66E82 /* InfoViewController.swift in Sources */,
 				3FEFF04D21F18E0700C04F19 /* Model.swift in Sources */,
 				3FEFF04B21F18D4B00C04F19 /* MoviesTableViewController.swift in Sources */,
