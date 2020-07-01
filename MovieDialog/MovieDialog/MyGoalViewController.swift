@@ -143,7 +143,10 @@ extension MyGoalViewController: UITableViewDataSource{
                 
                 cell.goalRate.text = String(Float(challenge.now*100 / challenge.goal))+"%"
                 //진행바
-                cell.progressFront.frame.size.width = CGFloat(298 * challenge.now / challenge.goal)
+//                cell.progressFront.frame.size.width = CGFloat(Int(cell.progressFront.frame.size.width) * challenge.now / challenge.goal)
+//                print(cell.progressFront.frame.size.width)
+                cell.progressBar.progress = Float(challenge.now) / Float(challenge.goal)
+                cell.progressBar.transform = cell.progressBar.transform.scaledBy(x: 1, y: 10)
                 
                 let startDate = challenge.startTime
                 let finishDate = challenge.time
@@ -174,8 +177,8 @@ extension MyGoalViewController: UITableViewDataSource{
                     cell.status.text="마감"
                 }
                 
-                cell.progressBack.layer.cornerRadius = 10
-                cell.progressFront.layer.cornerRadius = 7
+//                cell.progressBack.layer.cornerRadius = 10
+//                cell.progressFront.layer.cornerRadius = 7
                 
                 
                 return cell
@@ -204,7 +207,7 @@ extension MyGoalViewController: UITableViewDataSource{
                 return cell
             }
         }
-        return tableView.dequeueReusableCell(withIdentifier: "MyGoalListCell", for: indexPath) as! MyGoalListCell
+        return tableView.dequeueReusableCell(withIdentifier: "MyGoalEmptyTableViewCell", for: indexPath) as! MyGoalEmptyTableViewCell
     }
     
     

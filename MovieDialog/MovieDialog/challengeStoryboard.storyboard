@@ -51,52 +51,37 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FNh-Q4-FDZ">
-                                                    <rect key="frame" x="8" y="133" width="329.66666666666669" height="23"/>
-                                                    <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wb6-cM-AcM">
-                                                            <rect key="frame" x="8" y="2" width="313.66666666666669" height="19"/>
-                                                            <color key="backgroundColor" red="1" green="0.93169499528101918" blue="0.03331694742569391" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        </view>
-                                                    </subviews>
-                                                    <color key="backgroundColor" red="0.071354694664478302" green="0.029797542840242386" blue="0.018169790506362915" alpha="0.11" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstItem="wb6-cM-AcM" firstAttribute="centerX" secondItem="FNh-Q4-FDZ" secondAttribute="centerX" id="9cZ-zK-z6X"/>
-                                                        <constraint firstItem="wb6-cM-AcM" firstAttribute="leading" secondItem="FNh-Q4-FDZ" secondAttribute="leading" constant="8" id="BQX-Dp-lQh"/>
-                                                        <constraint firstAttribute="bottom" secondItem="wb6-cM-AcM" secondAttribute="bottom" constant="2" id="FBR-34-X6v"/>
-                                                        <constraint firstItem="wb6-cM-AcM" firstAttribute="centerY" secondItem="FNh-Q4-FDZ" secondAttribute="centerY" id="OWp-f5-hj0"/>
-                                                        <constraint firstItem="wb6-cM-AcM" firstAttribute="top" secondItem="FNh-Q4-FDZ" secondAttribute="top" constant="2" id="c8V-At-OnX"/>
-                                                        <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="wb6-cM-AcM" secondAttribute="trailing" constant="8" id="oEk-S0-Ihq"/>
-                                                    </constraints>
-                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="퍼센트" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ynz-Rz-Hnk">
                                                     <rect key="frame" x="361.66666666666669" y="133" width="44.333333333333314" height="23"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="uWC-lW-fOX">
+                                                    <rect key="frame" x="8" y="143" width="300" height="2"/>
+                                                    <color key="progressTintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </progressView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Ynz-Rz-Hnk" firstAttribute="top" secondItem="aA5-II-F6n" secondAttribute="bottom" constant="27" id="2Ji-BS-B31"/>
                                                 <constraint firstItem="xFP-GS-Sg6" firstAttribute="height" secondItem="Y2x-ZE-djp" secondAttribute="height" id="4K0-WU-f7Z"/>
                                                 <constraint firstItem="Y2x-ZE-djp" firstAttribute="leading" secondItem="xFP-GS-Sg6" secondAttribute="trailing" constant="-8" id="5dM-Ex-Ayf"/>
-                                                <constraint firstItem="xFP-GS-Sg6" firstAttribute="height" secondItem="FNh-Q4-FDZ" secondAttribute="height" multiplier="1.30435" id="5pe-7V-BZY"/>
                                                 <constraint firstItem="xFP-GS-Sg6" firstAttribute="top" secondItem="yqs-l0-h1p" secondAttribute="top" constant="20" id="7kR-44-LUr"/>
                                                 <constraint firstItem="aA5-II-F6n" firstAttribute="top" secondItem="xFP-GS-Sg6" secondAttribute="bottom" constant="24" id="8Gs-SD-nze"/>
-                                                <constraint firstItem="Ynz-Rz-Hnk" firstAttribute="centerY" secondItem="FNh-Q4-FDZ" secondAttribute="centerY" id="CXb-fR-ePM"/>
                                                 <constraint firstItem="aA5-II-F6n" firstAttribute="centerY" secondItem="yqs-l0-h1p" secondAttribute="centerY" id="FrG-wD-VZu"/>
                                                 <constraint firstItem="Y2x-ZE-djp" firstAttribute="top" secondItem="yqs-l0-h1p" secondAttribute="top" constant="20" id="G2Y-ib-5wu"/>
                                                 <constraint firstItem="xFP-GS-Sg6" firstAttribute="centerY" secondItem="Y2x-ZE-djp" secondAttribute="centerY" id="Hfm-Is-USo"/>
                                                 <constraint firstAttribute="trailing" secondItem="Y2x-ZE-djp" secondAttribute="trailing" constant="8" id="L6m-WQ-HIt"/>
                                                 <constraint firstItem="xFP-GS-Sg6" firstAttribute="height" secondItem="Ynz-Rz-Hnk" secondAttribute="height" multiplier="1.30435" id="O0B-fm-9Qb"/>
-                                                <constraint firstItem="FNh-Q4-FDZ" firstAttribute="leading" secondItem="yqs-l0-h1p" secondAttribute="leading" constant="8" id="VZR-XH-fxw"/>
+                                                <constraint firstItem="uWC-lW-fOX" firstAttribute="leading" secondItem="yqs-l0-h1p" secondAttribute="leading" constant="8" id="RoG-HX-gkw"/>
                                                 <constraint firstItem="aA5-II-F6n" firstAttribute="leading" secondItem="yqs-l0-h1p" secondAttribute="leading" constant="8" id="Z7x-3H-56v"/>
                                                 <constraint firstItem="aA5-II-F6n" firstAttribute="top" secondItem="Y2x-ZE-djp" secondAttribute="bottom" constant="24" id="Zmj-fK-GWg"/>
                                                 <constraint firstItem="xFP-GS-Sg6" firstAttribute="leading" secondItem="yqs-l0-h1p" secondAttribute="leading" constant="8" id="b0M-0R-vn9"/>
-                                                <constraint firstItem="Ynz-Rz-Hnk" firstAttribute="leading" secondItem="FNh-Q4-FDZ" secondAttribute="trailing" constant="24" id="eoN-LP-u7c"/>
+                                                <constraint firstItem="Ynz-Rz-Hnk" firstAttribute="leading" secondItem="uWC-lW-fOX" secondAttribute="trailing" constant="53.666666666666686" id="cbd-JB-wPu"/>
+                                                <constraint firstItem="uWC-lW-fOX" firstAttribute="top" secondItem="aA5-II-F6n" secondAttribute="bottom" constant="37" id="eKT-wv-l9q"/>
                                                 <constraint firstAttribute="trailing" secondItem="Ynz-Rz-Hnk" secondAttribute="trailing" constant="8" id="kf2-Z1-ev6"/>
                                                 <constraint firstItem="xFP-GS-Sg6" firstAttribute="height" secondItem="aA5-II-F6n" secondAttribute="height" multiplier="0.9375" id="l0M-ok-erE"/>
-                                                <constraint firstItem="FNh-Q4-FDZ" firstAttribute="top" secondItem="aA5-II-F6n" secondAttribute="bottom" constant="27" id="uTX-CZ-xoe"/>
+                                                <constraint firstAttribute="bottom" secondItem="uWC-lW-fOX" secondAttribute="bottom" constant="35" id="rbz-KX-uW1"/>
                                                 <constraint firstAttribute="trailing" secondItem="aA5-II-F6n" secondAttribute="trailing" constant="8" id="xcg-Ou-Fdq"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -104,8 +89,7 @@
                                             <outlet property="goalDday" destination="aA5-II-F6n" id="nOI-3d-0Yp"/>
                                             <outlet property="goalName" destination="xFP-GS-Sg6" id="3J6-FK-a7q"/>
                                             <outlet property="goalRate" destination="Ynz-Rz-Hnk" id="Z8a-6M-Np6"/>
-                                            <outlet property="progressBack" destination="FNh-Q4-FDZ" id="gjK-6V-YJq"/>
-                                            <outlet property="progressFront" destination="wb6-cM-AcM" id="seo-wa-kwC"/>
+                                            <outlet property="progressBar" destination="uWC-lW-fOX" id="TPR-os-zDm"/>
                                             <outlet property="status" destination="Y2x-ZE-djp" id="FrC-2L-hJd"/>
                                         </connections>
                                     </tableViewCell>
@@ -158,6 +142,14 @@
                                             <outlet property="goalListNum" destination="69G-2i-wXm" id="hzk-hM-AON"/>
                                             <outlet property="goalListTitle" destination="WiD-Ea-yT2" id="dzu-cQ-adT"/>
                                         </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyGoalEmptyTableViewCell" rowHeight="130" id="9bf-4S-yPw" userLabel="MyGoalEmptyTableViewCell" customClass="MyGoalEmptyTableViewCell" customModule="MovieDialog" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="338" width="414" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9bf-4S-yPw" id="LH5-Uc-xqd" customClass="MyGoalEmptyTableViewCell" customModule="MovieDialog" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
