@@ -146,6 +146,7 @@ extension MyGoalViewController: UITableViewDataSource{
 //                cell.progressFront.frame.size.width = CGFloat(Int(cell.progressFront.frame.size.width) * challenge.now / challenge.goal)
 //                print(cell.progressFront.frame.size.width)
                 cell.progressBar.progress = Float(challenge.now) / Float(challenge.goal)
+                cell.progressBar.transform = .identity
                 cell.progressBar.transform = cell.progressBar.transform.scaledBy(x: 1, y: 10)
                 
                 let startDate = challenge.startTime
