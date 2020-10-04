@@ -41,6 +41,7 @@ class MyGoalViewController: UIViewController {
         }
     }
     
+    
     func checkDateForButton(){
         if challenges.count > 0{
             let calendar = Calendar.current
