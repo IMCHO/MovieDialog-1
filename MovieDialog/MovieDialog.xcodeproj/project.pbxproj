@@ -14,7 +14,6 @@
 		3F76C8F321F07F5200BC98D8 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F76C8F221F07F5200BC98D8 /* SearchViewController.swift */; };
 		3F85D6F921F5ABC00012FADD /* MyGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F85D6F821F5ABC00012FADD /* MyGoalViewController.swift */; };
 		3F85D6FB21F5AC7B0012FADD /* MyGoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F85D6FA21F5AC7B0012FADD /* MyGoalCell.swift */; };
-		3F85D6FD21F5BEF70012FADD /* MyGoalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F85D6FC21F5BEF70012FADD /* MyGoalListView.swift */; };
 		3F85D6FF21F5BF4B0012FADD /* MyGoalListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F85D6FE21F5BF4B0012FADD /* MyGoalListCell.swift */; };
 		3F9022D521EC5DC0002AF52F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9022D421EC5DC0002AF52F /* AppDelegate.swift */; };
 		3F9022DA21EC5DC0002AF52F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F9022D821EC5DC0002AF52F /* Main.storyboard */; };
@@ -24,10 +23,11 @@
 		3FEFF04B21F18D4B00C04F19 /* MoviesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEFF04A21F18D4B00C04F19 /* MoviesTableViewController.swift */; };
 		3FEFF04D21F18E0700C04F19 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEFF04C21F18E0700C04F19 /* Model.swift */; };
 		3FEFF04F21F18F4F00C04F19 /* MoviesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEFF04E21F18F4F00C04F19 /* MoviesTableViewCell.swift */; };
-		7F41CC4B21F5F46400556DC2 /* AddGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F41CC4A21F5F46400556DC2 /* AddGoalView.swift */; };
 		DA08A68922018C060014BDA5 /* detailReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA08A68822018C060014BDA5 /* detailReviewTableViewController.swift */; };
 		DA08A68B220196910014BDA5 /* detailReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA08A68A220196910014BDA5 /* detailReviewTableViewCell.swift */; };
 		DA148D5421F59A5F00E66E82 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA148D5321F59A5F00E66E82 /* InfoViewController.swift */; };
+		DA29D7C8242738F700955F49 /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA29D7C7242738F700955F49 /* AddGoalViewController.swift */; };
+		DABBC83B24AC6C07000D62CD /* MyGoalEmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABBC83A24AC6C07000D62CD /* MyGoalEmptyTableViewCell.swift */; };
 		DAD4F2AC21F5A6C000465DFD /* infoStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAD4F2AB21F5A6C000465DFD /* infoStoryboard.storyboard */; };
 		DAD4F2AE21F5A82300465DFD /* challengeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAD4F2AD21F5A82300465DFD /* challengeStoryboard.storyboard */; };
 		DAD4F2B021F5A88C00465DFD /* dialogStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAD4F2AF21F5A88C00465DFD /* dialogStoryboard.storyboard */; };
@@ -36,8 +36,8 @@
 		DADEE77721EF80BB0007F93A /* dialog.plist in Resources */ = {isa = PBXBuildFile; fileRef = DADEE77621EF80BB0007F93A /* dialog.plist */; };
 		DADEE77921EF81050007F93A /* challenge.plist in Resources */ = {isa = PBXBuildFile; fileRef = DADEE77821EF81050007F93A /* challenge.plist */; };
 		DADEE77D21EF880C0007F93A /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADEE77C21EF880C0007F93A /* user.swift */; };
-		DADEE77F21EF88290007F93A /* dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADEE77E21EF88290007F93A /* dialog.swift */; };
-		DADEE78121EF88340007F93A /* challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADEE78021EF88340007F93A /* challenge.swift */; };
+		DADEE77F21EF88290007F93A /* Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADEE77E21EF88290007F93A /* Dialog.swift */; };
+		DADEE78121EF88340007F93A /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADEE78021EF88340007F93A /* Challenge.swift */; };
 		DAF764F12405506B003697A6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAF764F02405506B003697A6 /* Default-568h@2x.png */; };
 		DAFA11FC21F7098F0071C33A /* DialogCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFA11FB21F7098F0071C33A /* DialogCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -50,7 +50,6 @@
 		3F76C8F221F07F5200BC98D8 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		3F85D6F821F5ABC00012FADD /* MyGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGoalViewController.swift; sourceTree = "<group>"; };
 		3F85D6FA21F5AC7B0012FADD /* MyGoalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGoalCell.swift; sourceTree = "<group>"; };
-		3F85D6FC21F5BEF70012FADD /* MyGoalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGoalListView.swift; sourceTree = "<group>"; };
 		3F85D6FE21F5BF4B0012FADD /* MyGoalListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGoalListCell.swift; sourceTree = "<group>"; };
 		3F9022D121EC5DC0002AF52F /* MovieDialog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieDialog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F9022D421EC5DC0002AF52F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,10 +61,11 @@
 		3FEFF04A21F18D4B00C04F19 /* MoviesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesTableViewController.swift; sourceTree = "<group>"; };
 		3FEFF04C21F18E0700C04F19 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		3FEFF04E21F18F4F00C04F19 /* MoviesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesTableViewCell.swift; sourceTree = "<group>"; };
-		7F41CC4A21F5F46400556DC2 /* AddGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalView.swift; sourceTree = "<group>"; };
 		DA08A68822018C060014BDA5 /* detailReviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailReviewTableViewController.swift; sourceTree = "<group>"; };
 		DA08A68A220196910014BDA5 /* detailReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailReviewTableViewCell.swift; sourceTree = "<group>"; };
 		DA148D5321F59A5F00E66E82 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		DA29D7C7242738F700955F49 /* AddGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGoalViewController.swift; sourceTree = "<group>"; };
+		DABBC83A24AC6C07000D62CD /* MyGoalEmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyGoalEmptyTableViewCell.swift; path = MovieDialog/MyGoalEmptyTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		DAD4F2AB21F5A6C000465DFD /* infoStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = infoStoryboard.storyboard; sourceTree = "<group>"; };
 		DAD4F2AD21F5A82300465DFD /* challengeStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = challengeStoryboard.storyboard; sourceTree = "<group>"; };
 		DAD4F2AF21F5A88C00465DFD /* dialogStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = dialogStoryboard.storyboard; sourceTree = "<group>"; };
@@ -74,8 +74,8 @@
 		DADEE77621EF80BB0007F93A /* dialog.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = dialog.plist; sourceTree = "<group>"; };
 		DADEE77821EF81050007F93A /* challenge.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = challenge.plist; sourceTree = "<group>"; };
 		DADEE77C21EF880C0007F93A /* user.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
-		DADEE77E21EF88290007F93A /* dialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dialog.swift; sourceTree = "<group>"; };
-		DADEE78021EF88340007F93A /* challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = challenge.swift; sourceTree = "<group>"; };
+		DADEE77E21EF88290007F93A /* Dialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dialog.swift; sourceTree = "<group>"; };
+		DADEE78021EF88340007F93A /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		DAF764F02405506B003697A6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		DAFA11FB21F7098F0071C33A /* DialogCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,8 +121,8 @@
 				DADEE77621EF80BB0007F93A /* dialog.plist */,
 				DADEE77821EF81050007F93A /* challenge.plist */,
 				DADEE77C21EF880C0007F93A /* user.swift */,
-				DADEE77E21EF88290007F93A /* dialog.swift */,
-				DADEE78021EF88340007F93A /* challenge.swift */,
+				DADEE77E21EF88290007F93A /* Dialog.swift */,
+				DADEE78021EF88340007F93A /* Challenge.swift */,
 				3F76C8EE21F07CD400BC98D8 /* ShowAllViewController.swift */,
 				3FBAA13421F82F350025A434 /* ShowDiaryViewController.swift */,
 				3F047F4621FDA2F1007EC403 /* EditViewController.swift */,
@@ -133,10 +133,10 @@
 				3FEFF04C21F18E0700C04F19 /* Model.swift */,
 				DA148D5321F59A5F00E66E82 /* InfoViewController.swift */,
 				3F85D6F821F5ABC00012FADD /* MyGoalViewController.swift */,
+				DA29D7C7242738F700955F49 /* AddGoalViewController.swift */,
+				DABBC83A24AC6C07000D62CD /* MyGoalEmptyTableViewCell.swift */,
 				3F85D6FA21F5AC7B0012FADD /* MyGoalCell.swift */,
-				3F85D6FC21F5BEF70012FADD /* MyGoalListView.swift */,
 				3F85D6FE21F5BF4B0012FADD /* MyGoalListCell.swift */,
-				7F41CC4A21F5F46400556DC2 /* AddGoalView.swift */,
 				DAFA11FB21F7098F0071C33A /* DialogCollectionViewCell.swift */,
 				DADC4FBB21FD814F00C3DB05 /* MonthCollectionViewController.swift */,
 				DA08A68822018C060014BDA5 /* detailReviewTableViewController.swift */,
@@ -238,20 +238,20 @@
 				3F85D6FB21F5AC7B0012FADD /* MyGoalCell.swift in Sources */,
 				DADEE77D21EF880C0007F93A /* user.swift in Sources */,
 				3FBAA13521F82F350025A434 /* ShowDiaryViewController.swift in Sources */,
-				DADEE78121EF88340007F93A /* challenge.swift in Sources */,
+				DADEE78121EF88340007F93A /* Challenge.swift in Sources */,
 				3F0CC059220184FC001109AA /* OnboardViewController.swift in Sources */,
-				7F41CC4B21F5F46400556DC2 /* AddGoalView.swift in Sources */,
 				3F85D6F921F5ABC00012FADD /* MyGoalViewController.swift in Sources */,
+				DABBC83B24AC6C07000D62CD /* MyGoalEmptyTableViewCell.swift in Sources */,
 				3F85D6FF21F5BF4B0012FADD /* MyGoalListCell.swift in Sources */,
 				DA08A68B220196910014BDA5 /* detailReviewTableViewCell.swift in Sources */,
+				DA29D7C8242738F700955F49 /* AddGoalViewController.swift in Sources */,
 				3F76C8F321F07F5200BC98D8 /* SearchViewController.swift in Sources */,
-				DADEE77F21EF88290007F93A /* dialog.swift in Sources */,
+				DADEE77F21EF88290007F93A /* Dialog.swift in Sources */,
 				3F76C8EF21F07CD400BC98D8 /* ShowAllViewController.swift in Sources */,
 				3FEFF04F21F18F4F00C04F19 /* MoviesTableViewCell.swift in Sources */,
 				3F76C8F121F07CF000BC98D8 /* DiaryEditViewController.swift in Sources */,
 				DAFA11FC21F7098F0071C33A /* DialogCollectionViewCell.swift in Sources */,
 				DA08A68922018C060014BDA5 /* detailReviewTableViewController.swift in Sources */,
-				3F85D6FD21F5BEF70012FADD /* MyGoalListView.swift in Sources */,
 				DA148D5421F59A5F00E66E82 /* InfoViewController.swift in Sources */,
 				3FEFF04D21F18E0700C04F19 /* Model.swift in Sources */,
 				3FEFF04B21F18D4B00C04F19 /* MoviesTableViewController.swift in Sources */,
@@ -405,14 +405,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4QG3GC35LA;
+				DEVELOPMENT_TEAM = 96575A5JRC;
 				INFOPLIST_FILE = MovieDialog/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.codershigh.MovieDialog;
+				PRODUCT_BUNDLE_IDENTIFIER = "New-MovieDialog";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -426,14 +426,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4QG3GC35LA;
+				DEVELOPMENT_TEAM = 96575A5JRC;
 				INFOPLIST_FILE = MovieDialog/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.codershigh.MovieDialog;
+				PRODUCT_BUNDLE_IDENTIFIER = "New-MovieDialog";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

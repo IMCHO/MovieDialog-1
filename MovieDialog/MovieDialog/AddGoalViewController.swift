@@ -9,7 +9,7 @@
 import UIKit
 
 
-class AddGoalView: UIViewController {
+class AddGoalViewController: UIViewController, UITextFieldDelegate {
     
     var challenges:[Challenge]=[]
     let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
@@ -18,10 +18,18 @@ class AddGoalView: UIViewController {
     
 
     //목표 제목
-    @IBOutlet weak var inputTitle: UITextField!
+    @IBOutlet weak var inputTitle: UITextField!{
+        didSet{
+            inputTitle.delegate = self
+        }
+    }
     
     //목표 개수
-    @IBOutlet weak var inputNum: UITextField!
+    @IBOutlet weak var inputNum: UITextField!{
+        didSet{
+            inputNum.delegate = self
+        }
+    }
     
     //목표 기간 선택
     @IBOutlet weak var startDay: UILabel!
@@ -29,50 +37,43 @@ class AddGoalView: UIViewController {
     
     var finish:Date!
     var start:Date!
-    //시작 날짜 선택
-    @IBAction func startDate(_ sender: Any) {
-        let startDate: UIDatePicker = UIDatePicker()
-        startDate.datePickerMode = .date
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    @IBAction func setDate(_ sender: Any) {
+        
+        if inputTitle.canResignFirstResponder{
+            inputTitle.resignFirstResponder()
+        }
+        if inputNum.canResignFirstResponder{
+            inputNum.resignFirstResponder()
+        }
+        
+        let datePicked: UIDatePicker = UIDatePicker()
+        datePicked.datePickerMode = .date
         
         let alert = UIAlertController(title: "\n\n\n\n\n\n\n\n\n\n\n", message: nil, preferredStyle: .actionSheet)
-        alert.view.addSubview(startDate)
+        alert.view.addSubview(datePicked)
         
         alert.addAction(UIAlertAction(title:"완료", style:.default, handler:{result in
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy.MM.dd"
-            self.start=startDate.date
-            let dateString = dateFormatter.string(from:startDate.date)
-            self.startDay.text = dateString //시작 날짜 받아와서 저장
             
+            if (sender as! UIButton).restorationIdentifier == "start"{
+                self.start=datePicked.date
+                let dateString = dateFormatter.string(from:datePicked.date)
+                self.startDay.text = dateString //시작 날짜 받아와서 저장
+            }else{
+                self.finish = datePicked.date
+                let dateString = dateFormatter.string(from:datePicked.date)
+                self.finishDay.text = dateString
+            }
         }))
         alert.addAction(UIAlertAction(title:"취소", style:.cancel, handler:nil))
         self.present(alert, animated:true, completion:nil)
-    }
-    
-    //종료 날짜 선택
-    @IBAction func finishDate(_ sender: Any) {
-        let finishDate: UIDatePicker = UIDatePicker()
-        finishDate.datePickerMode = .date
-        
-        let alert = UIAlertController(title: "\n\n\n\n\n\n\n\n\n\n\n", message: nil, preferredStyle: .actionSheet)
-        alert.view.addSubview(finishDate)
-        
-        alert.addAction(UIAlertAction(title:"완료", style:.default, handler:{result in
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy.MM.dd"
-            self.finish=finishDate.date
-            let dateString = dateFormatter.string(from:finishDate.date)
-            self.finishDay.text = dateString //종료 날짜 받아와서 저장
-            
-        }))
-        alert.addAction(UIAlertAction(title:"취소", style:.cancel, handler:nil))
-        self.present(alert, animated:true, completion:nil)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -81,12 +82,11 @@ class AddGoalView: UIViewController {
         if let data=try? Data(contentsOf: URL(fileURLWithPath:documentsPath+"/challenge.plist")){
             if let decodedChallenge=try? decoder.decode([Challenge].self, from: data){
                 challenges=decodedChallenge
-                print(challenges)
+//                print(challenges)
             }else{
-                print("디코딩 실패")
+                print("Can't find any challenges")
             }
         }
-    
     }
     
     //목표 저장
@@ -122,12 +122,28 @@ class AddGoalView: UIViewController {
             
             if let data = try? encoder.encode(challenges){
                 try? data.write(to: URL(fileURLWithPath: documentsPath + "/challenge.plist"))
-                print("ok")
+//                print("ok")
             }
         }else{
-            print("데이터를 모두 입력하세요")
+            print("Need all data to be input")
         }
-        
+
+        if let tbc=presentingViewController as? UITabBarController{
+            if let nvc=tbc.selectedViewController as? UINavigationController{
+                if let presentingView=nvc.topViewController as? MyGoalViewController{
+                    presentingView.challenges=challenges.reversed()
+                    presentingView.goalList.reloadData()
+                    presentingView.addButton.isEnabled = false
+                }else{
+                    print("Something is wrong to convert view to MyGoalViewController.")
+                }
+            }else{
+                print("Something is wrong to convert view to UINavigationController.")
+            }
+        }else{
+            print("Something is wrong to convert view to UITabBarController.")
+        }
+
         self.dismiss(animated:true, completion:nil)
     }
     
@@ -137,6 +153,5 @@ class AddGoalView: UIViewController {
 
     @IBAction func cancelGoal(_ sender: Any) {
         self.dismiss(animated:true, completion:nil)
-
     }
 }
